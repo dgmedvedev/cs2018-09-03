@@ -10,4 +10,5 @@ package by.it._tasks_.lesson02;
 
 class TaskA2 {
 
+
 }
