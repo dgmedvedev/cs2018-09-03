@@ -19,5 +19,14 @@ int i=sc.nextInt();
 
  */
 
+import java.util.Scanner;
+
 class TaskB1 {
+    public static void main(String[]args)
+    {
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        String square = String.valueOf(num*num);
+        System.out.println(square);
+    }
 }
