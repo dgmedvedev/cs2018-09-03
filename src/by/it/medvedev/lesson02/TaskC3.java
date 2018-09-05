@@ -30,5 +30,9 @@ package by.it.medvedev.lesson02;
 
 */
 class TaskC3 {
+    public static void main(String[] args) {
+        int a = 290;
+        System.out.println(Integer.toString(a, 2));
+    }
 
 }
