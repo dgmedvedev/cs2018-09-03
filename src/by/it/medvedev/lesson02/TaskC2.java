@@ -24,7 +24,7 @@ class TaskC2 {
         int j = sc.nextInt();
         int k = i + j;
 // Сумма чисел в ДЕСЯТИЧНОМ виде
-        System.out.println("D" + "E" + "C" + ":" + i + "+" + j + "=" + k);
+        System.out.println("DEC:" + i + "+" + j + "=" + k);
 // Сумма чисел в ДВОИЧНОМ виде
         System.out.print("BIN:");
         System.out.print(Integer.toString(i, 2));
