@@ -7,9 +7,14 @@ package by.it.Sledinskaya.lesson02;
 
 class TaskA3 {
     public static void main(String[] args) {
-        int i = 3;
-        int j = 4;
-        int k = 25;
-        System.out.println("i"+"*"+"i"+"+"+"j"+"*"+"j"+"="+"k");
+        int i;
+        int j;
+        int k;
+        i = 3;
+        j = 4;
+        k = i*i + j*j;
+        System.out.print(i + "*" + i + "+" + j + "*" + j + "=");
+        System.out.println(k);
+
     }
 }
