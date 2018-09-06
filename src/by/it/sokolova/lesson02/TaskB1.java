@@ -19,5 +19,13 @@ int i=sc.nextInt();
 
  */
 
+import java.util.Scanner;
+
 class TaskB1 {
+    public static void main(String[] args) {
+        System.out.println("Введите число: ");
+        Scanner sc=new Scanner(System.in);
+        int i=sc.nextInt();
+        System.out.println("Число: " + i*i);
+    }
 }
