@@ -18,6 +18,14 @@ int i=sc.nextInt();
 4. Программа должна выводить квадрат считанного числа.
 
  */
-
+import java.util.Scanner;
 class TaskB1 {
+    public static void main(String[] args)
+    {
+        System.out.print("Введите целое число");
+        Scanner sc=new Scanner(System.in);
+        int i=sc.nextInt();
+        int k=i*i;
+        System.out.println(k);
+    }
 }
