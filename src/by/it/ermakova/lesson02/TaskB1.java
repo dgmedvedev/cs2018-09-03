@@ -24,16 +24,4 @@ import java.util.Scanner;
 
 class TaskB1{
     public static void main(String[] args) {
-        System.out.println("Выводим квадрат числа");
-        Scanner sc=new Scanner(System.in);
-        int a = 5;
-        a = sc.nextInt();
-        int b = a*a;
-        System.out.println("a"+"*"+"a"+"="+b);
-
-
-    }
-}
-
-
-
+}}
