@@ -19,5 +19,18 @@ int i=sc.nextInt();
 
  */
 
+import java.util.Scanner;
+
 class TaskB1 {
+    public static void main (String args[]) {
+        System.out.print("Число а равно ");
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        System.out.println("Квадрат числа а равен " + i * i);
+    }
+
+
+
 }
+
+

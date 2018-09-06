@@ -1,5 +1,9 @@
 package by.it.tomashevskaya.lesson02;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Scanner;
+
 /*
 Ускорение свободного падения на Земле и Марсе таково:
 Марс   3.86
@@ -30,5 +34,19 @@ package by.it.tomashevskaya.lesson02;
 
 */
 class TaskC3 {
+    public static void main(String[] args){
+        System.out.print("Вес человека равен ");
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        System.out.println(getWeight(i));
+    }
+    public static double getWeight(int weightEarth) {
+        double weightMars = 0.0;
+        weightMars=weightEarth*3.86/9.81;
+        BigDecimal m = new BigDecimal(weightMars);
+        m = m.setScale(2, RoundingMode.HALF_UP);
+        System.out.println("Вес человека на Марсе составляет = " + m);
+        return weightEarth;
+    }
 
-}
+    }
