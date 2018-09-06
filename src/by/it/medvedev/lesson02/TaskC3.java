@@ -46,7 +46,7 @@ class TaskC3 {
 
         double rounding = new BigDecimal(wom).setScale(2, RoundingMode.HALF_UP).doubleValue();
 
-            return rounding;
+        return rounding;
 
     }
 }
