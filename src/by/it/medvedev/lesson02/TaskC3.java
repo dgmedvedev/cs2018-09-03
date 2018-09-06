@@ -1,5 +1,7 @@
 package by.it.medvedev.lesson02;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 /*
@@ -40,9 +42,11 @@ class TaskC3 {
 
         double z = 9.81;
         double m = 3.86;
-        double weightMars = weight * m / z;
+        double wom = weight * m / z;
 
-        return weightMars;
+        double rounding = new BigDecimal(wom).setScale(2, RoundingMode.HALF_UP).doubleValue();
+
+            return rounding;
 
     }
 }
