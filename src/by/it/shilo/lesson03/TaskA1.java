@@ -33,6 +33,25 @@ Scanner sc=new Scanner(System.in);
 
  */
 
-class TaskA1 {
+import java.util.Scanner;
 
+class TaskA1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите любое число: ");
+        int i = sc.nextInt();
+        int y = sc.nextInt();
+        //int sum=i+y;
+        //int sub=i-y;
+        //int mul=i*y;
+        //int div=i/y;
+        //int mod=i%y;
+        System.out.println((i + y) + " " + (i - y) + " " + (i * y) + " " + (i / y) + " " + (i % y));
+       // double dsum=i+y;
+        //double dsub=i-y;
+        //double dmul=i*y;
+        //double ddiv=((double)i)/y;
+        //double dmod=i%y;
+        System.out.println((i + y) + " " + (i - y) + " " + (i * y) + " " + ((double)i / y) + " " + (i % y));
+        }
 }
