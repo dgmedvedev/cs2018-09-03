@@ -33,10 +33,6 @@ Lesson 03. Task B2. Нужно написать программу, котора
 */
 class TaskB2 {
 
-    static double dis(int a,int b,int c){
-        double D = b*b-4*a*c;
-        return D;
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
@@ -44,4 +40,17 @@ class TaskB2 {
         int c = sc.nextInt();
         System.out.println(dis(a,b,c));
     }
+
+    static double dis(int a,int b,int c) {
+        double d,x1,x2;
+        d = b * b - 4 * a * c;
+        x1 = (-b + Math.sqrt(d)) / 2 * a;
+        x2 = (-b - Math.sqrt(d)) / 2 * a;
+
+        if (d > 0) System.out.println(x1+" "+x2);
+        if (d == 0) System.out.println(x1);
+        if (d < 0) System.out.println("Отрицательный дискриминант");
+        return d;
+    }
+
 }
