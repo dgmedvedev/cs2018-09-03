@@ -29,6 +29,6 @@ class TaskA2 {
         String d = "Всё ходит по цепи кругом;\n";
         System.out.println(a+b+c+d);
 
-                
+
     }
 }
