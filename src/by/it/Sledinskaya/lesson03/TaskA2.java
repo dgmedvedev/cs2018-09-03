@@ -1,4 +1,4 @@
-package by.it._tasks_.lesson03;
+package by.it.Sledinskaya.lesson03;
 
 /*
 Lesson 03. Task A2. Стихотворение
