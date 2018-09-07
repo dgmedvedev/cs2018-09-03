@@ -40,7 +40,7 @@ class TaskC3
     /*
     public static double getWeight(int Weight)
     {
-        return (double)Math.round( (double)Weight / 9.81 * 3.86 * 100) / 100; //Да, это нечитаемая дичь, но работает хД
+        return (double)Math.round( (double)Weight / 9.81 * 3.86 * 100) / 100;
     }
     public static void main(String[] args)
     {
@@ -48,7 +48,10 @@ class TaskC3
         int Weight1 = sc.nextInt();
         System.out.println(getWeight(Weight1));
     }
+    //Да, это нечитаемая дичь, но работает хД
+    //Я могу написать нормально, для людей, как говорится, но мне лень. Это слишком простое задание, чтоб заморачиваться ¯\_(ツ)_/¯
     */
+
 
 
     public static void main(String[] args)
