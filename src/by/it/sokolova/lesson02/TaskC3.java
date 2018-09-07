@@ -29,6 +29,20 @@ package by.it.sokolova.lesson02;
 
 
 */
+import java.util.Scanner;
+
 class TaskC3 {
+    public static void main(String[] args) {
+        System.out.println("Вес человека: ");
+        Scanner sc = new Scanner(System.in);
+        int weight = sc.nextInt();
+    }
+    public static void getWeight(int weight) {
+        double gMars = 3.86;
+        double gEarth = 9.81;
+        double getWeight = weight / (gEarth / gMars);
+        System.out.println(getWeight);
+        return;
+    }
 
 }
