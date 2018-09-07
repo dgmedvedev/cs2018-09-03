@@ -38,7 +38,7 @@ import java.math.RoundingMode;
 class TaskC3
 {
     /*
-    public static double getWeight(int Weight)
+    private static double getWeight(int Weight)
     {
         return (double)Math.round( (double)Weight / 9.81 * 3.86 * 100) / 100;
     }
@@ -49,7 +49,7 @@ class TaskC3
         System.out.println(getWeight(Weight1));
     }
     //Да, это нечитаемая дичь, но работает хД
-    //Я могу написать нормально, для людей, как говорится, но мне лень. Это слишком простое задание, чтоб заморачиваться ¯\_(ツ)_/¯
+    //Я могу написать нормально, для людей, как говорится... но мне лень. Это слишком простое задание, чтоб заморачиваться ¯\_(ツ)_/¯
     */
 
 
@@ -62,7 +62,7 @@ class TaskC3
         System.out.println(getWeight(weight));
     }
 
-    public static double getWeight(int weightEarth)
+    private static double getWeight(int weightEarth)
     {
         double weightMarsDouble = weightEarth / 9.81 * 3.86;
 
