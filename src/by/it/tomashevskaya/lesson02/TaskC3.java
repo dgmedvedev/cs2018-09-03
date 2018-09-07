@@ -34,19 +34,21 @@ import java.util.Scanner;
 
 */
 class TaskC3 {
-    public static void main(String[] args){
-        System.out.print("Вес человека равен ");
-        Scanner sc = new Scanner(System.in);
-        int i = sc.nextInt();
-        System.out.println(getWeight(i));
-    }
-    public static double getWeight(int weightEarth) {
-        double weightMars = 0.0;
-        weightMars=weightEarth*3.86/9.81;
-        BigDecimal m = new BigDecimal(weightMars);
-        m = m.setScale(2, RoundingMode.HALF_UP);
-        System.out.println("Вес человека на Марсе составляет = " + m);
-        return weightEarth;
+
+
+    private static double getweight(int weight) {
+        double result = weight * 3.86 / 9.81;
+        double r100 = result * 100;
+        double delta = r100 - (int) r100;
+        if (delta < 0.5)
+            return ((int) r100) / 100.0;
+        else
+            return ((int) r100 + 1) / 100.0;
     }
 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        System.out.println(getweight(m));
     }
+}
