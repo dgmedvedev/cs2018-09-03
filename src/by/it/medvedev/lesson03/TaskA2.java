@@ -22,12 +22,16 @@ Lesson 03. Task A2. Стихотворение
 */
 class TaskA2 {
     public static void main(String[] args) {
-        System.out.println("Мое любимое стихотворение");
-        String a="У лукоморья";
-        String b="У лукоморья";
-        String c="У лукоморья";
-        String d="У лукоморья";
-        System.out.println(a+"\n"+b+"\n"+c+"\n"+d);
+        System.out.println("Мое любимое стихотворение:");
+        String a="Я узнал, что у меня";
+        String b="Есть огромная семья!";
+        String c="И тропинка и лесок";
+        String d="В поле каждый колосок!";
+        String e="Речка, небо голубое";
+        String f="Это все мое - родное!";
+        String g="Это Родина моя,";
+        String h="Всех люблю на свете я!";
+        System.out.println(a+"\n"+b+"\n"+c+"\n"+d+"\n"+e+"\n"+f+"\n"+g+"\n"+h);
     }
 
 }
