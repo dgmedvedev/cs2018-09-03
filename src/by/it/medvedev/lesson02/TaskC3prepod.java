@@ -31,7 +31,7 @@ import java.util.Scanner;
 
 
 */
-class TaskC3l {
+class TaskC3prepod {
        static double getWeight(int weight) {
 
         double result = weight * 3.86 / 9.81;
