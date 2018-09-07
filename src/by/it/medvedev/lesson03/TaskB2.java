@@ -51,6 +51,7 @@ class TaskB2 {
             if (d==0) System.out.println(x1);
             if (d<0) System.out.println("Отрицательный дискриминант");
 
-            return d;
-        }
+    return d;
+
     }
+}
