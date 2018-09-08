@@ -34,16 +34,19 @@ import java.util.Scanner;
 import java.util.Scanner;
 
 class TaskC3 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int weight = sc.nextInt();
+    public static double getWeight(int weight) {
+        double result = weight * 3.86 / 9.81;
+        double r100 = result * 100;
+        double delta = r100 - (int) r100;
+        if (delta<0.5)
+            return ((int)r100)/100.0;
+        else
+            return ((int)r100+1)/100.0;
     }
-    public static double getWeight(int x) {
-        double z = 9.81;
-        double y = 3.86;
-        double n = z/y;
-        double a = x/n;
-    return a;
+    public static void main (String [] args) {
+        Scanner sc=new Scanner(System.in);
+        int m=sc.nextInt();
+        System.out.println (getWeight(m));
     }
 }
 
