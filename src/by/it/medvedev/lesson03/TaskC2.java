@@ -21,15 +21,16 @@ package by.it.medvedev.lesson03;
 */
 public class TaskC2 {
     public static void main(String[] args) {
-            System.out.println(sumDigitsInNumber(5467));
-        }
-        static int sumDigitsInNumber (int number){
-        int a=5; int b=4; int c=6; int d=7;
-        int sum = a+b+c+d;
-        number = sum;
-
+        System.out.println(sumDigitsInNumber(5467));
+    }
+    static int sumDigitsInNumber (int abcd){
+        int a = abcd/1000;
+        int b = (abcd-a*1000)/100;
+        int c = ((abcd-a*1000)-b*100)/10;
+        int d = ((abcd-a*1000)-b*100)-c*10;
+        int number = a+b+c+d;
         return number;
-        }
+    }
 
 //    public static void main(String[] args) {
 //        System.out.println(sumDigitsInNumber(5467));
