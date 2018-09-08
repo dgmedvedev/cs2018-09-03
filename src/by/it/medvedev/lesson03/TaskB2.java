@@ -38,10 +38,10 @@ class TaskB2 {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int c = sc.nextInt();
-        System.out.println(dis(a, b, c));
+        System.out.println(calculateDis(a, b, c));
     }
 
-    static double dis(int a, int b, int c) {
+    static double calculateDis(int a, int b, int c) {
         double d, x1, x2;
         d = b * b - 4 * a * c;
         x1 = (-b + Math.sqrt(d)) / (2 * a);

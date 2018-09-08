@@ -19,15 +19,16 @@ package by.it.medvedev.lesson03;
     4. Метод sumDigitsInNumber не должен ничего выводить на экран.
     5. Метод sumDigitsInNumber должен правильно возвращать сумму всех цифр в числе number.
 */
-public class TaskC2 {
+public class TaskC2test {
     public static void main(String[] args) {
-            System.out.println(sumDigitsInNumber(5467));
+        System.out.println(sumDigitsInNumber(5467));
         }
-        static int sumDigitsInNumber (int number){
-        int a=5; int b=4; int c=6; int d=7;
-        int sum = a+b+c+d;
-        number = sum;
-
+        static int sumDigitsInNumber (int abcd){
+        int a = abcd/1000;
+        int b = (a*1000-abcd)/100;
+        int c = ((a*1000-abcd)-b*100)/10;
+        int d = ((a*1000-abcd)-b*100)-c*10;
+        int number = a+b+c+d;
         return number;
         }
 
