@@ -19,7 +19,14 @@ package by.it.ermakova.lesson03;
     4. Метод sumDigitsInNumber не должен ничего выводить на экран.
     5. Метод sumDigitsInNumber должен правильно возвращать сумму всех цифр в числе number.
 */
-public class TaskC2 {
+ class TaskC2 {
+}
+
+
+
+
+
+
 
 
 
@@ -28,4 +35,4 @@ public class TaskC2 {
 //        System.out.println(sumDigitsInNumber(5467));
 //    }
 
-}
+
