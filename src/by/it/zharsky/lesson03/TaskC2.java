@@ -1,4 +1,7 @@
 package by.it.zharsky.lesson03;
+
+import java.util.Scanner;
+
 /*
     Сумма цифр четырехзначного числа
 
@@ -24,8 +27,42 @@ public class TaskC2 {
 
 
 
-//    public static void main(String[] args) {
-//        System.out.println(sumDigitsInNumber(5467));
-//    }
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        int source = scan.nextInt();
+        System.out.println(sumDigitsInNumber(source));
+
+    }
+
+    private static int sumDigitsInNumber(int number)
+    {
+        int sum = 0;
+        int key = 1;
+        sum = accumulator(number, key);
+        return sum;
+    }
+
+    private static int accumulator(int number, int key)
+    {
+        int startNum = number;
+        key = key * 10;
+        double num = (double) number / key;
+        int wholeNum =number / key;
+        int rem = (int)((num - wholeNum)*10);
+        if(rem ==0)
+        {
+            System.out.println(rem);
+            return number;
+        }
+
+
+        else
+        {
+           System.out.println(rem);
+            return  wholeNum + accumulator(startNum, key);
+        }
+
+    }
 
 }
