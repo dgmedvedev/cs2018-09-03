@@ -34,7 +34,7 @@ import java.util.Scanner;
 import java.util.Scanner;
 
 class TaskC3 {
-    public static double getWeight(int weight) {
+    private static double getWeight(int weight) {
         double result = weight * 3.86 / 9.81;
         double r100 = result * 100;
         double delta = r100 - (int) r100;

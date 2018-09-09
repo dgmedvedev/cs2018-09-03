@@ -47,7 +47,7 @@ class TaskB2 {
        }
        else if (d == 0) {
            double x;
-           x = -b / (2 * a);
+           x = -b / (2.0 * a);
            System.out.println(x);
        }
        else {
