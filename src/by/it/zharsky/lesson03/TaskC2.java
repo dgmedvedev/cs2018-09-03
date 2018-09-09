@@ -32,14 +32,13 @@ public class TaskC2 {
         Scanner scan = new Scanner(System.in);
         int source = scan.nextInt();
         System.out.println(sumDigitsInNumber(source));
-
     }
 
     private static int sumDigitsInNumber(int number)
     {
         int sum = 0;
         int key = 1;
-        sum = accumulator(number, key);
+        sum  = accumulator(number, key);
         return sum;
     }
 
@@ -49,20 +48,16 @@ public class TaskC2 {
         key = key * 10;
         double num = (double) number / key;
         int wholeNum =number / key;
-        int rem = (int)((num - wholeNum)*10);
+        float rounded = (float)((num - wholeNum)*10);
+        int rem = (int)rounded;
         if(rem ==0)
         {
-            System.out.println(rem);
-            return number;
+            return 0;
         }
-
-
         else
         {
-           System.out.println(rem);
-            return  wholeNum + accumulator(startNum, key);
+           rem+= accumulator(startNum, key);
+           return rem;
         }
-
     }
-
 }

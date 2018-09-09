@@ -23,7 +23,13 @@ Lesson 03. Task A2. Стихотворение
 class TaskA2 {
     public static void main (String[] args)
     {
+        String a = "Autrefois, quand septembre en larmes revenait,";
+        String b = "Je partais, je quittais tout ce qui me connaît,";
+        String c = "Je m'évadais ; Paris s'effaçait ; rien, personne ! ";
+        String d = "J'allais, je n'étais plus qu'une ombre qui frissonne. ";
         System.out.println("Мое любимое стихотворение:\n");
+        System.out.println(a+"\n"+b+"\n"+c+"\n"+d);
+
     }
 
 }
