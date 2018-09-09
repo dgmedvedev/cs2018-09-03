@@ -18,7 +18,7 @@ Scanner sc=new Scanner(System.in);
 
 Требования:
 1. В программе необходимо создать объект типа Scanner.
-2. Программа должна считывать два числа типа int с клавиатуры.
+2. Программа должна считывать два числа типа double dс клавиатуры.
 3. Программа должна дважды выводить в строку пять чисел через пробел.
 4. Программа должна выводить int сумму, разность, произведение, частное и остаток от деления этих чисел двух чисел.
 5. Программа должна выводить double сумму, разность, произведение, частное и остаток от деления этих чисел двух чисел.
@@ -33,6 +33,24 @@ Scanner sc=new Scanner(System.in);
 
  */
 
-class TaskA1 {
+import java.util.Scanner;
 
+class TaskA1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int sum=a+b;
+        int sub=a-b;
+        int mul=a*b;
+        int div=a/b;
+        int mod=a%b;
+        System.out.println(sum+" "+sub+" "+mul+" "+div+" "+mod);
+        double dsum=(double)a+b;
+        double dsub=(double)a-b;
+        double dmul=(double)a*b;
+        double ddiv=(double)a/b;
+        double dmod=(double)a%b;
+        System.out.println(dsum+" "+dsub+" "+dmul+" "+ddiv+" "+dmod);
+    }
 }
