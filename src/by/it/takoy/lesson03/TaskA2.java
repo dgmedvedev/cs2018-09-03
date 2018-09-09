@@ -23,11 +23,11 @@ Lesson 03. Task A2. Стихотворение
 class TaskA2 {
     public static void main(String[] args) {
         System.out.println("Моё любимое стихотворение:");
-        String a=("gfdgdfgdfgdf");
-        String b=("gyrtyrtyrtytr");
-        String c=("gfdgfdgelrew") ;
-        String d=("gfdwewrewt");
-    System.out.println(a+"/n"+b+c+d);
+        String a=("По вечерам над ресторанами");
+        String b=("Горячий воздух дик и глух,");
+        String c=("И правит окриками пьяными") ;
+        String d=("Весенний и тлетворный дух...");
+    System.out.println(a+"\n"+b+"\n"+c+"\n"+d);
 
     }
 
