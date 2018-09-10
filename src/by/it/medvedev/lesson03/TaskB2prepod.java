@@ -38,12 +38,23 @@ class TaskB2prepod {
     }
 
     public static void main(String[] args) {
-                Scanner sc = new Scanner(System.in);
-                        int a = sc.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
         int b = sc.nextInt();
         int c = sc.nextInt();
 
         double d = dis(1,2,3);
+        if (d>0){
+            double x1=(-b + Math.sqrt(d)) / (2 * a);
+            double x2=(-b - Math.sqrt(d)) / (2 * a);
+            System.out.println(x1+" "+x2);
+
+        } else if (d==0){
+            double x = -b / (2.0 * a);
+            System.out.println(x);
+        } else
+            System.out.println("Отрицательный дискриминант");
+
 
     }
 }
