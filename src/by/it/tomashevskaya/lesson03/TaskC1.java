@@ -24,9 +24,9 @@ TC = (TF – 32) * 5/9
 в градусы Фаренгейта и возвращать это число.*/
 
 
+import java.util.Scanner;
+
 class TaskC1 {
-
-
 
 
 
