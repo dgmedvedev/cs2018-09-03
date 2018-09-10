@@ -34,7 +34,7 @@ Lesson 03. Task B2. Нужно написать программу, котора
 
 class TaskB2 {
     private static double dis(int a, int b, int c) {
-        int d = b * b - 4 * a * c;
+        double d = b * b - 4 * a * c;
         return d;
     }
 
@@ -52,7 +52,7 @@ class TaskB2 {
             System.out.println(x1 + " " + x2);
         } else if (d == 0) {
             double x;
-            x = -(double) b / (2 * a);
+            x = - b / (2.0 * a);
             System.out.println(x);
         } else {
             System.out.println("Отрицательный дискриминант");
