@@ -41,17 +41,19 @@ class TaskA1 {
         System.out.print("Введите любое число:");
         int i = sc.nextInt();
         int y = sc.nextInt();
-        //int sum=i+y;
-        //int sub=i-y;
-        //int mul=i*y;
-        //int div=i/y;
-        //int mod=i%y;
-        System.out.println((i + y) + " " + (i - y) + " " + (i * y) + " " + (i / y) + " " + (i % y));
-        // double dsum=i+y;
-        //double dsub=i-y;
-        //double dmul=i*y;
-        //double ddiv=((double)i)/y;
-        //double dmod=i%y;
-        System.out.println((i + y) + " " + (i - y) + " " + (i * y) + " " + ((double) i / y) + " " + (i % y));
+        int sum = i + y;
+        int sub = i - y;
+        int mul = i * y;
+        int div = i / y;
+        int mod = i % y;
+        System.out.println(sum + " " + sub + " " + mul + " " + div + " " + mod);
+        //System.out.println((i + y) + " " + (i - y) + " " + (i * y) + " " + (i / y) + " " + (i % y));
+        double dsum = i + y;
+        double dsub = i - y;
+        double dmul = i * y;
+        double ddiv = ((double) i) / y;
+        double dmod = i % y;
+        System.out.println(dsum + " " + dsub + " " + dmul + " " + ddiv + " " + dmod);
+        //System.out.println((i + y) + " " + (i - y) + " " + (i * y) + " " + ((double) i / y) + " " + (i % y));
     }
 }
