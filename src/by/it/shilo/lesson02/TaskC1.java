@@ -9,14 +9,16 @@ package by.it.shilo.lesson02;
 Вывод (это должна появится в консоли, обратите внимание на пробелы и слово Sum:
 Sum = 26
 */
+
 import java.util.Scanner;
+
 class TaskC1 {
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         System.out.print("Введите два числа: ");
-        int i=sc.nextInt();
-        int a=sc.nextInt();
-        int sum = i+a;
-        System.out.println("Sum"+" "+"="+" "+sum) ;
+        int i = sc.nextInt();
+        int a = sc.nextInt();
+        int sum = i + a;
+        System.out.println("Sum" + " " + "=" + " " + sum);
     }
 }

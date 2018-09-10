@@ -1,4 +1,5 @@
 package by.it.shilo.lesson02;
+
 /*
 Подойдет только 20
 В методе main расставобы значеь правильно знаки плюс и минус, чтние переменной result получилось равным 20.
@@ -22,7 +23,7 @@ class TaskB2 {
 
     public static void main(String[] args) {
 
-        int result = - a + b - c + d;
+        int result = -a + b - c + d;
 
         System.out.println(result);
     }
