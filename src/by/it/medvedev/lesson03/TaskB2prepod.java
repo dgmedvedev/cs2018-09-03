@@ -43,10 +43,10 @@ class TaskB2prepod {
         int b = sc.nextInt();
         int c = sc.nextInt();
 
-        double d = dis(1,2,3);
+        double d = dis(a,b,c);
         if (d>0){
-            double x1=(-b + Math.sqrt(d)) / (2 * a);
-            double x2=(-b - Math.sqrt(d)) / (2 * a);
+            double x1=(-b + Math.sqrt(d)) / (2.0 * a);
+            double x2=(-b - Math.sqrt(d)) / (2.0 * a);
             System.out.println(x1+" "+x2);
 
         } else if (d==0){
