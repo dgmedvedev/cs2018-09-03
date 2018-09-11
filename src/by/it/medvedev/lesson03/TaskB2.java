@@ -33,8 +33,8 @@ Lesson 03. Task B2. Нужно написать программу, котора
 */
 class TaskB2 {
     static double calculateDis(int a, int b, int c) {
-        double D = b * b - 4 * a * c;
-        return D;
+
+        return b * b - 4 * a * c;
     }
 
     public static void main(String[] args) {
