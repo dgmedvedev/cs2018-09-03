@@ -32,10 +32,10 @@ class TaskB2 {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
         int i = 1;
-        int x = i*i++;
 
         while (i <= size) {
-            System.out.println(i+" "+x);
+            System.out.println(i+" "+2*i+" "+3*i+" "+4*i+" "+5*i+" "+6*i+" "+7*i+" "+8*i+" "+9*i+" "+10*i);
+
 
             i++;
 
