@@ -24,8 +24,20 @@ package by.it.khviasko.lesson04;
 
  */
 
-
+import java.util.Scanner;
 
 public class TaskB3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int b = sc.nextInt();
+        int result = 1;
+        int i = 1;
 
+        while (result <= b) {
+            System.out.print(result + ",");
+            i++;
+            result = result + i;
+
+        }
+    }
 }

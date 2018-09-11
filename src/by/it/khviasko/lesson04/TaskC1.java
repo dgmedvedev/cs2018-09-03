@@ -1,5 +1,7 @@
 package by.it.khviasko.lesson04;
 
+import java.util.Scanner;
+
 /*
 Напишите программу которая спрашивает у пользователя:
 Какую вы хотите зарплату в $$$?
@@ -38,5 +40,33 @@ package by.it.khviasko.lesson04;
 */
 public class TaskC1 {
 
+    public static void main(String[] args) {
+        System.out.println("Какую вы хотите зарплату в $$$?");
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+
+        if (i < 300 || i > 3000)
+            System.out.println("Мы вам перезвоним!");
+        else
+            while (i > 300 && i < 3000) {
+                System.out.println("За месяц 0 начислено $" + "0.0");
+                System.out.println("За январь начислено $" + i * 1.5);
+                System.out.println("За февраль начислено $" + i * 1.5);
+                System.out.println("За март начислено $" + i * 1.5);
+                System.out.println("За апрель начислено $" + i * 1.5);
+                System.out.println("За май начислено $" + i * 1.5);
+                System.out.println("За июнь начислено $" + i);
+                System.out.println("За июль начислено $" + i);
+                System.out.println("За август начислено $" + i);
+                System.out.println("За сентябрь начислено $" + i * 1.5);
+                System.out.println("За октябрь начислено $" + i * 1.5);
+                System.out.println("За ноябрь начислено $" + i * 1.5);
+                System.out.println("За декабрь начислено $" + i * 1.5);
+                System.out.println("За месяц 13 начислено $" + "0.0");
+                System.out.println("За месяц 14 начислено $" + "0.0");
+                            }
+
+
+    }
 
 }
