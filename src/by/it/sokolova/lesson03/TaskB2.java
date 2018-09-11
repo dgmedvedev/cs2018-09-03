@@ -32,19 +32,23 @@ Lesson 03. Task B2. Нужно написать программу, котора
 
 */
 class TaskB2 {
+    static double dis(int a, int b, int c){
+        return b*b-4*a*c;
+    }
+
     public static void main (String[] args) {
         Scanner sc=new Scanner(System.in);
         int a=sc.nextInt();
         int b=sc.nextInt();
         int c=sc.nextInt();
-        double dis = (b*b)-4*a*c;
-        if (dis > 0) {
+        double d = dis(a, b, c);
+        if (d > 0) {
             double x1, x2;
-            x1 = (-b + Math.sqrt(dis)) / (2 * a);
-            x2 = (-b - Math.sqrt(dis)) / (2 * a);
+            x1 = (-b + Math.sqrt(d)) / (2 * a);
+            x2 = (-b - Math.sqrt(d)) / (2 * a);
             System.out.println(x1 + " " + x2);
         }
-        else if (dis == 0) {
+        else if (d == 0) {
             double x;
             x = -b/(2*a);
             System.out.println(x);
