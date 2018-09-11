@@ -1,5 +1,7 @@
 package by.it.zharsky.lesson04;
 
+import java.util.Scanner;
+
 /*
 Определите количество дней в году
 
@@ -26,5 +28,17 @@ package by.it.zharsky.lesson04;
 
 */
 public class TaskB1 {
+    public static void main(String[] args)
+    {
+        Scanner inp = new Scanner(System.in);
+        int year = inp.nextInt();
+        int a = year%4;
+        int b = year%100;
+        int c = year%400;
+        if (a==0&&c==0) {System.out.println("1.количество дней в году: 366");}
+        else if (a==0&&b!=0) {System.out.println("2.количество дней в году: 366");}
+        else {System.out.println("количество дней в году: 365");}
+
+    }
 
 }

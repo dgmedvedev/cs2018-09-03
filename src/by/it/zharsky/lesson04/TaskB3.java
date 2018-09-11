@@ -25,7 +25,31 @@ package by.it.zharsky.lesson04;
  */
 
 
+import java.util.Scanner;
 
 public class TaskB3 {
+    public static void main(String [] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        int sum = 0;
+        boolean exit = false;
+        while (!exit)
+        {
+            int count = 1;
+            while(!exit)
+            {
+
+                sum+=count;
+                if(sum<=num)
+                {
+                    System.out.print(sum+",");
+                }
+                else {exit=true;}
+
+                count++;
+            }
+        }
+    }
 
 }

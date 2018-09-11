@@ -24,5 +24,29 @@ package by.it.zharsky.lesson04;
 */
 
 public class TaskC3 {
+    public static void main(String[] args)
+    {
+        int size = 10;
+        System.out.println(converter(size));
+
+        //for(int i=2;i<=10;i++)
+        {
+           // for(int j=2;j<=10;j++)
+            {
+               // System.out.println(converter(i)+" умножить на "+converter(j)+" равно "+converter((i*j)));
+            }
+        }
+    }
+
+    private static String converter(int i)
+    {
+        String[] untilTen = new String []{"два","три","четыре","пять","шесть","семь","восемь","девять"};
+        String[] untilTwenty = new String []{"одиннадцать","двенадцать","тринадцать","четырнадцать", "пятнадцать","шестнадцать","семнадцать","восемнадцать","девятнадцать"};
+        String[] upper = new String []{"десять","двадцать","тридцать","сорок","пятьдесят","шестьдесят", "семьдесят","восемьдесят"};
+        String s = String.valueOf(i);
+        s = s + "sda";
+
+        return s;
+    }
 
 }

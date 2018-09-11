@@ -1,5 +1,7 @@
 package by.it.zharsky.lesson04;
 
+import java.util.Scanner;
+
 /*
 
 На входе вводится число и месяц 2018 года.
@@ -27,5 +29,18 @@ package by.it.zharsky.lesson04;
 
  */
 public class TaskC2 {
-
+    public static void main(String [] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        int dayNum = scan.nextInt();
+        int monthNum = scan.nextInt();
+        int [] dayzInM = new int[]{31,28,31,30,31,30,31,31,30,31,30,31};
+        int startMonth = 0;
+        for(int i = 0; i<monthNum-1;i++)
+        {
+            startMonth+=dayzInM[i];
+        }
+        int result = startMonth + dayNum;
+        System.out.println(result);
+    }
 }
