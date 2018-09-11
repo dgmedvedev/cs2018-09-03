@@ -27,26 +27,55 @@ public class TaskC3 {
     public static void main(String[] args)
     {
         int size = 10;
-        System.out.println(converter(size));
 
-        //for(int i=2;i<=10;i++)
+
+        for(int i=2;i<=10;i++)
         {
-           // for(int j=2;j<=10;j++)
+            for(int j=2;j<=10;j++)
             {
-               // System.out.println(converter(i)+" умножить на "+converter(j)+" равно "+converter((i*j)));
+               System.out.println(converter(i)+" умножить на "+converter(j)+" равно "+converter((i*j)));
             }
         }
     }
 
-    private static String converter(int i)
+    private static String converter(int num)
     {
-        String[] untilTen = new String []{"два","три","четыре","пять","шесть","семь","восемь","девять"};
+        String[] untilTen = new String []{"один","два","три","четыре","пять","шесть","семь","восемь","девять"};
         String[] untilTwenty = new String []{"одиннадцать","двенадцать","тринадцать","четырнадцать", "пятнадцать","шестнадцать","семнадцать","восемнадцать","девятнадцать"};
-        String[] upper = new String []{"десять","двадцать","тридцать","сорок","пятьдесят","шестьдесят", "семьдесят","восемьдесят"};
-        String s = String.valueOf(i);
-        s = s + "sda";
+        String[] upper = new String []{"десять","двадцать","тридцать","сорок","пятьдесят","шестьдесят", "семьдесят","восемьдесят","девяносто","сто"};
+        String s = String.valueOf(num);
+        char [] ch = s.toCharArray();
+        if(num>=2&&num<=9)
+        {
+            return untilTen[num-1];
+        }
+        else
+        {
+            if(num>=11&&num<=19)
+            {
+                return untilTwenty[num-11];
+            }
+            else if(num==100)
+            {
+                return upper[9];
+            }
+            else
+            {
+                String concat = "";
+                int x = Character.getNumericValue(ch[0]);
+                int y = Character.getNumericValue(ch[1]);
+                if (y==0)
+                {
+                    concat=upper[x-1];
+                    return concat;
+                }
+                else
+                {
+                    concat=upper[x-1]+" "+untilTen[y-1];
+                    return concat;
+                }
 
-        return s;
+            }
+        }
     }
-
 }
