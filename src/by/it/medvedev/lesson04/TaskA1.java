@@ -33,6 +33,6 @@ public class TaskA1 {
                 System.out.println("Меня интересует высокая зарплата!");
             }
         }
-        System.out.println("Stop here");
+
     }
 }
