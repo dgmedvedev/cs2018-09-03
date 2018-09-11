@@ -2,6 +2,7 @@ package by.it.medvedev.lesson04;
 
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /*
 Таблица умножения
@@ -27,14 +28,21 @@ size прочитать c клавиатуры. Числа разделить п
 3. Программа должна выводить таблицу умножения size х size.
  */
 class TaskB2 {
-    public static void main(String args [])
-            throws java.io.IOException {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int i = 1;
+        int x = i*i++;
 
+        while (i <= size) {
+            System.out.println(i+" "+x);
 
-            int x;
-            x = System.in.read();
-            System.out.println(x);
+            i++;
+
         }
 
+
     }
+
+}
 
