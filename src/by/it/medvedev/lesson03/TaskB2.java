@@ -44,10 +44,8 @@ class TaskB2 {
         int c = sc.nextInt();
 
         double D = calculateDis(a, b, c);
-        double x1, x2;
-
-        x1 = (-b + Math.sqrt(D)) / (2 * a);
-        x2 = (-b - Math.sqrt(D)) / (2 * a);
+        double x1 = (-b + Math.sqrt(D)) / (2 * a);
+        double x2 = (-b - Math.sqrt(D)) / (2 * a);
 
         if (D > 0) System.out.println(x1 + " " + x2);
         if (D == 0) System.out.println(x1);
