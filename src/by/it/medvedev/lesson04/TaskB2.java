@@ -32,17 +32,17 @@ class TaskB2 {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
         int i = 1;
+        int j = 1;
 
         while (i <= size) {
-            System.out.println(i+" "+2*i+" "+3*i+" "+4*i+" "+5*i+" "+6*i+" "+7*i+" "+8*i+" "+9*i+" "+10*i);
-
-
+            while (j <= size) {
+                System.out.print(i * j + " ");
+                j++;
+            }
+            System.out.println();
             i++;
-
+            j=1;
         }
-
-
     }
-
 }
 
