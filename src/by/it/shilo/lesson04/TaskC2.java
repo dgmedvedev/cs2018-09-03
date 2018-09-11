@@ -26,6 +26,22 @@ package by.it.shilo.lesson04;
 256
 
  */
-public class TaskC2 {
 
+import java.util.Scanner;
+
+public class TaskC2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("введите число и месяц");
+        int day = sc.nextInt();
+        int month = sc.nextInt();
+        int sum = 0;
+        for (int i = 1; i < 12; i++) {
+            for (int d = 1; d < 31; d++) {
+                sum = d;
+                if (day == d && i == month) break;
+                System.out.print(sum);
+            }
+        }
+    }
 }

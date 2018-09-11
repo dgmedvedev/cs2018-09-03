@@ -25,7 +25,18 @@ package by.it.shilo.lesson04;
  */
 
 
+import java.util.Scanner;
 
 public class TaskB3 {
-
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int i;
+        int sum = 0;
+        for (i = 1; i < 100; i++) {
+            sum = i + sum;
+            if (sum > x) break;
+            System.out.print(sum + ",");
+        }
+    }
 }
