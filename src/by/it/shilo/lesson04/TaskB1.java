@@ -33,11 +33,14 @@ public class TaskB1 {
         Scanner sc = new Scanner(System.in);
         int i = sc.nextInt();
         int a = i % 4;
-        int b = i % 400
-        int c = i % 100
-        if (a == 0 && c==0 && b!=0 )
-            System.out.println("количество дней в году: 366");
-        else
+        int b = i % 400;
+        int c = i % 100;
+        if (a == 0) {
+            if (c == 0 && b != 0)
+                System.out.println("количество дней в году: 365");
+            else
+                System.out.println("количество дней в году: 366");
+        } else
             System.out.println("количество дней в году: 365");
     }
 }
