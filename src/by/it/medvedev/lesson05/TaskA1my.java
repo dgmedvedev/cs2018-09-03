@@ -26,17 +26,28 @@ package by.it.medvedev.lesson05;
 
 import java.util.Scanner;
 
-public class TaskA1 {
+public class TaskA1my {
     public static void main(String[] args) {
-        int[] mas = new int[10];
         Scanner sc = new Scanner(System.in);
-        for (int i=9;i>=0;i--){
-            mas[i]=sc.nextInt();
-            for (int element : mas) {
-                System.out.println(element);
-            }
-        }
+        int i;
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
+        int e = sc.nextInt();
+        int f = sc.nextInt();
+        int g = sc.nextInt();
+        int h = sc.nextInt();
+        int k = sc.nextInt();
+        int l = sc.nextInt();
 
+        int [] m = {a,b,c,d,e,f,g,h,k,l};
+        for (i=0;i<10;i++){
+            m[i]=9-i;
+        }
+        for (i=0;i<10;i++){
+            System.out.println(m[i]);
+        }
     }
 
 }

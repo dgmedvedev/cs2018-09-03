@@ -12,4 +12,5 @@ package by.it.medvedev.lesson05;
 
 public class TaskB1 {
 
+
 }
