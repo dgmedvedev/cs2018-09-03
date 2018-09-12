@@ -24,27 +24,31 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class TaskB2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         int[] m = new int[20];
         int a[] = new int[10];
         int b[] = new int[10];
         Scanner sc = new Scanner( System.in );
         for (int i = 0; i <= m.length; i++) {
             m[i] = sc.nextInt();
-            a[i]=sc.nextInt();
-            b[i]=sc.nextInt();
+            a[i] = sc.nextInt();
+            b[i] = sc.nextInt();
         }
         for (int x : m) {
             System.out.print( m + " " );
         }
-        a = Arrays.copyOfRange( m, 0, 9 );
-        for (int c: a) {
+        System.arraycopy( m, 0, a, 0, 10 );
+        for (int i = 0; i < 10; i++) {
+            System.out.println( a[i] );
             System.out.println( "a=" + Arrays.toString( a ) );
         }
-        b = Arrays.copyOfRange( m, 10, 20 );
-        for (int d: b) {
+        System.arraycopy( m, 10, b, 0, 10 );
+        for (int i = 0; i < 10; i++) {
+            System.out.println( b[i] );
+
             System.out.println( "b=" + Arrays.toString( b ) );
         }
 
-    }
-}
+
+    }}
+
