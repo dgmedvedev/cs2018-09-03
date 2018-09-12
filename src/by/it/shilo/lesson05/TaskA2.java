@@ -19,6 +19,20 @@ END
 [ONE, TWO, THREE, FOUR, FIVE]
 
 */
-public class TaskA2 {
 
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class TaskA2 {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            String line = sc.next();
+            if (line.equals("END"))
+                break;
+            list.add(line);
+        }
+        System.out.println(list);
+    }
 }
