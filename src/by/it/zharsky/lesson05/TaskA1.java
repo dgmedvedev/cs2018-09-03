@@ -24,6 +24,24 @@ package by.it.zharsky.lesson05;
 */
 
 
+import java.util.Scanner;
+
 public class TaskA1 {
+    public static void main(String[] args)
+    {
+       // 2 55 75 41 64 112 41 38 95 10
+        Scanner scan = new Scanner(System.in);
+        int[] arr = new int[10];
+
+        for(int i = 0; i<10;i++)
+        {
+            arr[i] = scan.nextInt();
+        }
+        for(int i = 9; i>=0;i--)
+        {
+            System.out.println(arr[i]);
+        }
+
+    }
 
 }
