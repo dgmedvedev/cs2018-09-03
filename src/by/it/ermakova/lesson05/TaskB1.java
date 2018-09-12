@@ -10,6 +10,28 @@ package by.it.ermakova.lesson05;
 */
 
 
-public class TaskB1 {
+import java.util.ArrayList;
+import java.util.Scanner;
 
-}
+public class TaskB1 {
+    public static void main(String[] args) {
+        ArrayList<String> list= new ArrayList<>();
+        list.add("список");
+        list.add("покупок");
+        list.add("в");
+        list.add("продуктовый");
+        list.add("магазин");
+        int n=list.size();
+        System.out.println(n);
+        for (int a=0; a<list.size(); a++ ){
+            System.out.println(list.get(a));}
+        }
+
+
+
+
+
+
+
+    }
+

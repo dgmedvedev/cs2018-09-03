@@ -5,7 +5,22 @@ package by.it.ermakova.lesson05;
 */
 
 public class TaskC2 {
-    //Напишите тут ваш код
+    public static void main(String[] args) {
+        int[] mas=new int[20];
+        int a,b,t;
+        int size=20;
+       for (a=1; a<size; a++){
+           for (b=size-1; b>=a; b--){
+               if (mas[b-1] > mas[b]){
+                   t=mas[b-1];
+                   mas[b-1]= mas[b];
+                   mas[b]=t;
+               }
+           }
+       }
+
+
+    }
 
 
 

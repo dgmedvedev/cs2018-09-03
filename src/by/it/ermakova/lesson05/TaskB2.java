@@ -12,14 +12,39 @@ package by.it.ermakova.lesson05;
         System.out.println("b="+Arrays.toString(b));
 
 Например, для такого ввода
-1 2 3 4 5 6 7 8 9 10 11 22 33 44 55 66 77 88 99 0
+1 2 3 4 5 6 7 8 9 10 11 22 33 44 55 66 77
 
-ожидается такой вывод:
+ожидается такой вывод:1 2 3 4 5 6 7 8 9 10 11 22 33 44 55 66 77 88 99 0
 a=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 b=[11, 22, 33, 44, 55, 66, 77, 88, 99, 0]
 
 */
 
-public class TaskB2 {
+import java.util.Arrays;
+import java.util.Scanner;
 
+public class TaskB2 {
+    public static void main(String[] args) {
+        int[] m = new int[20];
+        int a[] = new int[10];
+        int b[] = new int[10];
+        Scanner sc = new Scanner( System.in );
+        for (int i = 0; i <= m.length; i++) {
+            m[i] = sc.nextInt();
+            a[i]=sc.nextInt();
+            b[i]=sc.nextInt();
+        }
+        for (int x : m) {
+            System.out.print( m + " " );
+        }
+        a = Arrays.copyOfRange( m, 0, 9 );
+        for (int c: a) {
+            System.out.println( "a=" + Arrays.toString( a ) );
+        }
+        b = Arrays.copyOfRange( m, 10, 20 );
+        for (int d: b) {
+            System.out.println( "b=" + Arrays.toString( b ) );
+        }
+
+    }
 }

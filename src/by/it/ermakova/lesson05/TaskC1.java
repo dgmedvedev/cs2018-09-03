@@ -10,17 +10,20 @@ package by.it.ermakova.lesson05;
     Сначала тот, который для x%3, потом тот, который для x%2, потом последний.
 */
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class TaskC1 {
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception{
+        ArrayList<Integer> list = new ArrayList<>();
+
 
     }
 
-    private static void printList(List<Integer> list) {
-        for (Integer aList : list) System.out.println(aList);
+
+
     }
 
 
-}
+
