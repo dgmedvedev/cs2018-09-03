@@ -46,25 +46,25 @@ public class TaskC3 {
                 case 9:
                     return "девять";
                 case 10:
-                    return "одиннадцать";
+                    return "десять";
                 case 11:
-                    return "двенадцать";
+                    return "одиннадцать";
                 case 12:
-                    return "тринадцать";
+                    return "двенадцать";
                 case 13:
-                    return "один";
+                    return "тринадцать";
                 case 14:
-                    return "один";
+                    return "четырнадцать";
                 case 15:
-                    return "один";
+                    return "пятнадцать";
                 case 16:
-                    return "один";
+                    return "шестнадцать";
                 case 17:
-                    return "один";
+                    return "семнадцать";
                 case 18:
-                    return "один";
+                    return "восемнадцать";
                 case 19:
-                    return "один";
+                    return "девятнадцать";
 
             }
         else {
@@ -72,21 +72,21 @@ public class TaskC3 {
                 String end = (i % 10 == 0) ? "" : "" + intToString(i % 10);
                 switch (d) {
                     case 2:
-                        return "двадцать" + end;
+                        return "двадцать " + end;
                     case 3:
-                        return "тридцать" + end;
+                        return "тридцать " + end;
                     case 4:
-                        return "сорок" + end;
+                        return "сорок " + end;
                     case 5:
-                        return "пятьдесят" + end;
+                        return "пятьдесят " + end;
                     case 6:
-                        return "шестьдесят" + end;
+                        return "шестьдесят " + end;
                     case 7:
-                        return "семьдесят" + end;
+                        return "семьдесят " + end;
                     case 8:
-                        return "восемьдесят" + end;
+                        return "восемьдесят " + end;
                     case 9:
-                        return "девяносто" + end;
+                        return "девяносто " + end;
                     case 10:
                         return "сто" + end;
                 }
@@ -97,9 +97,9 @@ public class TaskC3 {
 
 
     public static void main(String[] args) {
-        for (int i = 2; i < 10; i++) {
+        for (int i = 2; i <= 10; i++) {
             for (int j=2;j<=10;j++)
-            System.out.println(intToString(i)+"умножить на"+intToString(j)+"равно"+intToString(i*j));
+            System.out.println(intToString(i)+" умножить на "+intToString(j)+" равно "+intToString(i*j));
 
         }
     }

@@ -10,7 +10,23 @@ package by.it.medvedev.lesson05;
 */
 
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class TaskB1 {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        while (true) {
 
+            String one = "первая строка";
+            String two = "вторая строка";
+            String three = "третья строка";
+            String four = "четвертая строка";
+            String five = "пятая строка";
+            break;
 
+        }
+        System.out.println(list);
+    }
 }
+
