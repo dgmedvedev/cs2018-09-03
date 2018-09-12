@@ -33,7 +33,7 @@ public class TaskB2 {
         while (size > 0) {
             System.out.println( size * size + " " );
            size++;
-           
+
         }
     }
 
