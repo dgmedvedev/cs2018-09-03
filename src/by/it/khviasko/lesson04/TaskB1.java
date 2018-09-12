@@ -35,13 +35,9 @@ public class TaskB1 {
         int b = a % 100;
         int c = a % 400;
         int d = a % 4;
-        if (d == 0 && a == 0)
-            System.out.println("количество дней в году: 365");
-        else if (d == 0 && c != 0)
+        if (d == 0 && b!=0 || c==0)
             System.out.println("количество дней в году: 366");
-        else if (b == 0 && c == 0)
-            System.out.println("количество дней в году: 366");
-        else
+                else
             System.out.println("количество дней в году: 365");
     }
 }

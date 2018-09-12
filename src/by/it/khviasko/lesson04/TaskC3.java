@@ -23,6 +23,21 @@ package by.it.khviasko.lesson04;
 десять умножить на десять равно сто
 */
 
-public class TaskC3 {
+import java.util.Scanner;
 
+public class TaskC3 {
+    public static void main(String[]arg) {
+        int i = 1;
+    int n = 1;
+     while(i <=10) {
+         while (n <= 10) {
+
+             System.out.print(i * n + " ");
+             n++;
+         }
+         System.out.println();
+         i++;
+         n = 1;
+     }
+    }
 }

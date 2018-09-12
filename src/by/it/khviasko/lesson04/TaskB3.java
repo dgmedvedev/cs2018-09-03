@@ -36,7 +36,7 @@ public class TaskB3 {
         while (result <= b) {
             System.out.print(result + ",");
             i++;
-            result = result + i;
+            result = i*(i+1)/2;
 
         }
     }
