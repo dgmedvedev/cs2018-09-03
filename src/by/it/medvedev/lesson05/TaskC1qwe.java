@@ -10,26 +10,23 @@ package by.it.medvedev.lesson05;
     Сначала тот, который для x%3, потом тот, который для x%2, потом последний.
 */
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import javafx.util.converter.IntegerStringConverter;
 
-public class TaskC1test {
-    public static void main(String[] args) throws Exception{
-        Scanner sc = new Scanner(System.in);
-        int[] mas = new int[20];
-        for (int i = 0; i < 20; i++)
-            mas[i] = sc.nextInt();
+import java.util.*;
 
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int j=0;j<mas.length;j++) list.add(mas[j]);
-
+public class TaskC1qwe {
+    public static void main(String[] args) throws Exception {
         ArrayList list1 = new ArrayList();
-        for (int j=0;j<mas.length;j++){
-                if (mas[j]%10==0)
-                    list1.add(mas[j]);}
+        Collections.addAll(list1, 5, 10, 15);
+        ArrayList list2 = new ArrayList();
+        Collections.addAll(list2, 3, 6, 9);
+        ArrayList result = new ArrayList();
 
-        System.out.println(list1);
+        result.addAll(list1);
+        result.addAll(list2);
+
+
+            System.out.print(result);
+
     }
 }

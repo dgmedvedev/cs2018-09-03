@@ -15,17 +15,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TaskC1 {
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        int i = sc.nextInt(5);
-        ArrayList<Integer> list = new ArrayList<>(20);
+        int[] mas = new int[20];
+        for (int i = 0; i < 20; i++)
+            mas[i] = sc.nextInt();
 
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int j = 0; j < mas.length; j++) list.add(mas[j]);
 
+        System.out.println(list);
 
     }
 
     private static void printList(List<Integer> list) {
+
         for (Integer aList : list) System.out.println(aList);
     }
 
