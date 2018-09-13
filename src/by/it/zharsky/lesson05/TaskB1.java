@@ -10,6 +10,22 @@ package by.it.zharsky.lesson05;
 */
 
 
+import java.util.ArrayList;
+
 public class TaskB1 {
+    public static void main(String[] args)
+    {
+        ArrayList <String> arr= new ArrayList<String>();
+        arr.add("one");
+        arr.add("two");
+        arr.add("three");
+        arr.add("four");
+        arr.add("five");
+        System.out.println(arr.size());
+        for(String s : arr)
+        {
+            System.out.println(s);
+        }
+    }
 
 }

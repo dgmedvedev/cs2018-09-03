@@ -10,16 +10,46 @@ package by.it.zharsky.lesson05;
     Сначала тот, который для x%3, потом тот, который для x%2, потом последний.
 */
 
+import java.util.ArrayList;
 import java.util.List;
 
+import java.util.Scanner;
+//1 2 3 4 5 6 7 8 9 10 11 22 33 44 55 66 77 88 99 0
 public class TaskC1 {
     public static void main(String[] args) throws Exception
     {
+        Scanner scan = new Scanner(System.in);
+        ArrayList<Integer> unsorted = new ArrayList<Integer>();
+        ArrayList<Integer> divToThree = new ArrayList<Integer>();
+        ArrayList<Integer> divToTwo = new ArrayList<Integer>();
+        ArrayList<Integer> others = new ArrayList<Integer>();
+
+        for(int i = 0; i<20; i++)
+        {
+            int added = scan.nextInt();
+            unsorted.add(added);
+        }
+        //System.out.println(unsorted.toString());
+        for(int i : unsorted)
+        {
+            int toTwo = i%2;
+            int toThree = i%3;
+            if(toTwo==0) { divToTwo.add(i); }
+            if(toThree==0) { divToThree.add(i); }
+            if(toTwo>0&&toThree>0){others.add(i);}
+        }
+        printList(divToThree);
+        //System.out.println("\n");
+        printList(divToTwo);
+        //System.out.println("\n");
+        printList(others);
 
     }
 
-    private static void printList(List<Integer> list) {
-        for (Integer aList : list) System.out.println(aList);
+    private static void printList(List<Integer> list)
+    {
+        for (Integer aList : list)
+            System.out.println(aList);
     }
 
 
