@@ -43,44 +43,31 @@ public class TaskC1 {
         System.out.println("Какую вы хотите зарплату в $$$?");
         Scanner sc = new Scanner(System.in);
         int zp = sc.nextInt();
-        int month;
         if (zp < 300 || zp > 3000)
             System.out.println("Мы вам перезвоним!");
-        else if (zp >= 300 && zp <= 3000)
-            for (month = 0; month <= 14; month++) {
-                if (month == 0)
-                    System.out.println("За месяц 0 начислено $0.0");
-                else if (month == 1)
-                    System.out.println("За январь начислено $0.0");
-                else if (month == 2)
-                    System.out.println("За февраль начислено $0.0");
-                else if (month == 3)
-                    System.out.println("За март начислено $0.0");
-                else if (month == 4)
-                    System.out.println("За апрель начислено $0.0");
-                else if (month == 5)
-                    System.out.println("За май начислено $0.0");
-                else if (month == 6)
-                    System.out.println("За июнь начислено $0.0");
-                else if (month == 7)
-                    System.out.println("За июль начислено $0.0");
-                else if (month == 8)
-                    System.out.println("За август начислено $0.0");
-                else if (month == 9)
-                    System.out.println("За сентябрь начислено $0.0");
-                else if (month == 10)
-                    System.out.println("За октябрь начислено $0.0");
-                else if (month == 11)
-                    System.out.println("За ноябрь начислено $0.0");
-                else if (month == 12)
-                    System.out.println("За декабрь начислено $0.0");
-                else if (month == 13)
-                    System.out.println("За месяц 13 начислено $0.0");
-                else if (month == 14)
-                    System.out.println("За месяц 14 начислено $0.0");
+        else
+            for (int m = 0; m <= 14; m++) {
+                double pay = zp * 1.5;
+                if (m<1 || m>12)
+                    pay=0;
+                if (m>=6 && m<9)
+                    pay=zp;
+                switch (m){
+                    case 1: System.out.println("За январь начислено $"+pay); break;
+                    case 2: System.out.println("За февраль начислено $"+pay); break;
+                    case 3: System.out.println("За март начислено $"+pay); break;
+                    case 4: System.out.println("За апрель начислено $"+pay); break;
+                    case 5: System.out.println("За май начислено $"+pay); break;
+                    case 6: System.out.println("За июнь начислено $"+pay); break;
+                    case 7: System.out.println("За июль начислено $"+pay); break;
+                    case 8: System.out.println("За август начислено $"+pay); break;
+                    case 9: System.out.println("За сентябрь начислено $"+pay); break;
+                    case 10: System.out.println("За октябрь начислено $"+pay); break;
+                    case 11: System.out.println("За ноябрь начислено $"+pay); break;
+                    case 12: System.out.println("За декабрь начислено $"+pay); break;
+                    default: System.out.println("За месяц "+m+" начислено $"+pay); break;
+                }
+                if (pay==666.0) break;
             }
-
-
     }
-
 }
