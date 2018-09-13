@@ -20,35 +20,30 @@ b=[11, 22, 33, 44, 55, 66, 77, 88, 99, 0]
 
 */
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class TaskB2 {
     public static void main(String[] args) throws Exception {
         int[] m = new int[20];
         int a[] = new int[10];
         int b[] = new int[10];
-        Scanner sc = new Scanner( System.in );
+        BufferedReader reader = new BufferedReader( new InputStreamReader( System.in ) );
         for (int i = 0; i <= m.length; i++) {
-            m[i] = sc.nextInt();
-            a[i] = sc.nextInt();
-            b[i] = sc.nextInt();
+            m[i] = Integer.parseInt( reader.readLine() );
         }
-        for (int x : m) {
-            System.out.print( m + " " );
-        }
-        System.arraycopy( m, 0, a, 0, 10 );
-        for (int i = 0; i < 10; i++) {
-            System.out.println( a[i] );
-            System.out.println( "a=" + Arrays.toString( a ) );
-        }
-        System.arraycopy( m, 10, b, 0, 10 );
-        for (int i = 0; i < 10; i++) {
-            System.out.println( b[i] );
+        a = Arrays.copyOfRange( m, 0, 10 );
+        b = Arrays.copyOfRange( m, 10, 20 );
 
-            System.out.println( "b=" + Arrays.toString( b ) );
+        for (int i = 0; i < a.length; i++) {
+            System.out.println( a[i] );
         }
+        for (int i = 0; i < b.length; i++) {
+            System.out.println( b[i] );
+        }
+        System.out.println( "a=" + Arrays.toString( a ) );
+        System.out.println( "b=" + Arrays.toString( b ) );
 
 
     }}
-
