@@ -20,6 +20,17 @@ b=[11, 22, 33, 44, 55, 66, 77, 88, 99, 0]
 
 */
 
-public class TaskB2 {
+import java.util.Scanner;
 
+public class TaskB2 {
+    public static void main(String[] args) {
+        int[] mas = new int[20];
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < 20; i++)
+            mas[i] = sc.nextInt();
+        for (int element : mas)
+            System.out.print(element+" ");
+
+    }
 }
+

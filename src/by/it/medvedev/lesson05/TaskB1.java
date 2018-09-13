@@ -15,18 +15,22 @@ import java.util.Scanner;
 
 public class TaskB1 {
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>();
-        while (true) {
+        ArrayList<String> list = new ArrayList<>(5);
 
-            String one = "первая строка";
-            String two = "вторая строка";
-            String three = "третья строка";
-            String four = "четвертая строка";
-            String five = "пятая строка";
-            break;
+        list.add("первая строка");
+        list.add("вторая строка");
+        list.add("третья строка");
+        list.add("четвертая строка");
+        list.add("пятая строка");
 
-        }
-        System.out.println(list);
+        int a=list.size();
+        System.out.println(a);
+
+        for (String s:list)
+            System.out.println(s);
+
     }
+
 }
+
 
