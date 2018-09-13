@@ -25,7 +25,17 @@ package by.it.ilnitskaya.lesson04;
  */
 
 
+import java.util.Scanner;
 
 public class TaskB3 {
+    public int sum(int n) {
+        int sum = 0;
+        for (int i = 1; i <= n; i++)
+            sum += i;
+        return sum;
+    }
 
-}
+
+        }
+
+

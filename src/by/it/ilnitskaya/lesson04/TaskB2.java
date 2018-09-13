@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /*
 Таблица умножения
-Вывести на экран таблицу умножения size х size используя цикл hile.
+Вывести на экран таблицу умножения size х size используя цикл while.
 size прочитать c клавиатуры. Числа разделить пробелом.
 
 Пример вывода на экран для числа 10:
@@ -29,12 +29,17 @@ public class TaskB2 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-
-        for (int i = 1; i <= 10; ++i) {
-            StringBuilder builder = new StringBuilder();
-            builder.append(n).append(" * ").append(i).append(" = ").append(i * n);
-            System.out.println(builder.toString());
+        int size = scan.nextInt();
+        int n = 1;
+        int a = 1;
+        while (n != size+1) {
+            while (a != size+1) {
+                System.out.print(n*a + " ");
+                a++;
+            }
+            System.out.println();
+            n++;
+            a=1;
         }
 
     }
