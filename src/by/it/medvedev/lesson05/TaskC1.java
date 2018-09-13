@@ -22,16 +22,29 @@ public class TaskC1 {
             mas[i] = sc.nextInt();
 
         ArrayList<Integer> list = new ArrayList<>();
-        for (int j = 0; j < mas.length; j++) list.add(mas[j]);
+        for (int i = 0; i < mas.length; i++) list.add(mas[i]);
 
-        System.out.println(list);
+        ArrayList list1 = new ArrayList();
+        ArrayList list2 = new ArrayList();
+        ArrayList list3 = new ArrayList();
 
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] % 3 == 0 || (mas[i] % 3 == 0 && mas[i] % 2 == 0))
+                list1.add(mas[i]);
+            if (mas[i] % 2 == 0 || (mas[i] % 3 == 0 && mas[i] % 2 == 0))
+                list2.add(mas[i]);
+            if (mas[i] % 3 != 0 && mas[i] % 2 != 0 && (mas[i] % 3 != 0 && mas[i] % 2 != 0))
+                list3.add(mas[i]);
+        }
+
+        System.out.println(list1);
+        System.out.println(list2);
+        System.out.println(list3);
     }
 
-    private static void printList(List<Integer> list) {
+    private static void printList(ArrayList<Integer> list) {
 
         for (Integer aList : list) System.out.println(aList);
     }
-
 
 }
