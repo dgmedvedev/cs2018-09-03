@@ -32,7 +32,7 @@ public class TaskA1 {
     public static void main(String[] args) {
         Dog dog1 = new Dog();
         dog1.setName("Шарик");
-        dog1.setAge(3);
+        dog1.setAge(5);
 
         Dog dog2 = new Dog();
         dog2.setName("Тузик");
