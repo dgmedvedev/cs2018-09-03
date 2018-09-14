@@ -32,12 +32,11 @@ public class Dog {
     public String toString() {
         return "Кличка: " + name + ". Возраст: " + age;
 
-        boolean win(Dog otherDog) {
-            dooble byChange = 0.2 * this.age + 0.3 * this.weight + 0.5 * this.power;
-            double otherChange = 0.2 * otherDog.age + 0.3 * otherDog.weith + 0.5 * otherDog.power;
-            return my Change > otherChange;
-        }
+        //     boolean win(Dog otherDog)
+        //        dooble byChange = 0.2 * this.age + 0.3 * this.weight + 0.5 * this.power;
+        //         double otherChange = 0.2 * otherDog.age + 0.3 * otherDog.weith + 0.5 * otherDog.power;
+        //         return my Change > otherChange;
     }
-
 }
+
 
