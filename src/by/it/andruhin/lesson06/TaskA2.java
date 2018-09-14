@@ -24,6 +24,22 @@ package by.it.andruhin.lesson06;
 
 
 */
-public class TaskA2 {
+public class TaskA2
+{
+    public static void main(String[] args)
+    {
+        Dog Dog1 = new Dog();
+        Dog Dog2 = new Dog();
 
+        Dog1.setName("Шарик");
+        Dog1.setAge(5);
+
+        Dog2.setName("Тузик");
+        Dog2.setAge(3);
+
+        System.out.println(Dog1.toString());
+        System.out.println(Dog2.toString());
+
+
+    }
 }

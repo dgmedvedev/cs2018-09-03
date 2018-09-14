@@ -30,6 +30,7 @@ boolean win(Dog otherDog)
 */
 
 
-public class TaskC1 {
+public class TaskC1
+{
 
 }

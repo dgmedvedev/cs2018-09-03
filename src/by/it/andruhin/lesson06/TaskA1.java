@@ -38,4 +38,21 @@ public class Dog
 public class TaskA1
 {
 
+    public static void main(String[] args)
+    {
+        Dog Dog1 = new Dog();
+        Dog Dog2 = new Dog();
+
+        Dog1.setName("Шарик");
+        Dog1.setAge(5);
+
+        Dog2.setName("Тузик");
+        Dog2.setAge(3);
+
+        System.out.print(Dog1.getName() + " ");
+        System.out.println(Dog1.getAge());
+
+        System.out.print(Dog2.getName() + " ");
+        System.out.println(Dog2.getAge());
+    }
 }

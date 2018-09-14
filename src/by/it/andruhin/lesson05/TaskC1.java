@@ -10,8 +10,6 @@ package by.it.andruhin.lesson05;
     Сначала тот, который для x%3, потом тот, который для x%2, потом последний.
 */
 
-import jdk.nashorn.api.tree.IfTree;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;

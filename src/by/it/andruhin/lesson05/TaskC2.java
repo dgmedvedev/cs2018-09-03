@@ -58,9 +58,9 @@ public class TaskC2
 
 
 
-        for (int i = 0; i < ArrSize; i++)
+        for (int i = 19; i >= 0; i--)
         {
-            System.out.print(MyArr[i] + " ");
+            System.out.println(MyArr[i] + " ");
         }
     }
 }
