@@ -1,15 +1,9 @@
 package by.it.medvedev.lesson06;
 
-public class Dog {
+public class Dog2 {
     private String name;
     private int age;
-public Dog(){
 
-}
-public Dog(String name, int age){
-    this.name=name;
-    this.age=age;
-}
     public String getName() {
         return name;
     }
