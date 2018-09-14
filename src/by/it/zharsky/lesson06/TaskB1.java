@@ -25,56 +25,20 @@ double averageAge(Dog[] dogs){.....}; //должен вычислять сред
 
 */
 
-/*import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class TaskB1 {
     public static void main(String[] args)
     {
-        DogHelper [] dogs = new DogHelper[5];
-        dogs[0] = new DogHelper("Шарик", 1);
-        dogs[1] = new DogHelper("Жучка", 2);
-        dogs[2] = new DogHelper("Бобик", 3);
-        dogs[3] = new DogHelper("Барбос", 4);
-        dogs[4] = new DogHelper("Полкан", 5);
-        System.out.println();
-        DogHelper.printAllNames();
-        System.out.print("\n");
-        System.out.println(DogHelper.averageAge());
+        Dog [] dogs = new Dog[5];
+        dogs[0] = new Dog("Шарик", 1);
+        dogs[1] = new Dog("Жучка", 2);
+        dogs[2] = new Dog("Бобик", 3);
+        dogs[3] = new Dog("Барбос", 4);
+        dogs[4] = new Dog("Полкан", 5);
+        DogHelper.printAllNames(dogs);
+        System.out.println(DogHelper.averageAge(dogs));
 
 
     }
 }
-class DogHelper {
-
-    public String name;
-    public int age;
-    static ArrayList<String> names = new ArrayList<String>();
-    static ArrayList<Integer> ages = new ArrayList<Integer>();
-
-    public DogHelper(String Name, int Age) {
-        names.add(Name);
-        ages.add(Age);
-        this.name = Name;
-        this.age = Age;
-
-    }
-    public static void printAllNames()
-    {
-        String s ="";
-        for ( String dog : names) {
-            System.out.print(dog+" ");
-        }
-    }
-    public static double averageAge ()
-    {
-        double aver=0;
-        for(int i : ages)
-        {
-            double temp = (double)i;
-            aver+=temp;
-        }
-        aver = aver/ages.size();
-        return aver;
-    }
-
-}*/

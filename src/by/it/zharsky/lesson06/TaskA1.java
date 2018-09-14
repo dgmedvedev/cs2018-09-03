@@ -33,8 +33,8 @@ public class TaskA1
 {
     public static void main(String[] args)
     {
-        Dog2 sobaka1 = new Dog2();
-        Dog2 sobaka2 = new Dog2();
+        Dog sobaka1 = new Dog();
+        Dog sobaka2 = new Dog();
         sobaka1.setName("Шарик");
         sobaka2.setName("Тузик");
         sobaka1.setAge(5);
@@ -43,15 +43,4 @@ public class TaskA1
         String tuzik = sobaka2.getName()+" "+ sobaka2.getAge();
         System.out.println(sharik+"\n"+tuzik);
     }
-}
- class Dog2
-{
-    public String name;
-    public int age;
-
-    public String getName() { return name;}
-    public void setName(String name) {this.name = name;}
-    public int getAge() {return age;}
-    public void setAge(int age) {this.age = age;}
-
 }
