@@ -10,6 +10,19 @@ package by.it._tasks_.lesson05;
 */
 
 
-public class TaskB1 {
+import java.util.ArrayList;
+import java.util.Collections;
 
-}
+public class TaskB1 {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        Collections.addAll(list, "one", "two", "three", "four", "five");
+        int n = list.size();
+        System.out.println(n);
+        for (int i = 0; i < list.size(); i++) {
+            String s = list.get(i);
+            System.out.println(s);
+        }
+
+    }}
+
