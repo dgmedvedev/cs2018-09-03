@@ -15,6 +15,13 @@ public class Dog {
 
     }
 
+    public Dog(String name, int age, int weight, double power) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.power = power;
+    }
+
     public String getName() {
         return name;
     }
