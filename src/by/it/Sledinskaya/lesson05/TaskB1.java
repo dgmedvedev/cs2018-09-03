@@ -28,5 +28,4 @@ public class TaskB1 {
         System.out.println("Размер строки:" + len5 + "и у меня все получится");
 
     }
-
 }
