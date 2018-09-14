@@ -3,6 +3,9 @@ package by.it.medvedev.lesson06;
 public class Dog {
     private String name;
     private int age;
+    private int weight;
+    private int power;
+
 public Dog(){
 
 }
@@ -32,5 +35,12 @@ public Dog(String name, int age){
     @Override
     public String toString() {
         return "Кличка: " + name + ". Возраст: " + age;
+    }
+
+    //задание C1
+    boolean win(Dog otherDog){
+    double myChance=0.2*this.age+0.3*this.weight+0.5*this.power;
+        double otherChance=0.2*this.age+0.3*this.weight+0.5*this.power;
+        return myChance>otherChance;
     }
 }
