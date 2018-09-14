@@ -25,47 +25,56 @@ double averageAge(Dog[] dogs){.....}; //должен вычислять сред
 
 */
 
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 
 public class TaskB1 {
     public static void main(String[] args)
     {
-        Dog3 [] dogs = new Dog3[5];
-        dogs[0] = new Dog3("Шарик", 1);
-        dogs[1] = new Dog3("Жучка", 2);
+        DogHelper [] dogs = new DogHelper[5];
+        dogs[0] = new DogHelper("Шарик", 1);
+        dogs[1] = new DogHelper("Жучка", 2);
+        dogs[2] = new DogHelper("Бобик", 3);
+        dogs[3] = new DogHelper("Барбос", 4);
+        dogs[4] = new DogHelper("Полкан", 5);
         System.out.println();
+        DogHelper.printAllNames();
+        System.out.print("\n");
+        System.out.println(DogHelper.averageAge());
+
+
     }
 }
-class Dog3 {
+class DogHelper {
 
     public String name;
     public int age;
-    ArrayList<String> names = new ArrayList<String>();
-    ArrayList<Integer> ages = new ArrayList<Integer>();
+    static ArrayList<String> names = new ArrayList<String>();
+    static ArrayList<Integer> ages = new ArrayList<Integer>();
 
-    public Dog3(String Name, int Age) {
+    public DogHelper(String Name, int Age) {
         names.add(Name);
         ages.add(Age);
         this.name = Name;
         this.age = Age;
 
     }
-    public String toString()
+    public static void printAllNames()
     {
-        String opening = "Кличка: ";
-        String Age = "Возраст: ";;
-        String ret =opening+name+". "+Age+age;
-
-        return ret;
-    }
-    public String printAllNames()
-    {
-        String Name = "";
-        for(String dog : names )
-        {
-            Name = dog;
-
+        String s ="";
+        for ( String dog : names) {
+            System.out.print(dog+" ");
         }
-        return Name;
     }
-}
+    public static double averageAge ()
+    {
+        double aver=0;
+        for(int i : ages)
+        {
+            double temp = (double)i;
+            aver+=temp;
+        }
+        aver = aver/ages.size();
+        return aver;
+    }
+
+}*/
