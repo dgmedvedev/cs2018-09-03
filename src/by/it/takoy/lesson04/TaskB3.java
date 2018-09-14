@@ -26,7 +26,6 @@ package by.it.takoy.lesson04;
 
 
 import java.util.Scanner;
-lkjljk
 public class TaskB3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
