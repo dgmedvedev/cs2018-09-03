@@ -44,3 +44,7 @@ public class TaskB1 {
             System.out.println("количество дней в году: 365");
     }
 }
+/*if (year%4==0 && !(year%100==0 && year%400!=0))
+    sout(366)
+else
+    sout(365)*/

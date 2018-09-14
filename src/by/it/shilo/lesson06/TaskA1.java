@@ -1,4 +1,4 @@
-package by.it._tasks_.lesson06;
+package by.it.shilo.lesson06;
 
 /*
 Геттеры и сеттеры для класса Dog
@@ -27,8 +27,6 @@ package by.it._tasks_.lesson06;
 Тузик 3
 */
 
-
-import by.it.shilo.lesson06.Dog;
 
 public class TaskA1 {
     public static void main(String[] args) {

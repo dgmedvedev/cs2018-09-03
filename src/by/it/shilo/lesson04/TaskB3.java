@@ -35,7 +35,8 @@ public class TaskB3 {
         int sum = 0;
         for (i = 1; i < 100; i++) {
             sum = i + sum;
-            if (sum > x) break;
+            if (sum > x)
+                break;
             System.out.print(sum + ",");
         }
     }
