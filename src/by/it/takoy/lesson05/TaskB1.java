@@ -10,6 +10,22 @@ package by.it.takoy.lesson05;
 */
 
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class TaskB1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> MyArrList = new ArrayList<>();
+        MyArrList.add("a");
+        MyArrList.add("b");
+        MyArrList.add("c");
+        MyArrList.add("d");
+        MyArrList.add("e");
+        System.out.println(MyArrList.size());
+        for (String Str : MyArrList) {
+            System.out.println(Str);
+        }
+    }
 
 }

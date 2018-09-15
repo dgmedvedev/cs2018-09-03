@@ -27,5 +27,15 @@ package by.it.takoy.lesson05;
 import java.util.Scanner;
 
 public class TaskA1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] MyArray = new int[10];
+        for (int i = 0; i < 10; i++) {
+            MyArray[i] = sc.nextInt();
+        }
+        for (int i = 9; i >= 0; i--) {
+            System.out.println(MyArray[i]);
+        }
+    }
 
 }
