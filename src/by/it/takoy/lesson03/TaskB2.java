@@ -32,8 +32,8 @@ Lesson 03. Task B2. Нужно написать программу, котора
 
 */
 class TaskB2 {
-    static double dis(int aa, int bb, int cc) {
-        return bb * bb - 4 * aa * cc;
+    static double dis(int a, int b, int c) {
+        return (double) (b * b) - (4 * a * c);
 
     }
 
@@ -44,16 +44,15 @@ class TaskB2 {
         int c = sc.nextInt();
         double d = dis(a, b, c);
         if (d > 0) {
-            double x1 = (-b - Math.sqrt(d)) / 2 * a;
-            double x2 = (-b + Math.sqrt(d)) / 2 * a;
-            System.out.println(x1 + " " + x2);
+            System.out.println((-b - Math.sqrt(d)) / (2 * a) + " " + (-b + Math.sqrt(d)) / (2 * a));
 
 
         } else if (d == 0) {
-            double x = -b / (2 * a);
-            System.out.println(x);
+            System.out.println(-(double) b / (2 * a));
 
 
+        } else {
+            System.out.println("Дискриминант отрицательный");
         }
     }
-    }
+}
