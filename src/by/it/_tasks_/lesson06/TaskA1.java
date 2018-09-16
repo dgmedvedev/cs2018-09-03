@@ -28,20 +28,7 @@ package by.it._tasks_.lesson06;
 */
 
 
-import by.it.shilo.lesson06.Dog;
 
 public class TaskA1 {
-    public static void main(String[] args) {
-        Dog dog1 = new Dog();
-        dog1.setName("Шарик");
-        dog1.setAge(3);
 
-        Dog dog2 = new Dog();
-        dog2.setName("Тузик");
-        dog2.setAge(3);
-
-        System.out.println(dog1.getName() + " " + dog1.getAge());
-        System.out.println(dog2.getName() + " " + dog2.getAge());
-
-    }
 }

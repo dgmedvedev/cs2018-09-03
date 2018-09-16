@@ -19,7 +19,6 @@ public class TaskC1 {
     }
 
     private static void printList(List<Integer> list) {
-
         for (Integer aList : list) System.out.println(aList);
     }
 
