@@ -1,7 +1,5 @@
 package by.it.sokolova.lesson02;
 
-import com.sun.source.doctree.SummaryTree;
-
 import java.util.Scanner;
 
 /* Нужно написать программу, которая вводит два числа с клавиатуры

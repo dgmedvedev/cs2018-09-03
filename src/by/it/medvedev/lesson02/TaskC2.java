@@ -1,7 +1,5 @@
 package by.it.medvedev.lesson02;
 
-import javafx.util.converter.IntegerStringConverter;
-
 import java.util.Scanner;
 
 /* Нужно написать программу, которая вводит два числа с клавиатуры
