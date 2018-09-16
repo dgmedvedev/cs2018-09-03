@@ -1,4 +1,4 @@
-package by.it._tasks_.lesson04;
+package by.it.zharsky.lesson04;
 
 import org.junit.Test;
 

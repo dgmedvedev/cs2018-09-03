@@ -1,4 +1,6 @@
-package by.it._tasks_.lesson04;
+package by.it.zharsky.lesson04;
+
+import java.util.Scanner;
 
 /*
 Напишите программу которая спрашивает у пользователя:
@@ -37,6 +39,53 @@ package by.it._tasks_.lesson04;
 
 */
 public class TaskC1 {
+    public static void main(String [] args)
+    {
+        System.out.println("Какую вы хотите зарплату в $$$?");
+        Scanner scan = new Scanner(System.in);
+        int salaryPrefer = scan.nextInt();
+        boolean exept = false;
+        if(salaryPrefer<=300||salaryPrefer>=3000)
+        {
+            System.out.println("Мы вам перезвоним!");
+        }
+        else
+        {
+            String[]names = new String[]{
+                    "месяц","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"
+            };
+            int month = 0;
+            while(!exept)
+            {
+                if (month > 14) {
+                    break;
 
+                }
+                if (month == 0 || month == 13 || month == 14) {
+                    System.out.println("За " + names[0] + " " + month + " начислено $0.0");
+                }
+                else if (month == 6 || month == 7 || month == 8) {
+                    float offer = (float) salaryPrefer;
+                    if (offer == 666.0) {
+                        exept = true;
+                    }
+                    System.out.println("За " + names[month] + " начислено $" + offer);
+                }
+                else {
+                    float offer = (float) (salaryPrefer * 1.5);
+                    if (offer == 666.0) {
+                        exept = true;
+                    }
+                    System.out.println("За " + names[month] + " начислено $" + offer);
+                }
+
+                month++;
+            }
+        }
+
+
+
+
+    }
 
 }

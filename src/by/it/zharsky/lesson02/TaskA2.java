@@ -1,4 +1,4 @@
-package by.it._tasks_.lesson02;
+package by.it.zharsky.lesson02;
 
 /*
 напишите тело main программы которая выводит на экран 5 строк
@@ -9,5 +9,13 @@ package by.it._tasks_.lesson02;
 */
 
 class TaskA2 {
+    public static void main(String[]args)
+    {
+        for(int i = 0;i < 5;i++)
+        {
+            System.out.println("Я начинаю изучать Java!");
+        }
+
+    }
 
 }
