@@ -7,12 +7,6 @@ class Dog {
     private int weight;
     private double power;
 
-    public Dog() {
-    }
-    public Dog(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
     public String getName() {
         return name;
     }
