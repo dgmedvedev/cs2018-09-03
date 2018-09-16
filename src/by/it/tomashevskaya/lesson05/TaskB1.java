@@ -1,4 +1,4 @@
-package by.it._tasks_.lesson05;
+package by.it.tomashevskaya.lesson05;
 /*
 Создайте 5 различных строк в списке ArrayList:
 
@@ -11,18 +11,23 @@ package by.it._tasks_.lesson05;
 
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class TaskB1 {
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>();
-        Collections.addAll(list, "one", "two", "three", "four", "five");
-        int n = list.size();
-        System.out.println(n);
-        for (int i = 0; i < list.size(); i++) {
-            String s = list.get(i);
-            System.out.println(s);
+        int[] m = new int[20];
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < m.length; i++) {
+            m[i] = sc.nextInt();
         }
+        int[] a = new int[10];
+        System.arraycopy(m, 0, a, 0, 10);
+        System.out.println("a=" + Arrays.toString(a));
+        int[] b = new int[10];
+        System.arraycopy(m, 10, b, 0, 10);
+        System.out.println("b=" + Arrays.toString(b));
+    }
 
-    }}
+}
 
