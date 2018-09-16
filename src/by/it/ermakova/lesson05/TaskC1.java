@@ -1,4 +1,4 @@
-package by.it._tasks_.lesson05;
+package by.it.ermakova.lesson05;
 /*
 Три массива
 1.  Введите с клавиатуры 20 чисел, сохраните их в список и рассортируйте по трём другим спискам:
@@ -10,18 +10,33 @@ package by.it._tasks_.lesson05;
     Сначала тот, который для x%3, потом тот, который для x%2, потом последний.
 */
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class TaskC1 {
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception{
+        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> arr = new ArrayList<>();
+        BufferedReader reader = new BufferedReader( new InputStreamReader( System.in ) );
+        for (int x = 0; x < 20; x++)
+            arr.add( Integer.parseInt( reader.readLine() ) );
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        ArrayList<Integer> list3 = new ArrayList<>();
+        for (int x : arr) {
+            if (x % 3 == 0) list1.add( x );
+            if (x % 2 == 0) list2.add( x );
+            if ((x % 3 != 0) && (x % 2 != 0)) list3.add( x );
+        }
 
     }
 
-    private static void printList(List<Integer> list) {
 
-        for (Integer aList : list) System.out.println(aList);
+
     }
 
 
-}
+
