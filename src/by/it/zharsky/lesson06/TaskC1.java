@@ -28,8 +28,34 @@ boolean win(Dog otherDog)
 в классе Dog метода boolean win(Dog dog).
 Напечатайте кличку победителя.
 */
-
+/*
+жучка 2 5 5
+мяучка 5 4 5
+*/
+import java.util.Scanner;
 
 public class TaskC1 {
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        Dog firstDog = new Dog();
+        Dog otherDog = new Dog();
+        firstDog.setName(scan.next());
+        firstDog.setAge(scan.nextInt());
+        firstDog.setWeight(scan.nextInt());
+        firstDog.setPower(scan.nextDouble());
+        otherDog.setName(scan.next());
+        otherDog.setAge(scan.nextInt());
+        otherDog.setWeight(scan.nextInt());
+        otherDog.setPower(scan.nextDouble());
+        boolean verif = Dog.win(firstDog, otherDog);
+        if (verif ==true){
+            System.out.println(firstDog.name);
+        }
+        else{
+            System.out.println(otherDog.name);
+        }
+    }
+   
 
 }

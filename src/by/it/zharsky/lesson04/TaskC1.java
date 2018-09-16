@@ -59,16 +59,19 @@ public class TaskC1 {
             {
                 if (month > 14) {
                     break;
+
                 }
                 if (month == 0 || month == 13 || month == 14) {
                     System.out.println("За " + names[0] + " " + month + " начислено $0.0");
-                } else if (month == 6 || month == 7 || month == 8) {
+                }
+                else if (month == 6 || month == 7 || month == 8) {
                     float offer = (float) salaryPrefer;
                     if (offer == 666.0) {
                         exept = true;
                     }
                     System.out.println("За " + names[month] + " начислено $" + offer);
-                } else {
+                }
+                else {
                     float offer = (float) (salaryPrefer * 1.5);
                     if (offer == 666.0) {
                         exept = true;
