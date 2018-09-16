@@ -1,4 +1,4 @@
-package by.it._tasks_.lesson06;
+package by.it.shilo.lesson06;
 
 /*
 Геттеры и сеттеры для класса Dog
@@ -28,13 +28,11 @@ package by.it._tasks_.lesson06;
 */
 
 
-import by.it.shilo.lesson06.Dog;
-
 public class TaskA1 {
     public static void main(String[] args) {
         Dog dog1 = new Dog();
         dog1.setName("Шарик");
-        dog1.setAge(3);
+        dog1.setAge(5);
 
         Dog dog2 = new Dog();
         dog2.setName("Тузик");
