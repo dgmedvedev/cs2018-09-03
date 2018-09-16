@@ -1,4 +1,4 @@
-package by.it._tasks_.lesson03;
+package by.it.Sledinskaya.lesson03;
 
 /*
 Lesson 03. Task A2. Стихотворение
@@ -21,5 +21,13 @@ Lesson 03. Task A2. Стихотворение
 Для автоматической проверки откройте и запустите класс Testing
 */
 class TaskA2 {
+    public static void main (String [] args){
+        System.out.print("Мое любимое стихотворение:\n");
+        System.out.print("\n");
+        System.out.print("А если это так, то что есть красота\n" +
+                         "И почему её обожествляют люди?\n" +
+                         "Сосуд она, в котором пустота,\n" +
+                         "Или огонь, мерцающий в сосуде? \n");
 
+    }
 }
