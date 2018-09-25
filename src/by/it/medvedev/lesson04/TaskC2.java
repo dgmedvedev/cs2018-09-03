@@ -1,5 +1,7 @@
 package by.it.medvedev.lesson04;
 
+import java.util.Scanner;
+
 /*
 
 На входе вводится число и месяц 2018 года.
@@ -27,5 +29,19 @@ package by.it.medvedev.lesson04;
 
  */
 public class TaskC2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int day = sc.nextInt();
+        int month = sc.nextInt();
+        int [] year = {31,28,31,30,31,30,31,31,30,31,30,31};
+        int i = 1;
+        int daynumber=0;
+        while (i<month){
+            daynumber+=year[i-1];
+            i++;
+        }
+        daynumber+=day;
+        System.out.println(daynumber);
+    }
 
 }
