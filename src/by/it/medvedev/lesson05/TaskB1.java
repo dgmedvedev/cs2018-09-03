@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class TaskB1 {
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>(5);
+        ArrayList<String> list = new ArrayList<>();
 
         list.add("первая строка");
         list.add("вторая строка");
@@ -23,14 +23,12 @@ public class TaskB1 {
         list.add("четвертая строка");
         list.add("пятая строка");
 
-        int a=list.size();
+        int a = list.size();
         System.out.println(a);
 
-        for (String s:list)
+        for (String s : list)
             System.out.println(s);
-
     }
-
 }
 
 

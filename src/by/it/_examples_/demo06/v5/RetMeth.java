@@ -20,8 +20,8 @@ class RetMeth {
     range1 = minivan.range(); 
     range2 = sportscar.range(); 
 
-    System.out.println("Minivan can carry " + minivan.passengers + 
-                     " with range of " + range1 + " Miles"); 
+    System.out.println("Minivan can carry " + minivan.passengers +
+                     " with range of " + range1 + " Miles");
 
     System.out.println("Sportscar can carry " + sportscar.passengers + 
                      " with range of " + range2 + " miles"); 
