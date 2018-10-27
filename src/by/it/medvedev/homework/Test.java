@@ -1,29 +1,27 @@
 package by.it.medvedev.homework;
 
-
-import java.util.Scanner;
-
 public class Test {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int i;
-        int result;
-        for (i = 0; i < 10; i++) {
-            result = 1;
-            int e = i;
-            while (e > 0) {
-                result *= 2;
-                e--;
-            }
-            System.out.println("2 в степени " + i + " равно " + result);
-        }
-        System.out.println("a = "+a+";" + "b = "+b);
-        if (a>=b) {
-            if (a==b) System.out.println("a = b");
-            else System.out.println("a > b");
-
-        } else System.out.println("a < b");
+    int calcArea(int height, int width) {
+        return height * width;
     }
+
+    int a = calcArea(5, 6);
+
+    /*int c=7;
+    calcArea(c,15);
+    int d = calcArea(57);
+    calcArea(2,3);
+    */
+
+    /*long t=42; byte,short,int-подойдет!
+    int f = calcArea(t,17);
+    */
+
+    /*int g = calcArea();
+    calcArea();
+    */
+
+    /*byte h = calcArea(4,20);
+    int j = calcArea(2,3,5);
+    */
 }
