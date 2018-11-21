@@ -1,5 +1,7 @@
 package by.it1.medvedev3.lesson04;
 
+import java.util.Scanner;
+
 /*
 Напишите программу которая спрашивает у пользователя:
 Какую вы хотите зарплату в $$$?
@@ -37,6 +39,66 @@ package by.it1.medvedev3.lesson04;
 
 */
 public class TaskC1 {
-
-
+    public static void main(String[] args) {
+        System.out.println("Какую вы хотите зарплату в $$$?");
+        Scanner sc = new Scanner(System.in);
+        int sum = sc.nextInt();
+        if(sum<300||sum>3000) System.out.println("Мы вам перезвоним!");
+        else {
+            for(int month=0;month<=14;month++){
+                double pay=sum*1.5;
+                if(month<1||month>12)
+                    pay=0.0;
+                if(month>5&&month<9)
+                    pay=sum;
+                switch (month){
+                    case 0:
+                        System.out.println("За месяц "+month+" начислено "+"$"+pay);
+                        break;
+                    case 1:
+                        System.out.println("За январь начислено "+"$"+pay);
+                        break;
+                    case 2:
+                        System.out.println("За февраль начислено "+"$"+pay);
+                        break;
+                    case 3:
+                        System.out.println("За март начислено "+"$"+pay);
+                        break;
+                    case 4:
+                        System.out.println("За апрель начислено "+"$"+pay);
+                        break;
+                    case 5:
+                        System.out.println("За май начислено "+"$"+pay);
+                        break;
+                    case 6:
+                        System.out.println("За июнь начислено "+"$"+pay);
+                        break;
+                    case 7:
+                        System.out.println("За июль начислено "+"$"+pay);
+                        break;
+                    case 8:
+                        System.out.println("За август начислено "+"$"+pay);
+                        break;
+                    case 9:
+                        System.out.println("За сентябрь начислено "+"$"+pay);
+                        break;
+                    case 10:
+                        System.out.println("За октябрь начислено "+"$"+pay);
+                        break;
+                    case 11:
+                        System.out.println("За ноябрь начислено "+"$"+pay);
+                        break;
+                    case 12:
+                        System.out.println("За декабрь начислено "+"$"+pay);
+                        break;
+                    case 13:
+                        System.out.println("За месяц "+month+" начислено "+"$"+pay);
+                        break;
+                    case 14:
+                        System.out.println("За месяц "+month+" начислено "+"$"+pay);
+                        break;
+                }if(pay==666.0)break;
+            }
+        }
+    }
 }

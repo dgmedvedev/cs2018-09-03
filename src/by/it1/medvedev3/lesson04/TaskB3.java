@@ -25,7 +25,27 @@ package by.it1.medvedev3.lesson04;
  */
 
 
+import java.util.Scanner;
 
 public class TaskB3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int digit = sc.nextInt();
 
+        int i = 2;
+        int sum = 1;
+        while (sum <= digit) {
+            System.out.print(sum + ",");
+            sum = sum + i++;
+
+    /*    int i = 1;            //второй способ
+        int sum = 0;
+        for (; ; ) {
+            sum = sum + i++;
+            if (sum > digit) break;
+            else System.out.print(sum+",");
+        }
+    */
+        }
+    }
 }

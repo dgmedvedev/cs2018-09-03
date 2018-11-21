@@ -24,6 +24,18 @@ package by.it1.medvedev3.lesson05;
 */
 
 
-public class TaskA1 {
+import java.util.Scanner;
 
+public class TaskA1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Integer[] mas = new Integer[10];
+
+        for (int i = mas.length - 1; i >= 0; i--) {
+            mas[i] = sc.nextInt();
+        }
+        for (int element : mas) {
+            System.out.println(element);
+        }
+    }
 }

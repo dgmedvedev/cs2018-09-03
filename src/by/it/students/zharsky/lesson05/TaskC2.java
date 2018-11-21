@@ -41,7 +41,7 @@ public class TaskC2 {
                     sorting[i+1]=temp;
                 }
             }
-            maxi--;
+//            maxi--;
         }
         for(int n : sorting)
         {

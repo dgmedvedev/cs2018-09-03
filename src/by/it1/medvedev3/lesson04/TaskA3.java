@@ -22,6 +22,17 @@ package by.it1.medvedev3.lesson04;
  */
 
 
-public class TaskA3 {
+import java.util.Scanner;
 
+public class TaskA3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        int j = sc.nextInt();
+        int k = sc.nextInt();
+        if(i==j&&i==k) System.out.print(i+" "+j+" "+k);
+        if(i==j) System.out.print(i+" "+j);
+        if(i==k) System.out.print(i+" "+k);
+        if(j==k) System.out.print(j+" "+k);
+    }
 }

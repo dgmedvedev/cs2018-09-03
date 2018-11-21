@@ -10,6 +10,22 @@ package by.it1.medvedev3.lesson05;
 */
 
 
-public class TaskB1 {
+import java.util.ArrayList;
 
+public class TaskB1 {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("первая");
+        list.add("вторая");
+        list.add("третья");
+        list.add("четвертая");
+        list.add("пятая");
+        System.out.println(list.size());
+
+//        for (int i = 0;i<list.size();i++) {
+//            System.out.println(list.get(i));
+//        }
+        for(String s:list)
+            System.out.println(s);
+    }
 }
