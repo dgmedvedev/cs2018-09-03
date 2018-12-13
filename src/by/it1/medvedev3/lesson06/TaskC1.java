@@ -30,6 +30,23 @@ boolean win(Dog otherDog)
 */
 
 
-public class TaskC1 {
+import java.util.Scanner;
 
+public class TaskC1 {
+    public static void main(String[] args) {
+        Dog thisDog = new Dog();
+        Dog otherDog = new Dog();
+        Scanner sc = new Scanner(System.in);
+        thisDog.setName(sc.next());
+        thisDog.setAge(sc.nextInt());
+        thisDog.setWeight(sc.nextInt());
+        thisDog.setPower(sc.nextDouble());
+        otherDog.setName(sc.next());
+        otherDog.setAge(sc.nextInt());
+        otherDog.setWeight(sc.nextInt());
+        otherDog.setPower(sc.nextDouble());
+        if(thisDog.win(otherDog)==true){
+            System.out.println(thisDog.getName());
+        }else System.out.println(otherDog.getName());
+    }
 }

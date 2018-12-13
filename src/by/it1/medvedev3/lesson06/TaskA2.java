@@ -25,5 +25,11 @@ package by.it1.medvedev3.lesson06;
 
 */
 public class TaskA2 {
+    public static void main(String[] args) {
+        Dog dogOne = new Dog("Шарик", 5);
+        Dog dogTwo = new Dog("Тузик", 3);
+        System.out.println(dogOne.toString());
+        System.out.println(dogTwo.toString());
+    }
 
 }

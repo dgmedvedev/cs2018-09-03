@@ -30,38 +30,36 @@ public class SimpleGuiB implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         frame.repaint();
     }
-}
 
-class MyDrawPanel extends JPanel {
+    class MyDrawPanel extends JPanel {
 
-    public void paintComponent(Graphics g) {
-        long sum = 0;
-        long i = 0;
-        while (true) {
-            int red = (int) (Math.random() * 255);
-            int green = (int) (Math.random() * 255);
-            int blue = (int) (Math.random() * 255);
-            int red1 = (int) (Math.random() * 255);
-            int green1;
-            int blue1;
+        public void paintComponent(Graphics g) {
+            long sum = 0;
+            long i = 0;
+            while (true) {
+                int red = (int) (Math.random() * 255);
+                int green = (int) (Math.random() * 255);
+                int blue = (int) (Math.random() * 255);
+                int red1 = (int) (Math.random() * 255);
+                int green1;
+                int blue1;
 
-            if (red == green && green == blue && blue == red1) {
-                green1 = (int) (Math.random() * 255);
-                blue1 = (int) (Math.random() * 255);
+                if (red == green && green == blue) {
+                    green1 = (int) (Math.random() * 255);
+                    blue1 = (int) (Math.random() * 255);
 
+                    Color random = new Color(red, green, blue);
+                    g.setColor(random);
+                    g.fillRect(0, 0, this.getWidth(), this.getHeight());
 
-                Color random = new Color(red, green, blue);
-                g.setColor(random);
-                g.fillRect(0, 0, this.getWidth(), this.getHeight());
+                    Color random1 = new Color(red1, green1, blue1);
+                    g.setColor(random1);
+                    g.fillOval(20, 50, 100, 100);
 
-                Color random1 = new Color(red1, green1, blue1);
-                g.setColor(random1);
-                g.fillOval(20, 50, 100, 100);
-                System.out.println(sum);
-
-                break;
+                    System.out.println(sum);
+                    break;
+                }sum = i++;
             }
-            sum = i++;
         }
     }
 }

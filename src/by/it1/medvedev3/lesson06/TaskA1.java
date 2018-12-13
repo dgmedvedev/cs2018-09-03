@@ -28,7 +28,17 @@ package by.it1.medvedev3.lesson06;
 */
 
 
-
 public class TaskA1 {
+    public static void main(String[] args) {
+
+        Dog dogOne = new Dog("Шарик", 5);
+        Dog dogTwo = new Dog();
+
+        dogTwo.setAge(3);
+        dogTwo.setName("Тузик");
+
+        System.out.println(dogOne.getName() + " " + dogOne.getAge());
+        System.out.println(dogTwo.name + " " + dogTwo.age);
+    }
 
 }
