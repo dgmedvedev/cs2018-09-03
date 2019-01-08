@@ -26,17 +26,10 @@ package by.it.medvedev.lesson06;
 */
 public class TaskA2 {
     public static void main(String[] args) {
-
-
-        Dog dog1 = new Dog ("Шарик",5);
-
-
-
-        Dog dog2 = new Dog ("Тузик",3);
-
-
-        System.out.println(dog1);
-        System.out.println(dog2);
+        Dog dogOne = new Dog("Шарик", 5);
+        Dog dogTwo = new Dog("Тузик", 3);
+        System.out.println(dogOne.toString());
+        System.out.println(dogTwo.toString());
     }
 
 }

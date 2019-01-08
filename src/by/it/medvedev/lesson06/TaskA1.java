@@ -31,16 +31,14 @@ package by.it.medvedev.lesson06;
 public class TaskA1 {
     public static void main(String[] args) {
 
-        Dog dog1 = new Dog();
-        dog1.setName("Шарик");
-        dog1.setAge(5);
+        Dog dogOne = new Dog("Шарик", 5);
+        Dog dogTwo = new Dog();
 
-        Dog dog2 = new Dog();
-        dog2.setName("Тузик");
-        dog2.setAge(3);
+        dogTwo.setAge(3);
+        dogTwo.setName("Тузик");
 
-        System.out.println(dog1.getName() + " " + dog1.getAge());
-        System.out.println(dog2.getName() + " " + dog2.getAge());
+        System.out.println(dogOne.getName() + " " + dogOne.getAge());
+        System.out.println(dogTwo.name + " " + dogTwo.age);
     }
 
 }
