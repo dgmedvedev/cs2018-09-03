@@ -1,4 +1,4 @@
-package by.it1.decisions.lesson04;
+package by.it1.decisions.lesson04_1h48m52s_C3didnot;
 
 import org.junit.Test;
 

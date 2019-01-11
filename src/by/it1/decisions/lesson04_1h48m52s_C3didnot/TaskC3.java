@@ -1,4 +1,4 @@
-package by.it1.decisions.lesson04;
+package by.it1.decisions.lesson04_1h48m52s_C3didnot;
 
 /*
 Вывести таблицу умножения 10 x 10 (двоныйм циклом),

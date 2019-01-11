@@ -1,4 +1,4 @@
-package by.it1.decisions.lesson03;
+package by.it1.decisions.lesson03_40m22s;
 
 import org.junit.Test;
 

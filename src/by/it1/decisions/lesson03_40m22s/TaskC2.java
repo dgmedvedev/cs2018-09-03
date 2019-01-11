@@ -1,4 +1,5 @@
-package by.it1.decisions.lesson03;
+package by.it1.decisions.lesson03_40m22s;
+
 /*
     Сумма цифр четырехзначного числа
 
@@ -20,12 +21,15 @@ package by.it1.decisions.lesson03;
     5. Метод sumDigitsInNumber должен правильно возвращать сумму всех цифр в числе number.
 */
 public class TaskC2 {
+    static int sumDigitsInNumber(int abcd) {
+        int a = abcd/1000;
+        int b = (abcd-a*1000)/100;
+        int c = ((abcd-a*1000)-b*100)/10;
+        int d = (((abcd-a*1000)-b*100)-c*10);
+        return a+b+c+d;
+    }
 
-
-
-
-//    public static void main(String[] args) {
-//        System.out.println(sumDigitsInNumber(5467));
-//    }
-
+    public static void main(String[] args) {
+        System.out.println(sumDigitsInNumber(5467));
+    }
 }
