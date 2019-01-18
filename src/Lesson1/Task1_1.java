@@ -3,7 +3,11 @@ package Lesson1;
 public class Task1_1 {
     public static void main(String[] args) {
         String str = "С Новым 2019 годом!";
-        String str1 = "";
+        String strOne = str.substring(0,str.length()/2);
+        String strTwo = str.substring(str.length()/2);
+        System.out.println(strOne);
+        System.out.println(strTwo);
+     /*   String str1 = "";
         String str2 = "";
 
         System.out.println(str.length());
@@ -18,5 +22,6 @@ public class Task1_1 {
         }
         System.out.println(str1);
         System.out.println(str2);
+        */
     }
 }

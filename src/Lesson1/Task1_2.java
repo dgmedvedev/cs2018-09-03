@@ -10,8 +10,8 @@ public class Task1_2 {
         int number;
 
         if (temp < 0) {
-            number = temp - temp - temp;
-            System.out.println("Случайное число = " + (-1 * number));
+            number = Math.abs(temp);
+            System.out.println("Случайное число = " + temp);
         } else {
             number = temp;
             System.out.println("Случайное число = " + number);
