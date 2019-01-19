@@ -22,9 +22,11 @@ public class Task2_2_copy {
             for (int j = 0; j < mas.length; j++) {
                 if (intMasOne[i] == intMasTwo[j]) {
                     count++;
-                    intMasTwo[j]=0;
+                    intMasTwo[j] = 0;
                 }
             }
+
+        // думал будут квадратные скобки
             intList.add(i,intMasOne[i]);
 
             if(count>1)

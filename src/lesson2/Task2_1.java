@@ -3,7 +3,7 @@ package lesson2;
 import java.util.Arrays;
 
 public class Task2_1 {
-    public static void main(String[] args) {
+    public static void start() {
         int[] mas = new int[]{10, 74, 12, 3, 89, 325, 777, 67, 9, 55};
         int min = mas[0];
         int max = mas[0];

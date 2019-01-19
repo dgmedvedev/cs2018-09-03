@@ -2,7 +2,7 @@ package lesson2;
 
 public class Task2_2 {
 
-    public static void main(String[] args) {
+    public static void start() {
         float[] mas = {2, 3, 5, 7, 6, 5, 7, 3, 7, 20};
         int[] intMasOne = new int[mas.length];
         int[] intMasTwo = new int[mas.length];
