@@ -3,7 +3,7 @@ package lesson2;
 import java.util.Arrays;
 
 public class Task2_4 {
-    private static int number = 12045;
+    private static int number = -12045;
     private static String str = "" + number;
     private static int[] mas1 = new int[str.length()];
     private static int[] mas2 = new int[str.length() - 1];
@@ -47,16 +47,18 @@ public class Task2_4 {
             for (int i = 0; i < myString.length(); i++) {
                 mas1[i] = Integer.parseInt(String.valueOf(myString.charAt(i)));
             }
-            //   for (int print : mas1)
-            //       System.out.print(print);
+               for (int print : mas1)
+                   System.out.print(print);
+            System.out.println(" - mas1");
         } else {
 
             for (int i = 0; i < myString.length() - 1; i++) {
                 mas2[i] = Integer.parseInt(String.valueOf(myString.charAt(i + 1)));
             }
-            //   System.out.print("-");
-            //   for (int print : mas2)
-            //       System.out.print(print);
+               System.out.print("-");
+               for (int print : mas2)
+                   System.out.print(print);
+            System.out.println(" - mas2");
         }
     }
 }
