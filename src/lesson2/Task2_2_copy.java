@@ -1,37 +1,24 @@
 package lesson2;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Task2_2_copy {
 
-    public static void main(String[] args) {
-        float[] mas = {2, 3, 5, 7, 6, 5, 7, 3, 7, 20};
-        int[]intMasOne = new int[mas.length];
-        int[]intMasTwo = new int[mas.length];
-        ArrayList<Integer> intList=new ArrayList<>();
-
-        for(int i=0;i<mas.length;i++) {
-            intMasOne[i] = (int) mas[i];
-            intMasTwo[i] = (int) mas[i];
-        }
+    public static void start() {
+        float[] mas = {2F, 3.1F, 5F, 7F, 6F, 5F, 7F, 3.1F, 7F, 20F};
+        float[] copyMas = Arrays.copyOf(mas, mas.length);
 
         int count = 0;
 
         for (int i = 0; i < mas.length; i++) {
-
             for (int j = 0; j < mas.length; j++) {
-                if (intMasOne[i] == intMasTwo[j]) {
+                if (mas[i] == copyMas[j]) {
                     count++;
-                    intMasTwo[j] = 0;
+                    copyMas[j] = 0;
                 }
             }
-
-        // думал будут квадратные скобки
-            intList.add(i,intMasOne[i]);
-
-            if(count>1)
-
-                System.out.println(intList.get(i) + " - повторений " + count);
+            if (count > 1)
+                System.out.println("[" + mas[i] + "] - повторений " + count);
             count = 0;
         }
     }

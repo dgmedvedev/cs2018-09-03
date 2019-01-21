@@ -15,7 +15,7 @@ public class Task2_5 {
         System.out.println();
 
         for (int j = mas.length - 1; j >= 0; j--) {
-            for (int i = 0; i < mas.length - 1; i++) {
+            for (int i = 0; i < j; i++) {
                 if (mas[i] < mas[i + 1]) {
                     int temp = mas[i];
                     mas[i] = mas[i + 1];
