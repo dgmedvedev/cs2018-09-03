@@ -6,7 +6,7 @@ import java.util.Random;
 public class Task2_2 {
 
     public static void start() {
-        float[] mas = {6F, 3.1F, 7F, 7F, 6F, 5F, 7F, 3.1F, 7F, 20F};
+        float[] mas = {0F, 3.1F, 7F, 7F, 0F, 5F, 7F, 3.1F, 7F, 20F};
         float[] copyMas = Arrays.copyOf(mas, mas.length);
 
         int count = 0;
@@ -22,7 +22,5 @@ public class Task2_2 {
                 System.out.println("[" + mas[i] + "] - повторений " + count);
             count = 0;
         }
-        for(float x:copyMas)
-            System.out.print(x+" ");
     }
 }
