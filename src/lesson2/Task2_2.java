@@ -1,6 +1,7 @@
 package lesson2;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Task2_2 {
 
@@ -14,12 +15,14 @@ public class Task2_2 {
             for (int j = 0; j < mas.length; j++) {
                 if (mas[i] == copyMas[j]) {
                     count++;
-                    copyMas[j] = 0;
+                    copyMas[j] = new Random().nextFloat();
                 }
             }
             if (count > 1)
                 System.out.println("[" + mas[i] + "] - повторений " + count);
             count = 0;
         }
+        for(float x:copyMas)
+            System.out.print(x+" ");
     }
 }
