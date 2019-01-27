@@ -1,4 +1,4 @@
-package class_work;
+package class_work.lesson1;
 
 
 import java.sql.Array;
