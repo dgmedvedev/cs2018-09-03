@@ -6,21 +6,24 @@ import java.util.Random;
 public class Task2_2 {
 
     public static void start() {
-        float[] mas = {0F, 3.1F, 7F, 7F, 0F, 5F, 7F, 3.1F, 7F, 20F};
-        float[] copyMas = Arrays.copyOf(mas, mas.length);
+        float[] arr = {0F, 3.1F, 7F, 0F, 5F, 7F, 3.1F, 7F, 20F};
+        methodSort(arr);
+    }
 
+    private static void methodSort(float[] a) {
+        Arrays.sort(a);
+        float currentValue = 0;
         int count = 0;
 
-        for (int i = 0; i < mas.length; i++) {
-            for (int j = 0; j < mas.length; j++) {
-                if (mas[i] == copyMas[j]) {
-                    count++;
-                    copyMas[j] = new Random().nextFloat();
-                }
+        for (float curr : a) {
+            if (curr != currentValue&&count>1) {
+                System.out.println("[" + currentValue +"]" + " - повторений " + count);
+                count = 0;
+            }else if(curr != currentValue&&count<2) {
+                count = 0;
             }
-            if (count > 1)
-                System.out.println("[" + mas[i] + "] - повторений " + count);
-            count = 0;
+            currentValue = curr;
+            count++;
         }
     }
 }

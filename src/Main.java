@@ -5,6 +5,6 @@ import lesson3.Task3_2;
 public class Main {
 
     public static void main(String[] args) {
-Task3_2.start();
+Task2_2.start();
     }
 }
