@@ -12,17 +12,17 @@ public class Task2_2 {
 
     private static void methodSort(float[] a) {
         Arrays.sort(a);
-        float currentValue = 0;
+        float value = 0;
         int count = 0;
 
-        for (float curr : a) {
-            if (curr != currentValue&&count>1) {
-                System.out.println("[" + currentValue +"]" + " - повторений " + count);
+        for (float temp : a) {
+            if (temp != value&&count>1) {
+                System.out.println("[" + value +"]" + " - повторений " + count);
                 count = 0;
-            }else if(curr != currentValue&&count<2) {
+            }else if(temp != value&&count<2) {
                 count = 0;
             }
-            currentValue = curr;
+            value = temp;
             count++;
         }
     }
