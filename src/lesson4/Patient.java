@@ -1,53 +1,55 @@
 package lesson4;
 
+import java.util.Scanner;
+
 class Patient {
-    private String surname;
-    private String name;
-    private String middleName;
+    private String fio;
     private int age;
     private String diagnosis;
     private static int countPatient;
 
     Patient() {
         countPatient++;
+        enterInfo();
     }
 
-    Patient(String surname, String name, int age, String diagnosis) {
-        this.surname = surname;
-        this.name = name;
+    Patient(String fio,int age,String diagnosis){
+        this.fio = fio;
         this.age = age;
         this.diagnosis = diagnosis;
-        countPatient++;
-        System.out.println("Пациент " + getSurname() + " " + getName() + " - Возраст = " + getAge());
     }
 
-    Patient(String surname, String name, String middleName, int age, String diagnosis) {
-        this.surname = surname;
-        this.name = name;
-        this.middleName = middleName;
-        this.age = age;
-        this.diagnosis = diagnosis;
-        countPatient++;
-        System.out.println("Пациент " + getSurname() + " " + getName() + " " + getMiddleName() + " - Возраст = " + getAge());
-    }
-
-    static int getCountPatient() {
-        return countPatient;
+    public String getFio() {
+        return fio;
     }
 
     public int getAge() {
         return age;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getDiagnosis() {
+        return diagnosis;
     }
 
-    public String getName() {
-        return name;
+    public String getAllInfoPatient(){
+        return fio + " (возраст: " + age + ", диагноз: " + diagnosis + ")";
     }
 
-    public String getMiddleName() {
-        return middleName;
+    public int getCountPatient() {
+        return countPatient;
+    }
+
+    public void print() {
+        System.out.println("Пациент " + fio + " - Возраст = " + age);
+    }
+
+    private void enterInfo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("ФИО пациента № " + countPatient);
+        this.fio = sc.nextLine();
+        System.out.println("диагноз пациента № " + countPatient);
+        this.diagnosis = sc.nextLine();
+        System.out.println("возраст пациента № " + countPatient);
+        this.age = sc.nextInt();
     }
 }
