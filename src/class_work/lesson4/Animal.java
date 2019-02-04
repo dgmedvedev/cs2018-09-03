@@ -13,6 +13,9 @@ abstract class Animal {
     }
 
     abstract void say();
+    void say(Animal a){
+        a.say();
+    }
     abstract void eat(Food food);
 
     @Override
