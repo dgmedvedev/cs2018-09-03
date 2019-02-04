@@ -1,7 +1,7 @@
 package lesson5.home_appliances;
 
-class HomeAppliancesTestDrive {
-    public static void main(String[] args) {
+public class Task5_1 {
+    public static void start() {
         HomeAppliances[] arr = new HomeAppliances[6];
         arr[0] = new Fridge(60, 50, 200, "белый");
         arr[1] = new Humidifier(20, 25, 35, "черный");
