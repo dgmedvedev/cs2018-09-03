@@ -1,9 +1,10 @@
 package lesson5.atm;
 
-public class ATM {
+public class ATM_copy {
     private int banknote20;  //количество купюр наминалом 20
     private int banknote50;  //количество купюр наминалом 50
     private int banknote100; //количество купюр наминалом 100
+    private int change;
 
     private int sum; // остаток денег в банкомате
 
@@ -11,7 +12,7 @@ public class ATM {
     // метод добавления денег
     boolean giveMoney(int number) {
 
-        int change = 0;
+        this.change = 0;
         int tempBanknote20;
         if (number >= 20) {
             this.banknote100 += number / 100;
@@ -27,16 +28,16 @@ public class ATM {
                 } else {
                     tempBanknote20 = (number % 100 - 50) / 20;
                     this.banknote20 += tempBanknote20;
-                    change += number % 100 - 50 - 20 * tempBanknote20;
-                    System.out.println("Операция удалась. Ваша сдача " + change + " $.");
+                    this.change += number % 100 - 50 - 20 * tempBanknote20;
+                    System.out.println("Операция удалась. Ваша сдача " + this.change + " $.");
                     return false;
                 }
 
             } else if (number % 100 > 50 && (number % 100 - 50) <= 20) {
                 this.banknote20 += (number % 100 - 50) / 20;
-                change += number % 100 - 50;
-                if (change % 20 != 0) {
-                    System.out.println("Операция удалась. Ваша сдача " + change + " $.");
+                this.change += number % 100 - 50;
+                if (this.change % 20 != 0) {
+                    System.out.println("Операция удалась. Ваша сдача " + this.change + " $.");
                     return false;
                 } else {
                     System.out.println("Операция удалась.");
@@ -45,25 +46,15 @@ public class ATM {
             } else if (number % 100 < 50 && (number % 100) >= 20) {
                 tempBanknote20 = (number % 100) / 20;
                 this.banknote20 += tempBanknote20;
-                change += number % 100 - 20 * tempBanknote20;
-                if (change % 20 != 0) {
-                    System.out.println("Операция удалась. Ваша сдача " + change + " $.");
+                this.change += number % 100 - 20 * tempBanknote20;
+                if (this.change % 20 != 0) {
+                    System.out.println("Операция удалась. Ваша сдача " + this.change + " $.");
                     return false;
                 } else System.out.println("Операция удалась.");
                 return true;
-            } else if (number % 100 == 0) {
-                this.banknote20 = 0;
-                if (this.banknote100 == 0 && this.banknote50 == 0) {
-                    System.out.println("Операция не удалась.\n" +
-                            "введите значение больше 0");
-                    return false;
-                } else {
-                    System.out.println("Операция удалась.");
-                    return true;
-                }
             } else {
-                change += number % 100;
-                System.out.println("Операция удалась. Ваша сдача " + change + " $.");
+                this.change += number % 100;
+                System.out.println("Операция удалась. Ваша сдача " + this.change + " $.");
                 return false;
             }
         } else {
@@ -117,21 +108,21 @@ public class ATM {
                 bank20 = 0;
                 if (bank100 == 0 && bank50 == 0) {
                     return "Операция не удалась.\n" +
-                            "минимальная допустимая сумма для снятия равна 20$";
+                            "минимальная допустимая сумма для снятия равна 20$\n";
                 } else return "Выдано:\n" +
                         "купюры номиналом 100 - " + bank100 + " шт.;\n";
             } else return "Операция не удалась.\n" +
                     "в банкомате нет купюры наминалом " + number % 10 + "\n";
-        } else return "Операция не удалась.\n" +
-                "минимальная допустимая сумма для снятия равна 20$";
+        }else return "Операция не удалась.\n" +
+                "минимальная допустимая сумма для снятия равна 20$\n";
     }
     //    if (getSum() - number > 0) {sout "считаю"}
     //    } else return "в банкомате недостаточно денег.\n" +
     //            "всего доступно " + getSum() + " $.";}
 
     void howMuchMoneyInATM() {
-        System.out.println();
-        System.out.println("В банкомате " + getSum() + " $ :\n" +
+
+        System.out.println("В банкомате находится " + getSum() + " $ :\n" +
                 "купюры номиналом 20 - " + this.banknote20 + " шт.;\n" +
                 "купюры номиналом 50 - " + this.banknote50 + " шт.;\n" +
                 "купюры номиналом 100 - " + this.banknote100 + " шт.;\n");
@@ -151,5 +142,9 @@ public class ATM {
 
     public int getSum() {
         return (this.banknote20 * 20) + (this.banknote50 * 50) + (this.banknote100 * 100);
+    }
+
+    public int getChange() {
+        return change;
     }
 }

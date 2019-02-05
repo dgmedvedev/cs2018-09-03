@@ -2,9 +2,9 @@ package lesson5.atm;
 
 import java.util.Scanner;
 
-public class Menu {
+public class Menu_copy {
     public static void main(String[] args) {
-        ATM atm = new ATM();
+        ATM_copy atm = new ATM_copy();
         boolean bool = true;
 
         while (bool) {
@@ -22,8 +22,14 @@ public class Menu {
                         bool = false;
                     } else if (sc.nextInt() == 2) {
                         System.out.println("введите сумму, которую хотите положить");
-                        if(atm.giveMoney(sc.nextInt())){ System.out.println("операция проведена успешно");
-                        bool=false;}
+                        if (atm.giveMoney(sc.nextInt())) {
+                            if (atm.getChange() == 0) System.out.println("операция проведена успешно");
+                            else if (atm.getChange() != 0) {
+                                System.out.println("операция проведена успешно. ваша сдача "+atm.getChange());
+                            }else System.out.println("операция не проведена");
+                            bool = false;
+                        }else {System.out.println("операция не проведена");
+                            bool = false;}
 
                     } else if (sc.nextInt() == 3) {
                         System.out.println("введите сумму, которую хотите снять");
@@ -43,8 +49,8 @@ public class Menu {
             }
             System.out.println("если желаете повторить операцию нажмите 1");
             Scanner sc = new Scanner(System.in);
-            if (sc.nextInt()==1)bool=true;
-            else bool=false;
+            if (sc.nextInt() == 1) bool = true;
+            else bool = false;
         }
     }
 }
