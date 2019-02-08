@@ -1,6 +1,6 @@
 package class_work.lesson4;
 
-abstract class Animal {
+abstract class Animal implements AbleToEat{
     private String name;
     private double size;
     private final String TITLE;
@@ -16,7 +16,20 @@ abstract class Animal {
     void say(Animal a){
         a.say();
     }
-    abstract void eat(Food food);
+
+    public void eat(Food food) {
+        if (isHungry()) {
+            if (isCanEat(food)) {
+                setHungry(false);
+                say();
+            } else setName(null);
+        } else {
+            if(isCanEat(food)){
+                if(getName()!=null)
+                    System.out.println(getName());
+            }
+        }
+    }
 
     @Override
     public String toString() {

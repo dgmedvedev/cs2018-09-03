@@ -5,9 +5,13 @@ public class Dog extends Animal {
         super("dog", size,name);
     }
 
-    void eat(Food food){
+    public void eat(Food food){
         if(food instanceof Meat) System.out.println("ням-ням");
         else System.out.println("я это не ем");
+    }
+
+    public boolean isCanEat(Food food){
+        return food instanceof Meat;
     }
 
     void say(){
