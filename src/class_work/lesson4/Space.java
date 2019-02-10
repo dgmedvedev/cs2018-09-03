@@ -3,9 +3,10 @@ package class_work.lesson4;
 import java.util.Arrays;
 
 abstract class Space {
-    private int SIZE;
+    private double SIZE;
     private final int MAX_ANIMALS;
     private final Animal[] animals;
+    private int countAnimal;
 
     Space(int SIZE, int MAX_ANIMALS) {
         this.SIZE = SIZE;
@@ -14,11 +15,11 @@ abstract class Space {
     }
 
     int countAnimal() {
-        int countAnimal = 0;
+        int count = 0;
         for (Animal i : animals) {
-            if (i != null) countAnimal++;
+            if (i != null) count++;
         }
-        return countAnimal;
+        return count;
     }
 
     @Override
@@ -28,17 +29,20 @@ abstract class Space {
                 '}';
     }
 
-    void addAnimal(Animal animal) {
-        int countAnimal = 0;
-        int size = 0;
-
-        for (Animal a : animals)
-            size += a.getSize();
-
-        for (Animal a : animals)
-            if (a != null) countAnimal++;
-
-     //   if (countAnimal < MAX_ANIMALS && size < SIZE)//+size животного
-     //       a[countAnimal] = animal;
+    public void printAll(){
+        for(Animal animal:animals)
+            if(animal != null)
+                System.out.println(animal.toString());
     }
+
+    public boolean addAnimal(Animal animal) {
+        if (countAnimal < MAX_ANIMALS && (this.SIZE - animal.getSize())>0&&canLive(animal)) {
+            this.SIZE = this.SIZE - animal.getSize();
+            animals[countAnimal] = animal;
+            countAnimal ++;
+            return true;
+        }return false;
+    }
+
+    abstract boolean canLive(Animal animal);
 }

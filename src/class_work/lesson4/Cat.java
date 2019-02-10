@@ -1,19 +1,25 @@
 package class_work.lesson4;
 
-class Cat extends Animal {
+class Cat extends Animal implements GrandLive{
 
-    Cat(double size, String name) {
-        super("cat", size, name);
+    Cat(String name) {
+        super("Кот",name,"мяу", 3.6);
     }
-
-
+    Cat() {
+        super("Кот",null,"мяу", 3.6);
+    }
 
     public boolean isCanEat(Food food){
         return food instanceof Fish;
     }
 
+    @Override
+    public void eat(Food food) {
+        if(isCanEat(food))System.out.println("ням-ням");
+        else System.out.println("я это не ем");
+    }
 
-    void say() {
-        System.out.println("мяу");
+    boolean canLive(Animal animal){
+        return animal instanceof GrandLive;
     }
 }

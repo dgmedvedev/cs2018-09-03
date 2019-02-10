@@ -1,35 +1,36 @@
 package class_work.lesson4;
 
-abstract class Animal implements AbleToEat{
+abstract class Animal implements AbleToEat {
     private String name;
     private double size;
+    private String voice;
     private final String TITLE;
-    private boolean hungry=true;
+    public boolean isHungry = true;
 
-    Animal(String title, double size,String name){
+    Animal(String title, String name, String voice, double size) {
         this.size = size;
         this.name = name;
-        TITLE = title;
+        this.voice = voice;
+        this.TITLE = title;
     }
 
-    abstract void say();
-    void say(Animal a){
-        a.say();
+    public void say() {
+        System.out.println(voice);
     }
 
     public void eat(Food food) {
-        if (isHungry()) {
-            if (isCanEat(food)) {
-                setHungry(false);
+        if (isHungry) {
+            if (isCanEat(food))
                 say();
-            } else setName(null);
-        } else {
-            if(isCanEat(food)){
-                if(getName()!=null)
-                    System.out.println(getName());
-            }
+            else
+                name = null;
+            isHungry = false;
+        }else {
+            if (isCanEat(food) && name != null && !name.isEmpty())
+                System.out.println(name);
         }
     }
+
 
     @Override
     public String toString() {
@@ -50,13 +51,6 @@ abstract class Animal implements AbleToEat{
 
     public double getSize() {
         return size;
-    }
-
-    public boolean isHungry() {
-        return hungry;
-    }
-    public void setHungry(boolean hungry){
-        this.hungry = hungry;
     }
 
     public void setName(String name) {

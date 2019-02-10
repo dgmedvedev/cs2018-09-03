@@ -1,22 +1,24 @@
 package class_work.lesson4;
 
-public class Dog extends Animal {
-    Dog(double size,String name){
-        super("dog", size,name);
+public class Dog extends Animal implements GrandLive {
+    Dog(String name) {
+        super("Собака", name, "гав", 5.5);
     }
 
-    public void eat(Food food){
-        if(food instanceof Meat) System.out.println("ням-ням");
+    Dog() {
+        super("Собака", null, "гав", 5.5);
+    }
+
+    public void eat(Food food) {
+        if (isCanEat(food)) System.out.println("ням-ням");
         else System.out.println("я это не ем");
     }
 
-    public boolean isCanEat(Food food){
+    public boolean isCanEat(Food food) {
         return food instanceof Meat;
     }
 
-    void say(){
-        if(getSize()<5)
-        System.out.println("тяф");
-        else System.out.println("ГАВ");
+    boolean canLive(Animal animal){
+        return animal instanceof GrandLive;
     }
 }
