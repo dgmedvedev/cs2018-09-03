@@ -5,9 +5,9 @@ import java.util.Scanner;
 public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuATM {
     private String titleBank;   //название банка
     private String titleMaker;  //название производителя банкомата
-    private int banknote20;  //количество купюр наминалом 20
-    private int banknote50;  //количество купюр наминалом 50
-    private int banknote100; //количество купюр наминалом 100
+    private int banknote20;  //текущее количество купюр номиналом 20
+    private int banknote50;  //текущее количество купюр номиналом 50
+    private int banknote100; //текущее количество купюр номиналом 100
     private int cash; // остаток денег в банкомате
 
     ATM(int banknote20, int banknote50, int banknote100, String titleBank, String titleMaker) {
@@ -116,9 +116,9 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
     }
 
     public String getMoney(int sum) {
-        int bank20;  //количество купюр наминалом 20 при снятии
-        int bank50;  //количество купюр наминалом 50 при снятии
-        int bank100; //количество купюр наминалом 100 при снятии
+        int bank20;  //количество купюр номиналом 20 при снятии
+        int bank50;  //количество купюр номиналом 50 при снятии
+        int bank100; //количество купюр номиналом 100 при снятии
 
         if (sum >= 20) {
             bank100 = sum / 100;
@@ -185,7 +185,7 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
         System.out.println("Всего выдано " + getCash() + ".\n" +
                 "купюры номиналом 20 - " + this.banknote20 + " шт.;\n" +
                 "купюры номиналом 50 - " + this.banknote50 + " шт.;\n" +
-                "купюры номиналом 100 - " + this.banknote100 + " шт.;\n");
+                "купюры номиналом 100 - " + this.banknote100 + " шт.\n");
         this.banknote20 = 0;
         this.banknote50 = 0;
         this.banknote100 = 0;
@@ -245,6 +245,7 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                     isMenu();
                     return;
                 case "нет":
+                    System.out.println("Работа завершена");
                     return;
                 default:
                     System.out.println("введите да или нет");
