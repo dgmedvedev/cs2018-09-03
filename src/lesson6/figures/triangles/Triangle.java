@@ -30,6 +30,7 @@ public abstract class Triangle extends Figure {
         return sideTriangleC;
     }
 
+    @Override
     public String getTITLE_NAME() {
         return TITLE_NAME;
     }

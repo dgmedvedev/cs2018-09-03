@@ -10,6 +10,6 @@ import lesson6.figures.Task6_3;
 public class Main {
 
     public static void main(String[] args) {
-Task6_1.start();
+        Task6_1.start();
     }
 }

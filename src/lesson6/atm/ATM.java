@@ -29,13 +29,13 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
             if (sum % 100 > 50 && (sum % 100 - 50) > 20 && (sum % 100 - sum % 10) % 20 != 0) {
                 if ((sum % 100 - 50) % 20 == 0) {
                     this.banknote20 += (sum % 100 - 50) / 20;
-                    System.out.println("Операция удалась.\n");
+                    System.out.println("Операция удалась1.\n");
                     return true;
                 } else {
                     tempBanknote20 = (sum % 100 - 50) / 20;
                     this.banknote20 += tempBanknote20;
                     change += sum % 100 - 50 - 20 * tempBanknote20;
-                    System.out.println("Операция удалась. Ваша сдача " + change + " $.\n");
+                    System.out.println("Операция удалась2. Ваша сдача " + change + " $.\n");
                     return false;
                 }
 
@@ -44,21 +44,21 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                     this.banknote50 += -1;
                     this.banknote20 += sum % 100 / 20;
                     if (sum % 10 == 0) {
-                        System.out.println("Операция удалась.\n");
+                        System.out.println("Операция удалась3.\n");
                         return true;
                     } else {
                         change = sum % 10;
-                        System.out.println("Операция удалась. Ваша сдача " + change + " $.\n");
+                        System.out.println("Операция удалась4. Ваша сдача " + change + " $.\n");
                         return false;
                     }
                 } else {
                     this.banknote20 += sum % 100 / 20;
                     if (sum % 10 == 0) {
-                        System.out.println("Операция удалась.\n");
+                        System.out.println("Операция удалась5.\n");
                         return true;
                     } else {
                         change = sum % 10;
-                        System.out.println("Операция удалась. Ваша сдача " + change + " $.\n");
+                        System.out.println("Операция удалась6. Ваша сдача " + change + " $.\n");
                         return false;
                     }
                 }
@@ -67,21 +67,21 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                 this.banknote50 += 1;
                 this.banknote20 += (sum % 100 + 100 - 50) / 20;
                 if (sum % 10 == 0) {
-                    System.out.println("Операция удалась.\n");
+                    System.out.println("Операция удалась7.\n");
                     return true;
                 } else {
                     change = sum % 10;
-                    System.out.println("Операция удалась. Ваша сдача " + change + " $.\n");
+                    System.out.println("Операция удалась8. Ваша сдача " + change + " $.\n");
                     return false;
                 }
             } else if (sum % 100 > 50 && (sum % 100 - 50) <= 20) {
                 this.banknote20 += (sum % 100 - 50) / 20;
                 change += sum % 100 - 50;
                 if (change % 20 != 0) {
-                    System.out.println("Операция удалась. Ваша сдача " + change + " $.\n");
+                    System.out.println("Операция удалась9. Ваша сдача " + change + " $.\n");
                     return false;
                 } else {
-                    System.out.println("Операция удалась.\n");
+                    System.out.println("Операция удалась10.\n");
                     return true;
                 }
             } else if (sum % 100 < 50 && (sum % 100) >= 20) {
@@ -89,23 +89,26 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                 this.banknote20 += tempBanknote20;
                 change += sum % 100 - 20 * tempBanknote20;
                 if (change % 20 != 0) {
-                    System.out.println("Операция удалась. Ваша сдача " + change + " $.\n");
+                    System.out.println("Операция удалась11. Ваша сдача " + change + " $.\n");
                     return false;
-                } else System.out.println("Операция удалась.\n");
+                } else System.out.println("Операция удалась12.\n");
                 return true;
-            } else if (sum % 100 == 0) {//дубль
+            } else if (sum % 100 == 0) {
                 this.banknote20 += 0;
                 if (this.banknote100 == 0 && this.banknote50 == 0) {
                     System.out.println("Операция не удалась.\n" +
                             "введите значение больше 0\n");
                     return false;
                 } else {
-                    System.out.println("Операция удалась.\n");
+                    System.out.println("Операция удалась13.\n");
                     return true;
                 }
+            } else if (sum % 100 == 50) {
+                System.out.println("Операция удалась14.\n");
+                return true;
             } else {
                 change += sum % 100;
-                System.out.println("Операция удалась. Ваша сдача " + change + " $.\n");
+                System.out.println("Операция удалась15. Ваша сдача " + change + " $.\n");
                 return false;
             }
         } else {
@@ -127,40 +130,53 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
             else bank50 = 0;
 
             if (sum % 100 >= 50 && (sum % 100 - 50 >= 20 || sum % 100 - 50 == 0) && (sum % 100 - 50) % 20 == 0) {
-                this.banknote100 = this.banknote100 - bank100;
-                this.banknote50 = this.banknote50 - bank50;
                 bank20 = (sum % 100 - 50) / 20;
-                this.banknote20 = this.banknote20 - bank20;
-                return printM(bank20, bank50, bank100);
+                if (this.banknote100 >= bank100 && this.banknote50 >= bank50 && this.banknote20 >= bank20) {
+                    this.banknote100 = this.banknote100 - bank100;
+                    this.banknote50 = this.banknote50 - bank50;
+                    this.banknote20 = this.banknote20 - bank20;
+                    return printM(bank20, bank50, bank100);
+                } else return "недостаточно банкнот для снятия";
             } else if (sum % 100 > 50 && (sum % 100) % 20 == 0) {
-                this.banknote100 = this.banknote100 - bank100;
                 bank50 = 0;
                 bank20 = sum % 100 / 20;
-                this.banknote20 = this.banknote20 - bank20;
-                return printM(bank20, bank50, bank100);
+                if (this.banknote100 >= bank100 && this.banknote50 >= bank50 && this.banknote20 >= bank20) {
+                    this.banknote100 = this.banknote100 - bank100;
+                    this.banknote50 = this.banknote50 - bank50;
+                    this.banknote20 = this.banknote20 - bank20;
+                    return printM(bank20, bank50, bank100);
+                } else return "недостаточно банкнот для снятия";
             } else if (sum % 100 < 50 && (sum % 100) % 20 == 0) {
-                this.banknote100 = this.banknote100 - bank100;
                 bank50 = 0;
                 bank20 = sum % 100 / 20;
-                this.banknote20 = this.banknote20 - bank20;
-                return printM(bank20, bank50, bank100);
+                if (this.banknote100 >= bank100 && this.banknote50 >= bank50 && this.banknote20 >= bank20) {
+                    this.banknote100 = this.banknote100 - bank100;
+                    this.banknote50 = this.banknote50 - bank50;
+                    this.banknote20 = this.banknote20 - bank20;
+                    return printM(bank20, bank50, bank100);
+                } else return "недостаточно банкнот для снятия";
             } else if ((sum % 1000) > 100 && sum % 100 < 50 && (sum % 1000 - 50) % 20 == 0) {
                 bank100 = bank100 - 1;
-                this.banknote100 = this.banknote100 - bank100;
                 bank50 = 1;
-                this.banknote50 = this.banknote50 - bank50;
                 bank20 = (sum % 100 + 100 - 50) / 20;
-                this.banknote20 = this.banknote20 - bank20;
-                return printM(bank20, bank50, bank100);
+                if (this.banknote100 >= bank100 && this.banknote50 >= bank50 && this.banknote20 >= bank20) {
+                    this.banknote100 = this.banknote100 - bank100;
+                    this.banknote50 = this.banknote50 - bank50;
+                    this.banknote20 = this.banknote20 - bank20;
+                    return printM(bank20, bank50, bank100);
+                } else return "недостаточно банкнот для снятия";
             } else if (sum % 100 == 0) {
-                this.banknote100 = this.banknote100 - bank100;
                 bank20 = 0;
+                this.banknote100 = this.banknote100 - bank100;
                 if (bank100 == 0 && bank50 == 0) {
                     return "Операция не удалась.\n" +
                             "минимальная допустимая сумма для снятия равна 20$";
                 } else return printM(bank20, bank50, bank100);
-            } else return "Операция не удалась.\n" +
-                    "в банкомате нет купюры наминалом " + sum % 10 + "\n";
+            } else {
+                if (this.banknote100 == 0 && this.banknote50 == 0 && this.banknote20 == 0)
+                    return "В банкомате нет денег";
+                else return "Операция не удалась.\n";
+            }
         } else return "Операция не удалась.\n" +
                 "минимальная допустимая сумма для снятия равна 20$";
     }
@@ -182,13 +198,17 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
 
     @Override
     public void getAllCashATM() {
-        System.out.println("Всего выдано " + getCash() + ".\n" +
-                "купюры номиналом 20 - " + this.banknote20 + " шт.;\n" +
-                "купюры номиналом 50 - " + this.banknote50 + " шт.;\n" +
-                "купюры номиналом 100 - " + this.banknote100 + " шт.\n");
-        this.banknote20 = 0;
-        this.banknote50 = 0;
-        this.banknote100 = 0;
+        if (this.banknote100 == 0 && this.banknote50 == 0 && this.banknote20 == 0) {
+            System.out.println("В банкомате нет денег");
+        } else {
+            System.out.println("Всего выдано " + getCash() + ".\n" +
+                    "купюры номиналом 20 - " + this.banknote20 + " шт.;\n" +
+                    "купюры номиналом 50 - " + this.banknote50 + " шт.;\n" +
+                    "купюры номиналом 100 - " + this.banknote100 + " шт.\n");
+            this.banknote20 = 0;
+            this.banknote50 = 0;
+            this.banknote100 = 0;
+        }
     }
 
     private Scanner sc = new Scanner(System.in);

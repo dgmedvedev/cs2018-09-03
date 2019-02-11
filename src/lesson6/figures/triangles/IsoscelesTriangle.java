@@ -11,12 +11,13 @@ public class IsoscelesTriangle extends Triangle {
 
     @Override
     public double getHeight() {
-        return Math.sqrt(Math.pow(getSideTriangleA(),2)-Math.pow((getSideTriangleC()/2.0),2));
+        double height = Math.sqrt(Math.pow(getSideTriangleA(),2)-Math.pow((getSideTriangleC()/2.0),2));
+        return new BigDecimal(height).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
     @Override
     public double getArea() {
-        double area = getHeight() * getSideTriangleC() / 2;
+        double area = getHeight() * getSideTriangleC() / 2.0;
         return new BigDecimal(area).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 }
