@@ -194,6 +194,7 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
     private Scanner sc = new Scanner(System.in);
     private Scanner sc1 = new Scanner(System.in);
 
+
     @Override
     public void isMenu() {
 
@@ -276,5 +277,9 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
 
     public int getCash() {
         return this.cash = this.banknote20 * 20 + this.banknote50 * 50 + this.banknote100 * 100;
+    }
+
+    public Scanner getSc1() {
+        return sc1;
     }
 }
