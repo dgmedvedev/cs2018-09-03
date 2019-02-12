@@ -131,27 +131,27 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
 
             if (sum % 100 >= 50 && (sum % 100 - 50 >= 20 || sum % 100 - 50 == 0) && (sum % 100 - 50) % 20 == 0) {
                 bank20 = (sum % 100 - 50) / 20;
-                return countBanknotes(bank20,bank50,bank100);
+                return countBanknotes(bank20, bank50, bank100);
 
             } else if (sum % 100 > 50 && (sum % 100) % 20 == 0) {
                 bank50 = 0;
                 bank20 = sum % 100 / 20;
-                return countBanknotes(bank20,bank50,bank100);
+                return countBanknotes(bank20, bank50, bank100);
 
             } else if (sum % 100 < 50 && (sum % 100) % 20 == 0) {
                 bank50 = 0;
                 bank20 = sum % 100 / 20;
-                return countBanknotes(bank20,bank50,bank100);
+                return countBanknotes(bank20, bank50, bank100);
 
             } else if ((sum % 1000) > 100 && sum % 100 < 50 && (sum % 1000 - 50) % 20 == 0) {
                 bank100 = bank100 - 1;
                 bank50 = 1;
                 bank20 = (sum % 100 + 100 - 50) / 20;
-                return countBanknotes(bank20,bank50,bank100);
+                return countBanknotes(bank20, bank50, bank100);
 
             } else if (sum % 100 == 0) {
                 bank20 = 0;
-                return countBanknotes(bank20,bank50,bank100);
+                return countBanknotes(bank20, bank50, bank100);
 
             } else {
                 if (this.banknote100 == 0 && this.banknote50 == 0 && this.banknote20 == 0)
@@ -168,7 +168,7 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
         this.banknote20 = this.banknote20 - b20;
     }
 
-    private String countBanknotes(int bank20,int bank50,int bank100){
+    private String countBanknotes(int bank20, int bank50, int bank100) {
         while (this.banknote100 < bank100) {
             bank100 = bank100 - 1;
             bank50 = bank50 + 2;
@@ -195,15 +195,20 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
         return "Выдано:\n" +
                 "купюры номиналом 20 - " + b20 + " шт.;\n" +
                 "купюры номиналом 50 - " + b50 + " шт.;\n" +
-                "купюры номиналом 100 - " + b100 + " шт.;\n";
+                "купюры номиналом 100 - " + b100 + " шт.;\n" +
+                "В банкомате осталось " + getCash() + " руб.";
     }
 
-    public void printMoney() {
-        System.out.println("Остаток денежных средств:\n" +
-                "купюры номиналом 20 - " + getBanknote20() + " шт.;\n" +
-                "купюры номиналом 50 - " + getBanknote50() + " шт.;\n" +
-                "купюры номиналом 100 - " + getBanknote100() + " шт.;\n" +
-                "Всего " + getCash() + "$");
+    private void printMoney() {
+        if (this.banknote100 == 0 && this.banknote50 == 0 && this.banknote20 == 0) {
+            System.out.println("В банкомате нет денег");
+        } else {
+            System.out.println("Остаток денежных средств:\n" +
+                    "купюры номиналом 20 - " + getBanknote20() + " шт.;\n" +
+                    "купюры номиналом 50 - " + getBanknote50() + " шт.;\n" +
+                    "купюры номиналом 100 - " + getBanknote100() + " шт.;\n" +
+                    "Всего " + getCash() + " руб.");
+        }
     }
 
     private void printMenu() {
@@ -222,10 +227,10 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
         if (this.banknote100 == 0 && this.banknote50 == 0 && this.banknote20 == 0) {
             System.out.println("В банкомате нет денег");
         } else {
-            System.out.println("Всего выдано " + getCash() + ".\n" +
+            System.out.println("Всего выдано " + getCash() + " руб.\n" +
                     "купюры номиналом 20 - " + this.banknote20 + " шт.;\n" +
                     "купюры номиналом 50 - " + this.banknote50 + " шт.;\n" +
-                    "купюры номиналом 100 - " + this.banknote100 + " шт.\n");
+                    "купюры номиналом 100 - " + this.banknote100 + " шт.");
             this.banknote20 = 0;
             this.banknote50 = 0;
             this.banknote100 = 0;
