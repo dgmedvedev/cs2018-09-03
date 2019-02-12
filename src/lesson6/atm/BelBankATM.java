@@ -5,7 +5,7 @@ public class BelBankATM extends ATM implements InfoATM {
         super(banknote20,banknote50,banknote100,"Белорусский Банк", "Белорусич");
     }
 
-    public String InfoToString(){
+    public String infoToString(){
         return "Наименование банка - "+getTitleBank()+"\n"+
                 "Производитель банкомата - "+getTitleMaker();
     }
