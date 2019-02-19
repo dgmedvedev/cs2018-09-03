@@ -6,5 +6,6 @@ public class Task8_1 {
         calculator.start();
         //try - если без ошибок
         calculator.operation(calculator.getNumber1(),calculator.getNumber2(),calculator.getOperator());
+        System.err.println("good");
     }
 }

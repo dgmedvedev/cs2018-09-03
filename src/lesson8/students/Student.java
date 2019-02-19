@@ -1,4 +1,4 @@
-package class_work.lesson8;
+package lesson8.students;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -26,11 +26,10 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "ID=" + id +
-                ", group=" + group +
-                ", name='" + name + '\'' +
-                ", birthday=" + DATE_FORMAT.format(birthday);
+        return "Student (" + "ID=" + id +
+                "_group=" + group +
+                "_name=" + name +
+                "_birthday=" + DATE_FORMAT.format(birthday) + ")";
     }
 
     public int getID() {
@@ -51,5 +50,29 @@ public class Student {
 
     public SimpleDateFormat getDATE_FORMAT() {
         return DATE_FORMAT;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public static void setCount(int count) {
+        Student.count = count;
+    }
+
+    public void setGroup(int group) {
+        this.group = group;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 }

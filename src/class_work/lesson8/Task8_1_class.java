@@ -1,8 +1,5 @@
 package class_work.lesson8;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Task8_1_class {
     public static void start() {
         Menu menu = new Menu();

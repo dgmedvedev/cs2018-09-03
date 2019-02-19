@@ -2,7 +2,7 @@ package lesson8;
 
 import java.util.Scanner;
 
-public class Calculator {
+class Calculator {
     private double number1;
     private double number2;
     private String operator;

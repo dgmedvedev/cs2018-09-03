@@ -3,7 +3,7 @@ package class_work.lesson8;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Menu {
+class Menu {
     private ArrayList<Student> studentsList = new ArrayList<>();
 
     void isMenu() {

@@ -41,7 +41,7 @@ public class Task7_1 {
             try {
                 FileWriter writer = new FileWriter("file.txt");
                 writer.write(date);
-                writer.flush();
+                writer.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
