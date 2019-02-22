@@ -1,7 +1,7 @@
 package lesson9.building.my_exception;
 
 public class IlluminanceTooLittleException extends Exception {
-    public IlluminanceTooLittleException(){
+    public IlluminanceTooLittleException() {
         System.err.println("Освещенности недостаточно");
     }
 }

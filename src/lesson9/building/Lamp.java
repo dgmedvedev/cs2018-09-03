@@ -1,6 +1,6 @@
 package lesson9.building;
 
-class Lamp {
+public class Lamp {
     private int lux;
 
     Lamp(int lux) {

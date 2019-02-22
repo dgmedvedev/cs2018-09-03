@@ -1,13 +1,33 @@
 package lesson9.building;
 
+import lesson9.building.furniture.Chair;
+import lesson9.building.furniture.Table;
+
 public class Task9_2 {
     public static void start() {
-        Building building1 = new Building("Здание 1");
-        building1.addRoom("Комната 1", 15,0);
+        Building building1 = new Building("ЗДАНИЕ 1");
+        building1.addRoom("Комната 1", 15,1);
         building1.addRoom("Комната 2", 20,2);
 
-        System.out.println(building1.getRoom("Комната 1").getIllumination());
-        System.out.println(building1.getRoom("Комната 2").getIllumination());
+        building1.getRoom("Комната 1").add(new Lamp(100));
+        building1.getRoom("Комната 1").add(new Lamp(100));
+     //   building1.getRoom("Комната 2").add(new Lamp(200));
+     //   building1.getRoom("Комната 2").add(new Lamp(200));
+
+
+        building1.getRoom("Комната 1").add(new Table("стол 1",1.5));
+        building1.getRoom("Комната 1").add(new Chair("стул 1",1));
+     //   building1.getRoom("Комната 2").add(new Table("стол 2",4));
+     //   building1.getRoom("Комната 2").add(new Chair("стул 2",2));
+
+        building1.describe();
+
+    //    System.out.println(building1.getRoom("Комната 1").toString());
+    //    System.out.println(building1.getRoom("Комната 2").toString());
+
+     //   building1.getRoom("Комната 1").toString(building1.getRoom("Комната 1").getLampList());
+    //    building1.getRoom("Комната 2").toString(building1.getRoom("Комната 2").getFurnitureList());
+
         /*
         building1.getRoom("Комната 1").add(new Lamp(300));
         building1.getRoom("Комната 2").add(new Lamp(600));

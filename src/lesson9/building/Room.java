@@ -1,26 +1,33 @@
 package lesson9.building;
 
+import lesson9.building.furniture.Furniture;
 import lesson9.building.my_exception.IlluminanceTooLittleException;
 import lesson9.building.my_exception.IlluminanceTooMuchException;
+import lesson9.building.my_exception.SpaceUsageTooMuchException;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 class Room {
     private String titleRoom;
-    private double area;
-    private double freeArea;
+    private double areaRoom;
+    private double freeAreaRoom;
+    private double notFreeAreaRoom;
     private int windows;
+    private final int WINDOWS_LUX = 700;
     private int illumination;
     private ArrayList<Lamp> lampList;
+    private ArrayList<Furniture> furnitureList;
     private Scanner sc = new Scanner(System.in);
 
     Room(String titleRoom, double area, int windows) {
         this.titleRoom = titleRoom;
-        this.area = area;
+        this.areaRoom = area;
+        this.freeAreaRoom = area;
         this.windows = windows;
         this.illumination = findIllumination(windows);
         this.lampList = new ArrayList<>();
+        this.furnitureList = new ArrayList<>();
     }
 
     private int findIllumination(int windows) {
@@ -29,7 +36,7 @@ class Room {
             System.out.println("Освещенность равна " + getIllumination() + " лк");
             System.out.println("Освещенности недостаточно для создания комнаты " + "\"" + titleRoom + "\"" + " (минимум 300 лк).\n" +
                     "Для добавления освещенности введите:\n" +
-                    "1. Добавить окно (1 окно - 700 лк);\n" +
+                    "1. Добавить окно (1 окно - "+WINDOWS_LUX+" лк);\n" +
                     "2. Добавить лампочку (лк в зависимости от лампочки).");
             int value = sc.nextInt();
             int window;
@@ -50,7 +57,7 @@ class Room {
                     } catch (IlluminanceTooLittleException itl) {
                         System.exit(1);
                     }
-                    else return this.windows * 700;
+                    else return this.windows * WINDOWS_LUX;
                 case 2:
                     System.out.println("Лампочку какой освещенности Вы хотите добавить?");
                     lamp = sc.nextInt();
@@ -64,21 +71,23 @@ class Room {
                     } catch (IlluminanceTooLittleException itl) {
                         System.exit(1);
                     }
-                    else if (lamp < 300) {
+                    else if (lamp < 300) {// в моем случае можно добавлять нерабочие лампочки
                         this.illumination += lamp;
+                        this.lampList.add(new Lamp(lamp));
                         while (this.illumination < 300) {
                             System.out.println("Освещенность равна " + this.illumination);
                             System.out.println("Минимальное значение должно быть 300.");
                             System.out.println("Добавьте еще лампочку. Введите значение:");
                             lamp = sc.nextInt();
                             this.illumination += lamp;
+                            this.lampList.add(new Lamp(lamp));
                             if (this.illumination < 0) {
                                 System.err.println("Введено отрицательное значение. Будьте внимательнее!");
                                 System.exit(1);
                             }
                         }
                         return this.illumination;
-                    } else return this.windows * 700;
+                    } else return this.windows * WINDOWS_LUX;
             }
         } else if (windows > 5)
             try {
@@ -100,9 +109,9 @@ class Room {
                     System.exit(1);
                 }
                 else
-                    return this.windows * 700;
+                    return this.windows * WINDOWS_LUX;
             }
-        return windows * 700;
+        return windows * WINDOWS_LUX;
     }
 
     void add(Lamp lamp) {
@@ -116,20 +125,47 @@ class Room {
         }
     }
 
+    void add(Furniture furniture) {
+        try {
+            if (this.freeAreaRoom - furniture.getAreaFurniture() >= areaRoom*0.3) {
+                this.freeAreaRoom -= furniture.getAreaFurniture();
+                this.furnitureList.add(furniture);
+            } else throw new SpaceUsageTooMuchException();
+        } catch (SpaceUsageTooMuchException stm) {
+            System.exit(1);
+        }
+    }
+
+    public void toString(ArrayList list) {
+
+        StringBuilder string = new StringBuilder();
+        String and = "";
+            for (Object obj : list) {
+                if (obj instanceof Furniture)
+                    string.append(((Furniture) obj).getTitle_name()).
+                            append(" (площадь ").append(((Furniture) obj).
+                            getAreaFurniture()).append(" м^2)\n   ");
+                else if (obj instanceof Lamp){
+                    string.append(and).append(((Lamp) obj).getLux()).append(" лк");
+                    and = " и ";}
+            }
+        System.out.print(string);
+        }
+
     public String getTitleRoom() {
         return titleRoom;
     }
 
-    public double getArea() {
-        return area;
+    public double getAreaRoom() {
+        return areaRoom;
     }
 
     public int getWindows() {
         return windows;
     }
 
-    public double getFreeArea() {
-        return freeArea;
+    public int getWINDOWS_LUX() {
+        return WINDOWS_LUX;
     }
 
     public int getIllumination() {
@@ -138,5 +174,19 @@ class Room {
 
     public ArrayList<Lamp> getLampList() {
         return lampList;
+    }
+
+    public ArrayList<Furniture> getFurnitureList() {
+        return furnitureList;
+    }
+
+    public double getFreeAreaRoom() {
+        return freeAreaRoom;
+    }
+
+    public double getNotFreeAreaRoom() {
+        for(Furniture furniture : furnitureList)
+            notFreeAreaRoom += furniture.getAreaFurniture();
+        return notFreeAreaRoom;
     }
 }
