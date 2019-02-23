@@ -15,7 +15,6 @@ class Room {
     private double notFreeAreaRoom;
     private double notFreeAreaRoomMax;
     private double notFreeAreaRoomMin;
-    private Furniture furniture;
     private int windows;
     private final int WINDOWS_LUX = 700;
     private int illumination;
@@ -161,6 +160,8 @@ class Room {
                     string.append(((Furniture) obj).getTitle_name()).
                             append(" (площадь ").append(((Furniture) obj).
                             getAreaFurniture()).append(" м^2)\n   ");
+
+
                 } else if (((Furniture) obj).getAreaFurniture() == 0) {
                     string.append(((Furniture) obj).getTitle_name()).
                             append(" (площадь от ").append(((Furniture) obj).
@@ -209,13 +210,13 @@ class Room {
 
     public double getNotFreeAreaRoomMax() {
         for (Furniture furniture : furnitureList)
-            notFreeAreaRoomMax += furniture.getMaxAreaFurniture();
+            notFreeAreaRoomMax += furniture.getMaxAreaFurniture()+furniture.getAreaFurniture();
         return notFreeAreaRoomMax;
     }
 
     public double getNotFreeAreaRoomMin() {
         for (Furniture furniture : furnitureList)
-            notFreeAreaRoomMin += furniture.getMinAreaFurniture();
+            notFreeAreaRoomMin += furniture.getMinAreaFurniture()+furniture.getAreaFurniture();
         return notFreeAreaRoomMin;
     }
 
@@ -223,9 +224,5 @@ class Room {
         for (Furniture furniture : furnitureList)
             notFreeAreaRoom += furniture.getAreaFurniture();
         return notFreeAreaRoom;
-    }
-
-    public Furniture getFurniture() {
-        return furniture;
     }
 }
