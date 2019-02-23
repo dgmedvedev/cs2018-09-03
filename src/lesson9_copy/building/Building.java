@@ -1,4 +1,4 @@
-package lesson9.building;
+package lesson9_copy.building;
 
 import java.util.ArrayList;
 
@@ -31,6 +31,14 @@ public class Building {
 
             System.out.print("Площадь = " + room.getAreaRoom() + " м^2 (");
             if (!room.getFurnitureList().isEmpty()) {
+                double notFreeAreaRoom = room.getNotFreeAreaRoom();
+                double notFreeAreaRoomMin = room.getNotFreeAreaRoomMin();
+                double notFreeAreaRoomMax = room.getNotFreeAreaRoomMax();
+                System.out.print("занято " +
+                        notFreeAreaRoomMin + " - " +notFreeAreaRoomMax +" м^2, гарантированно свободно " +
+                        (room.getAreaRoom()-notFreeAreaRoomMax) + " м^2 или " +
+                        (int)(100 * (room.getAreaRoom()-notFreeAreaRoomMax) / room.getAreaRoom()) + "% площади)\n  ");
+            }else if (!room.getFurnitureList().isEmpty()&&room.getNotFreeAreaRoomMin()==room.getNotFreeAreaRoomMax()) {
                 double notFreeAreaRoom = room.getNotFreeAreaRoom();
                 System.out.print("занято " +
                         notFreeAreaRoom + " м^2, гарантированно свободно " +

@@ -1,7 +1,7 @@
-package lesson9.building;
+package lesson9_copy.building;
 
-import lesson9.building.furniture.Chair;
-import lesson9.building.furniture.Table;
+import lesson9_copy.building.furniture.Chair;
+import lesson9_copy.building.furniture.Table;
 
 public class Task9_2 {
     public static void start() {
@@ -15,9 +15,11 @@ public class Task9_2 {
      //   building1.getRoom("Комната 2").add(new Lamp(200));
 
 
-        building1.getRoom("Комната 1").add(new Table("стол 1",3.5));
-        building1.getRoom("Комната 1").add(new Chair("стул 1",4));
-     //   building1.getRoom("Комната 2").add(new Table("стол 2",4));
+        building1.getRoom("Комната 1").add(new Table("стол 1",6));
+        building1.getRoom("Комната 1").add(new Chair("стул 1",2));
+        building1.getRoom("Комната 1").add(new Chair("стул 1",1));
+
+        //   building1.getRoom("Комната 2").add(new Table("стол 2",4));
      //   building1.getRoom("Комната 2").add(new Chair("стул 2",2));
 
         building1.describe();

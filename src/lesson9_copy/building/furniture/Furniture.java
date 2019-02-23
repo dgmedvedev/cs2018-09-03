@@ -1,6 +1,6 @@
-package lesson9.building.furniture;
+package lesson9_copy.building.furniture;
 
-import lesson9.building.my_exception.NegativeValueAreaException;
+import lesson9_copy.building.my_exception.NegativeValueAreaException;
 
 public abstract class Furniture {
     private double areaFurniture;

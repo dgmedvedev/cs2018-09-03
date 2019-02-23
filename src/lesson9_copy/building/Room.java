@@ -1,9 +1,9 @@
-package lesson9.building;
+package lesson9_copy.building;
 
-import lesson9.building.furniture.Furniture;
-import lesson9.building.my_exception.IlluminanceTooLittleException;
-import lesson9.building.my_exception.IlluminanceTooMuchException;
-import lesson9.building.my_exception.SpaceUsageTooMuchException;
+import lesson9_copy.building.furniture.Furniture;
+import lesson9_copy.building.my_exception.IlluminanceTooLittleException;
+import lesson9_copy.building.my_exception.IlluminanceTooMuchException;
+import lesson9_copy.building.my_exception.SpaceUsageTooMuchException;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -161,6 +161,8 @@ class Room {
                     string.append(((Furniture) obj).getTitle_name()).
                             append(" (площадь ").append(((Furniture) obj).
                             getAreaFurniture()).append(" м^2)\n   ");
+
+
                 } else if (((Furniture) obj).getAreaFurniture() == 0) {
                     string.append(((Furniture) obj).getTitle_name()).
                             append(" (площадь от ").append(((Furniture) obj).
@@ -209,13 +211,13 @@ class Room {
 
     public double getNotFreeAreaRoomMax() {
         for (Furniture furniture : furnitureList)
-            notFreeAreaRoomMax += furniture.getMaxAreaFurniture();
+            notFreeAreaRoomMax += furniture.getMaxAreaFurniture()+furniture.getAreaFurniture();
         return notFreeAreaRoomMax;
     }
 
     public double getNotFreeAreaRoomMin() {
         for (Furniture furniture : furnitureList)
-            notFreeAreaRoomMin += furniture.getMinAreaFurniture();
+            notFreeAreaRoomMin += furniture.getMinAreaFurniture()+furniture.getAreaFurniture();
         return notFreeAreaRoomMin;
     }
 
