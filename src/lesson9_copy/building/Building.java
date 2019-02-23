@@ -18,6 +18,7 @@ public class Building {
     }
 
     void describe() {
+        System.out.println();
         System.out.print(titleBuilding);
         for (Room room : roomList) {
             System.out.print(" \n" + room.getTitleRoom() + "\n  " +
@@ -30,18 +31,19 @@ public class Building {
             } else System.out.print(")\n  ");
 
             System.out.print("Площадь = " + room.getAreaRoom() + " м^2 (");
-            if (!room.getFurnitureList().isEmpty()) {
-                double notFreeAreaRoom = room.getNotFreeAreaRoom();
-                double notFreeAreaRoomMin = room.getNotFreeAreaRoomMin();
-                double notFreeAreaRoomMax = room.getNotFreeAreaRoomMax();
+            double notFreeAreaRoom = room.getNotFreeAreaRoom();
+            double notFreeAreaRoomMin = room.getNotFreeAreaRoomMin();
+            double notFreeAreaRoomMax = room.getNotFreeAreaRoomMax();
+            if (!room.getFurnitureList().isEmpty()&&notFreeAreaRoomMin!=notFreeAreaRoomMax) {
+
                 System.out.print("занято " +
                         notFreeAreaRoomMin + " - " +notFreeAreaRoomMax +" м^2, гарантированно свободно " +
                         (room.getAreaRoom()-notFreeAreaRoomMax) + " м^2 или " +
                         (int)(100 * (room.getAreaRoom()-notFreeAreaRoomMax) / room.getAreaRoom()) + "% площади)\n  ");
-            }else if (!room.getFurnitureList().isEmpty()&&room.getNotFreeAreaRoomMin()==room.getNotFreeAreaRoomMax()) {
-                double notFreeAreaRoom = room.getNotFreeAreaRoom();
+            }else if (!room.getFurnitureList().isEmpty()&&notFreeAreaRoomMin==notFreeAreaRoomMax) {
+
                 System.out.print("занято " +
-                        notFreeAreaRoom + " м^2, гарантированно свободно " +
+                        notFreeAreaRoom + " м^2, гарантированннннннно свободно " +
                         room.getFreeAreaRoom() + " м^2 или " +
                         (int)(100 * (room.getAreaRoom()-notFreeAreaRoom) / room.getAreaRoom()) + "% площади)\n  ");
             } else System.out.print("свободно 100%)\n  ");
