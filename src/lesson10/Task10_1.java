@@ -1,9 +1,10 @@
-package lesson9;
+package lesson10;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
-public class Task9_1 {
+public class Task10_1 {
     public static void start() {
         Scanner sc = new Scanner(System.in);
         ArrayList<String> list = new ArrayList<>();
@@ -23,7 +24,9 @@ public class Task9_1 {
             }
         }
 
-        for (String str : list)
+        HashSet<String> noDups = new HashSet<>(list);
+
+        for (String str : noDups)
             System.out.println(str);
     }
 }

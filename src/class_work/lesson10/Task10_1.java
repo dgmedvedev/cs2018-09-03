@@ -10,7 +10,7 @@ public class Task10_1 {
     public static void start() {
         boolean isTrue = true;
         Scanner sc = new Scanner(System.in);
-        HashMap<Integer, String> hashMap = new HashMap<Integer, String>();
+        HashMap<Integer, String> hashMap = new HashMap<>();
 
 
         for (int i = 0; i < 10; i++) {
