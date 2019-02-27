@@ -68,6 +68,6 @@ public class Task12_1 {
                 .registerTypeAdapter(Wife.class,new WifeSerializer())
                 .create();
 
-        
+
     }
 }
