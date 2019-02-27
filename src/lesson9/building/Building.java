@@ -43,7 +43,7 @@ public class Building {
             }else if (!room.getFurnitureList().isEmpty()&&notFreeAreaRoomMin==notFreeAreaRoomMax) {
 
                 System.out.print("занято " +
-                        notFreeAreaRoom + " м^2, гарантированннннннно свободно " +
+                        notFreeAreaRoom + " м^2, гарантированно свободно " +
                         room.getFreeAreaRoom() + " м^2 или " +
                         (int)(100 * (room.getAreaRoom()-notFreeAreaRoom) / room.getAreaRoom()) + "% площади)\n  ");
             } else System.out.print("свободно 100%)\n  ");

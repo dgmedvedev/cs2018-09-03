@@ -215,6 +215,7 @@ class Room {
     }
 
     public double getNotFreeAreaRoomMin() {
+        notFreeAreaRoom = 0;
         for (Furniture furniture : furnitureList)
             notFreeAreaRoomMin += furniture.getMinAreaFurniture()+furniture.getAreaFurniture();
         return notFreeAreaRoomMin;

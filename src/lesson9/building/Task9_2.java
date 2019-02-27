@@ -9,8 +9,8 @@ public class Task9_2 {
         building1.addRoom("Комната 2", 20,3);
         building1.getRoom("Комната 1").add(new Lamp(100));
         building1.getRoom("Комната 1").add(new Lamp(150));
-        building1.getRoom("Комната 1").add(new Table("стол 1",0.9));
-        building1.getRoom("Комната 1").add(new Chair("стул 1","0.3-0.5"));
+        building1.getRoom("Комната 1").add(new Table("стол 1",2));
+        building1.getRoom("Комната 1").add(new Chair("стул 1",1));
 
         Building building2 = new Building("ЗДАНИЕ 2");
         building2.addRoom("Комната 1", 10,3);

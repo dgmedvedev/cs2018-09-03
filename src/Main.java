@@ -11,6 +11,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-            Task10_2.start();
+            Task9_2.start();
     }
 }
