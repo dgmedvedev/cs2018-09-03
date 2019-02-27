@@ -14,11 +14,11 @@ import java.net.URL;
 public class Task11 {
     public static void start() {
         try {
-            URL url = new URL("https://goo.gl/tFpBDV");
+            URL url = new URL("https://goo.gl/Hc8J4n");
             HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
             StringBuilder stringBuilder = new StringBuilder();
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                 FileWriter write = new FileWriter("text.txt")) {
+                 FileWriter write = new FileWriter("newText.txt")) {
                 String s;
                 while ((s = reader.readLine()) != null) {
                     stringBuilder.append(s);

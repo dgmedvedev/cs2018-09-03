@@ -1,4 +1,5 @@
 import class_work.lesson11.Task11;
+import class_work.lesson12.Task12_1;
 import lesson10.Task10_1;
 import lesson10.task10_2.Task10_2;
 import lesson9.Task9_1;
@@ -11,6 +12,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-            Task10_1.start();
+            Task12_1.start();
     }
 }
