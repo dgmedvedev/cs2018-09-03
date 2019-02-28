@@ -14,11 +14,11 @@ import java.net.URL;
 public class Task11 {
     public static void start() {
         try {
-            URL url = new URL("https://goo.gl/Hc8J4n");
+            URL url = new URL("https://goo.gl/tFpBDV");
             HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
             StringBuilder stringBuilder = new StringBuilder();
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                 FileWriter write = new FileWriter("newText.txt")) {
+                 FileWriter write = new FileWriter("text11.txt")) {
                 String s;
                 while ((s = reader.readLine()) != null) {
                     stringBuilder.append(s);
@@ -28,7 +28,7 @@ public class Task11 {
 
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse(new File("text.txt"));
+            Document doc = builder.parse(new File("text11.txt"));
             doc.normalizeDocument();
 
             NodeList nodes = doc.getChildNodes();
@@ -50,9 +50,8 @@ public class Task11 {
             Node nameAttrib = attribute.getNamedItem("name");
             if (nameAttrib != null) {
                 String a = nameAttrib.getNodeValue();
-                tab+=" name = " + a;
-            }
-            else System.out.print("\n");
+                tab += " name = " + a;
+            } else System.out.print("\n");
         } else if (node.getNodeType() == Node.TEXT_NODE)
             System.out.println(tab + "->" + node.getNodeValue());
 

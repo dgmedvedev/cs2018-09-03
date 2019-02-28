@@ -31,7 +31,7 @@ public class Task12_1 {
         StringBuilder stringBuilder = new StringBuilder();
         try (
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                FileWriter write = new FileWriter("text.txt")) {
+                FileWriter write = new FileWriter("text12.txt")) {
             String s;
             while ((s = reader.readLine()) != null) {
                 stringBuilder.append(s);
