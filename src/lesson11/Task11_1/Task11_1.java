@@ -42,7 +42,8 @@ public class Task11_1 {
             for (int i = 0; i<myClassArrayList.size();i++) {
                 System.out.println(String.format("Имя класса "+(i+1)+": %s", myClassArrayList.get(i).getName()));
                 for (int j = 0; j < myClassArrayList.get(i).getMethodList().size(); j++)
-                    System.out.println(String.format(" Имя метода "+(j+1)+" в классе "+(i+1)+": %s", myClassArrayList.get(i).getMethodList().get(j).getName()));
+                    System.out.println(String.format(" Имя метода "+(j+1)+" в классе "+(i+1)+
+                            ": %s", myClassArrayList.get(i).getMethodList().get(j).getName()));
             }
 
         } catch (Exception ex) {
