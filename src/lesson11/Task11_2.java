@@ -12,54 +12,80 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import lesson11.People.Man;
+import lesson11.People.Member;
+import lesson11.People.Professor;
+import lesson11.People.Student;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class Task11_2 {
-    /*
-    private static final String FILENAME = "staff.xml";
 
-    public static void main(String[] args) {
+    private static final String FILENAME = "manArrayList.xml";
+
+    public static void start() {
+        Task11_1.start();
+        System.out.println();
+        System.out.println("ЗАДАНИЕ 11_2");
         try {
             Document document = DocumentBuilderFactory.newInstance()
                     .newDocumentBuilder().newDocument();
 
             // Корневой элемент
-            Element company = document.createElement("company");
-            document.appendChild(company);
+            Element database = document.createElement("database");
+            document.appendChild(database);
 
-            // Элемент типа staff
-            Element staff = document.createElement("staff");
-            company.appendChild(staff);
+            // Элемент типа students
+            Element students = document.createElement("students");
+            database.appendChild(students);
 
-            // Определяем идентификатор сотрудника
-            Attr id = document.createAttribute("id");
-            id.setTextContent("1");
-            staff.setAttributeNode(id);
+            for (Man man : Task11_1.getManArrayList()) {
+                if (man instanceof Student) {
+                    // Элемент типа student
+                    Element student = document.createElement("student");
+                    students.appendChild(student);
+                    // Определяем имя
+                    student.setAttribute("name", man.getName());
+                    // Еще можно сделать так
+                    //   Attr name = document.createAttribute("name");
+                    //   name.setTextContent("Maksim");
+                    //   student.setAttributeNode(name);
 
-            // Еще можно сделать так
-            // staff.setAttribute("id", "1");
+                    student.setAttribute("course", ((Student) man).getCourse());
+                    student.setAttribute("specialization", ((Student) man).getSpecialization());
+                }
+            }
+            // Элемент типа professors
+            Element professors = document.createElement("professors");
+            database.appendChild(professors);
 
-            // Определяем имя
-            Element firstname = document.createElement("firstname");
-            firstname.setTextContent("Иван");
-            staff.appendChild(firstname);
+            for (Man man : Task11_1.getManArrayList()) {
+                if (man instanceof Professor) {
+                    // Элемент типа professor
+                    Element professor = document.createElement("professor");
+                    professors.appendChild(professor);
 
-            // Определяем фамилию
-            Element lastname = document.createElement("lastname");
-            lastname.setTextContent("Иванов");
-            staff.appendChild(lastname);
+                    professor.setAttribute("name", man.getName());
+                    professor.setAttribute("experience", ((Professor) man).getExperience());
+                    professor.setAttribute("discipline", ((Professor) man).getDiscipline());
+                }
+            }
 
-            // Определяем никнейм
-            Element nickname = document.createElement("nickname");
-            nickname.setTextContent("ivanov");
-            staff.appendChild(nickname);
+            // Элемент типа service
+            Element service = document.createElement("service");
+            database.appendChild(service);
 
-            // Определяем зарплату
-            Element salary = document.createElement("salary");
-            salary.setTextContent("100000");
-            staff.appendChild(salary);
+            for (Man man : Task11_1.getManArrayList()) {
+                if (man instanceof Member) {
+                    // Элемент типа member
+                    Element member = document.createElement("member");
+                    service.appendChild(member);
+
+                    member.setAttribute("name", man.getName());
+                    member.setAttribute("position", ((Member) man).getPosition());
+                }
+            }
 
             // Сохранить текстовое представление XML документа в файл
             Transformer transformer = TransformerFactory.newInstance()
@@ -79,12 +105,11 @@ public class Task11_2 {
 
         } catch (ParserConfigurationException
                 | TransformerConfigurationException ex) {
-            Logger.getLogger(CreateXMLFileDOMExample.class.getName())
+            Logger.getLogger(Task11_2.class.getName())
                     .log(Level.SEVERE, null, ex);
         } catch (TransformerException ex) {
-            Logger.getLogger(CreateXMLFileDOMExample.class.getName())
+            Logger.getLogger(Task11_2.class.getName())
                     .log(Level.SEVERE, null, ex);
         }
     }
-    */
 }
