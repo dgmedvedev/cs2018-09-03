@@ -1,4 +1,4 @@
-package lesson11.Task11_1;
+package lesson11.Task11_1copy;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.xml.parsers.SAXParser;
@@ -18,6 +18,7 @@ public class Task11_1 {
     }
 
     public static void start() {
+
 
         try {
             URL url = new URL("https://goo.gl/tFpBDV");
