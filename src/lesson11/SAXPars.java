@@ -1,4 +1,4 @@
-package lesson11.Task11_1copy;
+package lesson11;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

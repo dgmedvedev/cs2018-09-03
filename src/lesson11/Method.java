@@ -1,4 +1,4 @@
-package lesson11.Task11_1copy;
+package lesson11;
 
 public class Method {
     private String name;
