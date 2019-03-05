@@ -1,51 +1,16 @@
 package lesson12;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import lesson12.json.JsonReader;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.json.JSONArray;
+import lesson12.json.UrlString;
+import org.json.JSONObject;
 
-import javax.net.ssl.HttpsURLConnection;
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Task12 {
     public static void start() {
-        String result="";
-        StringBuilder stringBuilder = new StringBuilder();
-        try {
-            URL url = new URL("https://goo.gl/Hc8J4n");
-            HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-
-
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                 FileWriter write = new FileWriter("text12_hw.txt")) {
-                String s;
-
-                while ((s = reader.readLine()) != null) {
-                    stringBuilder.append(s);
-                    result +=s;
-                }
-                write.write(stringBuilder.toString().replaceAll("", ""));
-            }
-
-
-
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        JSONArray jsonArray = new JSONArray(stringBuilder.toString().replaceAll("\"pet\": null", "\"pet\": []"));
-        System.out.println(jsonArray.toString());
-
-
-        String json = "[\n" +
+        String json1 = "[\n" +
                 "{\n" +
                 "\"name\":\"John\",\n" +
                 "\"age\":20" +
@@ -56,11 +21,30 @@ public class Task12 {
                 "}\n" +
                 "]";
 
-     //   result = result.replaceAll("=",":");
+        String json = UrlString.getStringJsonFromUrl("https://goo.gl/Hc8J4n", "text12_hw.txt");
 
-        List<Person> personList = JsonReader.getPersons(stringBuilder.toString());
+        // ДЗ 12.1
+        List<Person> personList = JsonReader.getPersons(json);
 
         for (Person person : personList)
             System.out.println(person);
+
+        // ДЗ 12.2
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .registerTypeAdapter(Wife.class, new WifeSerializer())
+                .create();
+        String json2 = gson.toJson(personList);
+        System.out.println(json2);
+
+        gson = new GsonBuilder()
+                .registerTypeAdapter(Wife.class, new WifeDeserializer())
+                .create();
+        PersonBand personBand = gson.fromJson(json2, PersonBand.class);
+
+        gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+//        System.out.println(gson.toJson(personBand));
     }
 }
