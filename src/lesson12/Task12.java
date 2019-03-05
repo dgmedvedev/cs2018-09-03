@@ -4,47 +4,48 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import lesson12.json.JsonReader;
 import lesson12.json.UrlString;
-import org.json.JSONObject;
 
 import java.util.List;
 
 public class Task12 {
     public static void start() {
-        String json1 = "[\n" +
-                "{\n" +
-                "\"name\":\"John\",\n" +
-                "\"age\":20" +
-                "},\n" +
-                "{\n" +
-                "\"name\":\"Jordan\",\n" +
-                "\"age\":30\n" +
-                "}\n" +
-                "]";
-
+        // ДЗ 12.1
+        System.out.println("ДЗ 12.1");
         String json = UrlString.getStringJsonFromUrl("https://goo.gl/Hc8J4n", "text12_hw.txt");
 
-        // ДЗ 12.1
         List<Person> personList = JsonReader.getPersons(json);
 
         for (Person person : personList)
             System.out.println(person);
 
         // ДЗ 12.2
+        System.out.println();
+        System.out.println("ДЗ 12.2_1");
+        PersonBand personBand = new PersonBand();
+        for (Person person : personList)
+            personBand.addPerson(person);
+
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .registerTypeAdapter(Wife.class, new WifeSerializer())
                 .create();
-        String json2 = gson.toJson(personList);
-        System.out.println(json2);
+        json = gson.toJson(personBand);
+        System.out.println(json);
 
+        System.out.println();
+        System.out.println("ДЗ 12.2_2");
         gson = new GsonBuilder()
                 .registerTypeAdapter(Wife.class, new WifeDeserializer())
                 .create();
-        PersonBand personBand = gson.fromJson(json2, PersonBand.class);
+        personBand = gson.fromJson(json, PersonBand.class);
 
-        gson = new GsonBuilder()
-                .setPrettyPrinting()
-                .create();
-//        System.out.println(gson.toJson(personBand));
+        for (Person person : personBand.getPersons()){
+            System.out.println(person);
+        }
+
+        System.out.println();
+        System.out.println("ДЗ 12.3");
+        
+
     }
 }

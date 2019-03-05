@@ -6,6 +6,10 @@ import java.util.List;
 public class PersonBand {
     private List<Person> persons = new LinkedList<>();
 
+    public void addPerson(Person person){
+        persons.add(person);
+    }
+
     public void setPersons(List<Person> persons) {
         this.persons = persons;
     }
