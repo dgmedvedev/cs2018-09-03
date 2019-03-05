@@ -4,9 +4,10 @@ public class Wife {
     private String name;
     private int age;
 
-    public Wife(){}
+    public Wife() {
+    }
 
-    Wife(String name,int age){
+    Wife(String name, int age) {
         this.name = name;
         this.age = age;
     }
@@ -29,9 +30,6 @@ public class Wife {
 
     @Override
     public String toString() {
-        return "{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+        return "{" + "\"name\": \"" + name + "\", \"age\":" + age + "}";
     }
 }
