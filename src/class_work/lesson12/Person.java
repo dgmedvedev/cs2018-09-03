@@ -7,7 +7,7 @@ public class Person {
     private Wife wife;
     private String[] pet;
 
-    Person(String name,int age,boolean isStudent, Wife wife, String[]pet){
+    Person(String name, int age, boolean isStudent, Wife wife, String[] pet) {
         this.name = name;
         this.age = age;
         this.isStudent = isStudent;
