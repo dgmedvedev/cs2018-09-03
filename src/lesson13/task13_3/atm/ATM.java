@@ -74,6 +74,18 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                     System.out.println("Операция удалась. Ваша сдача " + change + " руб.");
                     return false;
                 }
+            } else if ((sum % 1000) < 100 && sum % 100 < 50 && (sum % 1000 - sum % 10) % 20 != 0) {
+                this.banknote100 += -1;
+                this.banknote50 += 1;
+                this.banknote20 += (sum % 100 + 100 - 50) / 20;
+                if (sum % 10 == 0) {
+                    System.out.println("Операция удалась.");
+                    return true;
+                } else {
+                    change = sum % 10;
+                    System.out.println("Операция удалась. Ваша сдача " + change + " руб.");
+                    return false;
+                }
             } else if (sum % 100 > 50 && (sum % 100 - 50) <= 20) {
                 this.banknote20 += (sum % 100 - 50) / 20;
                 change += sum % 100 - 50;
