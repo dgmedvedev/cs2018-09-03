@@ -5,9 +5,7 @@ import com.google.gson.GsonBuilder;
 import lesson12.json.JsonReader;
 import lesson12.json.UrlString;
 import org.json.JSONArray;
-import org.json.simple.JSONValue;
-
-import java.util.Arrays;
+import org.json.JSONObject;
 import java.util.List;
 
 public class Task12 {
@@ -47,20 +45,27 @@ public class Task12 {
         System.out.println();
         System.out.println("ДЗ 12.3");
 
-        String temp = "";
-        StringBuilder endString = new StringBuilder();
-        for (int i = 0; i < personBand.getPersons().size(); i++) {
-            if (i == 0) {
-                temp = "[{" + personBand.getPersons().get(i).toString() + "},";
-            } else if (i < personBand.getPersons().size() - 1) {
-                temp = "{" + personBand.getPersons().get(i).toString() + "},";
-            } else if (i == personBand.getPersons().size() - 1)
-                temp = "{" + personBand.getPersons().get(i).toString() + "}]";
+        JSONObject mainObj = new JSONObject();
+        JSONArray ja = new JSONArray();
+        for (Person person : personBand.getPersons()) {
+            JSONObject jo = new JSONObject();
+            jo.put("name", person.getName());
+            jo.put("age", person.getAge());
+            jo.put("isStudent", person.getIsStudent());
+            if (person.getWife() != null) {
+                JSONObject wifeObj = new JSONObject();
+                wifeObj.put("name", person.getWife().getName());
+                wifeObj.put("age", person.getWife().getAge());
+                jo.put("wife", wifeObj);
+            }
+            if (person.getPet() != null)
+                jo.put("pet", person.getPet());
 
-            endString.append(temp);
+            ja.put(jo);
         }
-        json = endString.toString();
+        mainObj.put("persons", ja);
 
-        System.out.println(json);
+        System.out.println(mainObj);
+
     }
 }

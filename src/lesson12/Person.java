@@ -61,38 +61,14 @@ public class Person {
         return pet;
     }
 
-    public String toStringPet(String[] pet) {
-        String temp = "";
-        StringBuilder endString = new StringBuilder();
-        for (int i = 0; i < pet.length; i++) {
-            if (i == 0) {
-                temp = "[\"" + pet[i] + "\",";
-            } else if (i < pet.length - 1) {
-                temp = "\"" + pet[i] + "\",";
-            } else if (i == pet.length - 1)
-                temp = "\"" + pet[i] + "\"]";
-
-            endString.append(temp);
-        }
-
-        return endString.toString();
-    }
-
     @Override
     public String toString() {
-        if (wife != null)
-            if(pet!=null)
-            return "\"name\": " + name + ",	\"age\":" + age + ",	\"isStudent\": " + isStudent +
-                    ",	\"wife\": { \"name\": " + wife.getName() + ", \"age\": " + wife.getAge() +
-                    "},	\"pet\": " + toStringPet(pet);
-            else return "\"name\": " + name + ",	\"age\":" + age + ",	\"isStudent\": " + isStudent +
-                    ",	\"wife\": { \"name\": " + wife.getName() + ", \"age\": " + wife.getAge() +
-                    "},	\"pet\": null";
-        else
-        if(pet!=null)
-            return "\"name\": " + name + ",	\"age\":" + age + ",	\"isStudent\": " + isStudent +
-                    ",	\"wife\": null,	\"pet\": " + toStringPet(pet);
-            else return "\"name\": " + name + ",	\"age\":" + age + ",	\"isStudent\": " + isStudent +
-                ",	\"wife\": null,	\"pet\": null";
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", isStudent=" + isStudent +
+                ", wife=" + wife +
+                ", pet=" + Arrays.toString(pet) +
+                '}';
     }
 }
