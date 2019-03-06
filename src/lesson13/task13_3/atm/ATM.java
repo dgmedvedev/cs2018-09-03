@@ -161,7 +161,14 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                 bank20 = (sum % 100 + 100 - 50) / 20;
                 return countBanknotes(bank20, bank50, bank100);
 
-            } else if (sum % 100 == 0) {
+            }
+            else if ((sum % 1000) < 100 && sum % 100 < 50 && (sum % 1000) % 20 != 0) {
+                bank100 = bank100 - 1;
+                bank50 = 1;
+                bank20 = (sum % 100 + 100 - 50) / 20;
+                return countBanknotes(bank20, bank50, bank100);
+
+            }else if (sum % 100 == 0) {
                 bank20 = 0;
                 return countBanknotes(bank20, bank50, bank100);
 
