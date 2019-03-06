@@ -65,7 +65,9 @@ public class Task12 {
         }
         mainObj.put("persons", ja);
 
-        System.out.println(mainObj);
+        String endJson = mainObj.toString();
+
+        System.out.println(endJson);
 
     }
 }
