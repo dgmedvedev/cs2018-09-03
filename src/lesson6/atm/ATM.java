@@ -29,7 +29,7 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
             if (sum % 100 > 50 && (sum % 100 - 50) > 20 && (sum % 100 - sum % 10) % 20 != 0) {
                 if ((sum % 100 - 50) % 20 == 0) {
                     this.banknote20 += (sum % 100 - 50) / 20;
-                    System.out.println("Операция удалась.");
+                    System.out.println("Операция удалась1.");
                     return true;
                 } else {
                     tempBanknote20 = (sum % 100 - 50) / 20;
@@ -44,7 +44,7 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                     this.banknote50 += -1;
                     this.banknote20 += sum % 100 / 20;
                     if (sum % 10 == 0) {
-                        System.out.println("Операция удалась.");
+                        System.out.println("Операция удалась2.");
                         return true;
                     } else {
                         change = sum % 10;
@@ -54,7 +54,7 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                 } else {
                     this.banknote20 += sum % 100 / 20;
                     if (sum % 10 == 0) {
-                        System.out.println("Операция удалась.");
+                        System.out.println("Операция удалась3.");
                         return true;
                     } else {
                         change = sum % 10;
@@ -67,19 +67,19 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                 this.banknote50 += 1;
                 this.banknote20 += (sum % 100 + 100 - 50) / 20;
                 if (sum % 10 == 0) {
-                    System.out.println("Операция удалась.");
+                    System.out.println("Операция удалась4.");
                     return true;
                 } else {
                     change = sum % 10;
                     System.out.println("Операция удалась. Ваша сдача " + change + " руб.");
                     return false;
                 }
-            } else if ((sum % 1000) < 100 && sum % 100 < 50 && (sum % 1000 - sum % 10) % 20 != 0) {
+            } else if ((sum % 1000) < 100 && sum % 100 < 50 && (sum % 1000 - sum % 10) % 20 != 0 && sum / 100 >= 1) {
                 this.banknote100 += -1;
                 this.banknote50 += 1;
                 this.banknote20 += (sum % 100 + 100 - 50) / 20;
                 if (sum % 10 == 0) {
-                    System.out.println("Операция удалась.");
+                    System.out.println("Операция удалась5.");
                     return true;
                 } else {
                     change = sum % 10;
@@ -93,7 +93,7 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                     System.out.println("Операция удалась. Ваша сдача " + change + " руб.");
                     return false;
                 } else {
-                    System.out.println("Операция удалась.");
+                    System.out.println("Операция удалась6.");
                     return true;
                 }
             } else if (sum % 100 < 50 && (sum % 100) >= 20) {
@@ -103,7 +103,7 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                 if (change % 20 != 0) {
                     System.out.println("Операция удалась. Ваша сдача " + change + " руб.");
                     return false;
-                } else System.out.println("Операция удалась.");
+                } else System.out.println("Операция удалась7.");
                 return true;
             } else if (sum % 100 == 0) {
                 this.banknote20 += 0;
@@ -112,7 +112,7 @@ public abstract class ATM implements AddMoneyATM, GetMoneyATM, GetCashATM, MenuA
                             "введите значение больше 0");
                     return false;
                 } else {
-                    System.out.println("Операция удалась.");
+                    System.out.println("Операция удалась9.");
                     return true;
                 }
             } else if (sum % 100 == 50) {
