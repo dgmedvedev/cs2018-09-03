@@ -1,9 +1,9 @@
 package lesson14.task14_1;
 
 public class MyClass {
-    private String string = "777";
-    private int valueInt = 5;
-    private float valueFloat = 50F;
+    private String string;
+    private int valueInt;
+    private float valueFloat;
 
     public String getString() {
         return string;

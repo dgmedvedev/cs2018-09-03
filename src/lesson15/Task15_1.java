@@ -3,21 +3,24 @@ package lesson15;
 import java.util.Scanner;
 
 public class Task15_1 {
+
+    public static void print10() {
+        for (int i = 0; i < 10; i++) {
+            int random = 1 + (int) (Math.random() * 100);
+            String str = random + " ";
+            System.out.print(str);
+        }
+        System.out.println();
+    }
+
     public static void start() {
         Scanner sc = new Scanner(System.in);
-        String str = sc.next();
+        String string = sc.next();
 
-        Thread thread = new Thread("Thread 2") {
-            @Override
-            public void run() {
-                while (true) {
-                    System.out.print(Thread.currentThread().getName() + ": ");
-                    Task15_1.print10();
-                }
-            }
-        };
+        MyThread thread = new MyThread ();
+        thread.setName("Thread 2");
 
-        if (str.equals("start")) {
+        if (string.equals("start")) {
             thread.start();
             Thread.currentThread().setName("Thread 1");
             while (true) {
@@ -25,14 +28,5 @@ public class Task15_1 {
                 Task15_1.print10();
             }
         }
-    }
-
-    private static void print10() {
-        StringBuilder str = new StringBuilder();
-        for (int i = 0; i < 10; i++) {
-            int random = 1 + (int) (Math.random() * 100);
-            str.append(random).append(" ");
-        }
-        System.out.println(str);
     }
 }
