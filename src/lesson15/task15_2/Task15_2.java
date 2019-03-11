@@ -5,15 +5,14 @@ import java.util.Scanner;
 public class Task15_2 {
 
     public static synchronized void print10() {
-        int random;
-        System.out.print(Thread.currentThread().getName() + ": ");
-        for (int i = 0; i < 10; i++) {
-            if (i == 9) {
-                random = 1 + (int) (Math.random() * 100);
-                System.out.print(random + "\n");
-            } else {
-                random = 1 + (int) (Math.random() * 100);
-                System.out.print(random + " ");
+        int value = 1;
+        for (int j = 0; j < 100; j++) {
+            if (j % 10 == 0) {
+                System.out.print(Thread.currentThread().getName() + ": " + value++ + " ");
+            } else if (j % 10 == 9)
+                System.out.print(value++ + "\n");
+            else {
+                System.out.print(value++ + " ");
             }
         }
     }
