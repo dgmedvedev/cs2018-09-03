@@ -6,18 +6,20 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+// https://j4web.ru/java-io/generatsiya-kontrolnoj-summy-v-java.html
 
 public abstract class CheckSum {
 
     private static final String ALGORITHM = "SHA-1";
 
-    public static String getCheckSum(String fileName) {
+    public static String setCheckSum(String directory) {
+
         StringBuilder sb = new StringBuilder();
 
         try {
             // Получаем контрольную сумму для файла в виде массива байт
             final MessageDigest md = MessageDigest.getInstance(ALGORITHM);
-            final FileInputStream fis = new FileInputStream(fileName);
+            final FileInputStream fis = new FileInputStream(directory);
             byte[] dataBytes = new byte[1024];
             int bytesRead;
             while ((bytesRead = fis.read(dataBytes)) > 0) {
