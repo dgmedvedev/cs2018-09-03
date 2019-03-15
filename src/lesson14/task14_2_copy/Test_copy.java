@@ -13,7 +13,7 @@ public class Test_copy {
         //       System.out.println(mp3Files.toString());
 
         Search_copy.start("c:\\Users\\Администратор\\Downloads\\муз\\one\\");
-        PrintLists.printList1(SuperList.getAuthorsList1());
+        PrintLists.printAuthorsList1(SuperList.getAuthorsList1());
 
         System.out.println(System.currentTimeMillis() - startTime);
 

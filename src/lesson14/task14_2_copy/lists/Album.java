@@ -1,11 +1,10 @@
 package lesson14.task14_2_copy.lists;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Album {
     private String name;
-    private ArrayList<String> titleAndDurationAndDirect = new ArrayList<>();
+    private ArrayList<String[]> titleAndDurationAndDirect = new ArrayList<>();
 
     public Album(String name){
         this.name = name;
@@ -15,7 +14,7 @@ public class Album {
         return name;
     }
 
-    public ArrayList<String> getTitleAndDurationAndDirect() {
+    public ArrayList<String[]> getTitleAndDurationAndDirect() {
         return titleAndDurationAndDirect;
     }
 

@@ -42,22 +42,25 @@ public abstract class Search_copy {
 
                     boolean bool = false;
                     for (Author author : SuperList.getAuthorsList1()) {
-                        if (temp.getAuthor().equals(author.getName())) {// если автор повторяется
-                            Album tempAlbum = new Album(temp.getAlbum());
-                            author.getAlbumsList().add(tempAlbum);
-                            tempAlbum.getTitleAndDurationAndDirect().add(temp.getTitle());
-                            tempAlbum.getTitleAndDurationAndDirect().add(temp.getDuration());
-                            tempAlbum.getTitleAndDurationAndDirect().add(temp.getDirectory());
+                        //если автор повторяется
+                        if (temp.getAuthor().equals(author.getName())) {
+                            for(Album album : author.getAlbumsList()){
+                                if(temp.getAlbum().equals(album.getName()))
+                                    album.getTitleAndDurationAndDirect()
+                                            .add(new String[]{temp.getTitle(),temp.getDuration(), temp.getDirectory()});
+                                else //добавляем альбом
+                                    author.getAlbumsList()
+                                            .add(addAlbum(temp, temp.getTitle(), temp.getDuration(), temp.getDirectory()));
+                            }
+
                             bool = true;
                         }
                     }
-                    if(!bool){
+                    //если автор НЕ повторяется
+                    if (!bool) {
+                        //создаем нового автора и добавляем альбом
                         Author tempAuthor = new Author(temp.getAuthor());
-                        Album tempAlbum = new Album(temp.getAlbum());
-                        tempAlbum.getTitleAndDurationAndDirect().add(temp.getTitle());
-                        tempAlbum.getTitleAndDurationAndDirect().add(temp.getDuration());
-                        tempAlbum.getTitleAndDurationAndDirect().add(temp.getDirectory());
-                        tempAuthor.getAlbumsList().add(tempAlbum);
+                        tempAuthor.getAlbumsList().add(addAlbum(temp, temp.getTitle(), temp.getDuration(), temp.getDirectory()));
                         SuperList.getAuthorsList1().add(tempAuthor);
                     }
 
@@ -72,6 +75,12 @@ public abstract class Search_copy {
                 }
             }
         }
+    }
+
+    private static Album addAlbum(Mp3Files mp3, String title, String duration, String directory) {
+        Album tempAlbum = new Album(mp3.getAlbum());
+        tempAlbum.getTitleAndDurationAndDirect().add(new String[]{title,duration,directory});
+        return tempAlbum;
     }
 
     private static String format(String string) {
