@@ -7,6 +7,8 @@ public class Mp3Files extends MyFiles {
     private String duration;
     private String directory;
 
+    public Mp3Files(){}
+
     public Mp3Files(String checkSum, String author, String album, String title, String duration, String directory) {
         super(checkSum);
         this.author = author;

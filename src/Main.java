@@ -1,9 +1,10 @@
-import lesson14.task14_2_copy.Test_copy;
+
+import lesson14.task14_2.Test;
 
 public class Main {
 
     public static void main(String[] args) {
 
-            Test_copy.start();
+            Test.start();
     }
 }
