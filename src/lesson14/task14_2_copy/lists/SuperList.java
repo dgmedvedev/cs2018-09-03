@@ -1,0 +1,15 @@
+package lesson14.task14_2_copy.lists;
+
+import java.util.ArrayList;
+
+public class SuperList {
+    private static ArrayList<Author> authorsList1 = new ArrayList<>();
+
+    public static ArrayList<Author> getAuthorsList1() {
+        return authorsList1;
+    }
+
+    public String toString() {
+        return super.toString();
+    }
+}

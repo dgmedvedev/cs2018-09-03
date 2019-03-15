@@ -1,10 +1,12 @@
-package lesson14.task14_2.files;
+package lesson14.task14_2_copy.files;
 
 import java.util.ArrayList;
 
 public abstract class MyFiles {
     private String checkSum;
     private static ArrayList<Mp3Files> mp3FilesList = new ArrayList<>();
+
+    MyFiles(){}
 
     public MyFiles(String checkSum) {
         this.checkSum = checkSum;
