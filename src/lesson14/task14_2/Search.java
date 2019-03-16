@@ -15,8 +15,6 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-// http://www.javazoom.net/mp3spi/documents.html
-// https://javatalks.ru/topics/33955
 
 public abstract class Search {
 
@@ -29,39 +27,31 @@ public abstract class Search {
 
         File files[] = dir.listFiles();
         if (files != null) {
-            for (int i = 0; i<files.length;i++) {
+            for (File file : files) {
+                if (format(file.getName()).equals("mp3") ||
+                        format(file.getName()).equals("Mp3") ||
+                        format(file.getName()).equals("mP3") ||
+                        format(file.getName()).equals("MP3") && !file.isDirectory()) {
 
-
-
-                if (format(files[i].getName()).equals("mp3") ||
-                        format(files[i].getName()).equals("Mp3") ||
-                        format(files[i].getName()).equals("mP3") ||
-                        format(files[i].getName()).equals("MP3") && !files[i].isDirectory()) {
-
-                    System.out.println("mp3 - " + files[i].getName());
-                    Mp3Files temp = newMp3Files(files[i]);
+                    Mp3Files temp = newMp3Files(file);
 
                     boolean bool = false;
                     for (Author author : SuperList.getAuthorsList1()) {
-                        //если автор повторяется
                         if (temp.getAuthor().equals(author.getName())) {
                             for (Album album : author.getAlbumsList()) {
-                                //если альбом повторяется
                                 if (temp.getAlbum().equals(album.getName())) {
-                                    //если названия песен повторяется
                                     boolean booll = false;
                                     for (String[] strings : album.getTitleAndDurationAndDirect()) {
 
                                         if (temp.getTitle().equals(strings[0])) {
                                             booll = true;
                                             SuperList.getAuthorsList2().add(temp);
-                                            System.out.println("строка " + temp.getTitle() + " добавлена в список 2");
                                         }
                                     }
-                                    if(!booll)
+                                    if (!booll)
                                         album.getTitleAndDurationAndDirect()
                                                 .add(new String[]{temp.getTitle(), temp.getDuration(), temp.getDirectory()});
-                                } else //добавляем альбом
+                                } else
                                     author.getAlbumsList()
                                             .add(addAlbum(temp, temp.getTitle(), temp.getDuration(), temp.getDirectory()));
                             }
@@ -69,17 +59,14 @@ public abstract class Search {
                             bool = true;
                         }
                     }
-                    //если автор НЕ повторяется
                     if (!bool) {
-                        //создаем нового автора и добавляем альбом
                         Author tempAuthor = new Author(temp.getAuthor());
                         tempAuthor.getAlbumsList().add(addAlbum(temp, temp.getTitle(), temp.getDuration(), temp.getDirectory()));
                         SuperList.getAuthorsList1().add(tempAuthor);
                     }
-
                 }
-                if (files[i].isDirectory()) {
-                    start(String.valueOf(files[i]));
+                if (file.isDirectory()) {
+                    start(String.valueOf(file));
                 }
             }
         }
@@ -112,7 +99,6 @@ public abstract class Search {
         } catch (UnsupportedAudioFileException | IOException e) {
             e.printStackTrace();
         }
-// TAudioFileFormat properties
         if (baseFileFormat instanceof TAudioFileFormat) {
             Map properties = baseFileFormat.properties();
             String key = "author";

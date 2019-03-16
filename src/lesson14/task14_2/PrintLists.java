@@ -24,7 +24,6 @@ public class PrintLists {
     }
 
     public static void printAuthorsList2(LinkedList<Mp3Files> mp3List) {
-        System.out.println(SuperList.getAuthorsList2().size());
         for (int i = 0; i < mp3List.size(); i++) {
             System.out.println(mp3List.get(i).getAuthor() + ", " + mp3List.get(i).getAlbum() + ", " + mp3List.get(i).getTitle() + ":");
             System.out.println("+ " + mp3List.get(i).getDirectory());
