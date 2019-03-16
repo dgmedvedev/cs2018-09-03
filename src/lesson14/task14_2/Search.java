@@ -29,28 +29,43 @@ public abstract class Search {
 
         File files[] = dir.listFiles();
         if (files != null) {
-            for (File file : files) {
+            for (int i = 0; i<files.length;i++) {
 
-                if (format(file.getName()).equals("mp3") ||
-                        format(file.getName()).equals("Mp3") ||
-                        format(file.getName()).equals("mP3") ||
-                        format(file.getName()).equals("MP3") && !file.isDirectory()) {
 
-                    System.out.println("mp3 - " + file.getName());
-                    Mp3Files temp = newMp3Files(file);
+
+                if (format(files[i].getName()).equals("mp3") ||
+                        format(files[i].getName()).equals("Mp3") ||
+                        format(files[i].getName()).equals("mP3") ||
+                        format(files[i].getName()).equals("MP3") && !files[i].isDirectory()) {
+
+                    System.out.println("mp3 - " + files[i].getName());
+                    Mp3Files temp = newMp3Files(files[i]);
 
                     boolean bool = false;
                     for (Author author : SuperList.getAuthorsList1()) {
                         //если автор повторяется
                         if (temp.getAuthor().equals(author.getName())) {
-                            for(Album album : author.getAlbumsList()){
-                                if(temp.getAlbum().equals(album.getName()))
-                                    album.getTitleAndDurationAndDirect()
-                                            .add(new String[]{temp.getTitle(),temp.getDuration(), temp.getDirectory()});
-                                else //добавляем альбом
+                            for (Album album : author.getAlbumsList()) {
+                                //если альбом повторяется
+                                if (temp.getAlbum().equals(album.getName())) {
+                                    //если названия песен повторяется
+                                    boolean booll = false;
+                                    for (String[] strings : album.getTitleAndDurationAndDirect()) {
+
+                                        if (temp.getTitle().equals(strings[0])) {
+                                            booll = true;
+                                            SuperList.getAuthorsList2().add(temp);
+                                            System.out.println("строка " + temp.getTitle() + " добавлена в список 2");
+                                        }
+                                    }
+                                    if(!booll)
+                                        album.getTitleAndDurationAndDirect()
+                                                .add(new String[]{temp.getTitle(), temp.getDuration(), temp.getDirectory()});
+                                } else //добавляем альбом
                                     author.getAlbumsList()
                                             .add(addAlbum(temp, temp.getTitle(), temp.getDuration(), temp.getDirectory()));
                             }
+
                             bool = true;
                         }
                     }
@@ -61,6 +76,10 @@ public abstract class Search {
                         tempAuthor.getAlbumsList().add(addAlbum(temp, temp.getTitle(), temp.getDuration(), temp.getDirectory()));
                         SuperList.getAuthorsList1().add(tempAuthor);
                     }
+
+                }
+                if (files[i].isDirectory()) {
+                    start(String.valueOf(files[i]));
                 }
             }
         }
@@ -68,7 +87,7 @@ public abstract class Search {
 
     private static Album addAlbum(Mp3Files mp3, String title, String duration, String directory) {
         Album tempAlbum = new Album(mp3.getAlbum());
-        tempAlbum.getTitleAndDurationAndDirect().add(new String[]{title,duration,directory});
+        tempAlbum.getTitleAndDurationAndDirect().add(new String[]{title, duration, directory});
         return tempAlbum;
     }
 
