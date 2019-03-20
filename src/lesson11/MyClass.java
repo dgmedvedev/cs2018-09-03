@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class MyClass {
     private String name;
-    private Method method;
     private ArrayList<Method> methodList = new ArrayList<>();
 
     MyClass(String name){
@@ -13,10 +12,6 @@ public class MyClass {
 
     public String getName() {
         return name;
-    }
-
-    public Method getMethod() {
-        return method;
     }
 
     public ArrayList<Method> getMethodList() {

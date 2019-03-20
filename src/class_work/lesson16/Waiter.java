@@ -21,7 +21,7 @@ public class Waiter implements Runnable{
 
             System.out.println(name + " был вызван notify: " + System.currentTimeMillis());
             // обрабатываем сообщение
-            System.out.println(name + " : " + val.getValue());
+            System.out.println(name + " : " + val.getValue() + "!");
 
         }
     }

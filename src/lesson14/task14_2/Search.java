@@ -38,6 +38,7 @@ public abstract class Search {
                     boolean bool = false;
                     for (Author author : SuperList.getAuthorsList1()) {
                         if (temp.getAuthor().equals(author.getName())) {
+                            //исправить ошибку
                             for (Album album : author.getAlbumsList()) {
                                 if (temp.getAlbum().equals(album.getName())) {
                                     boolean booll = false;
