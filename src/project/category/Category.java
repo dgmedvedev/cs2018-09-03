@@ -18,8 +18,9 @@ public class Category {
     private LinkedList<TemporaryTask> temporaryTaskList = new LinkedList<>();
     private LinkedList<EverydayTask> everydayTaskList = new LinkedList<>();
 
-    public Category(String title){
+    public Category(String title, String color) {
         this.title = title;
+        this.color = color;
         this.creationDate = new Date();
         this.id = ++idCategory;
     }
@@ -37,12 +38,12 @@ public class Category {
                 '}';
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public static int getIdCategory() {
         return idCategory;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {

@@ -16,7 +16,7 @@ public abstract class Task {
     @Override
     public String toString() {
         return "{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", titleTask='" + titleTask + '\'' +
                 ", description='" + description + '\'' +
                 ", rating=" + rating +

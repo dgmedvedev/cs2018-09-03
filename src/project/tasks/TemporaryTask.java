@@ -14,8 +14,8 @@ public class TemporaryTask extends Task {
     public String toString() {
 
         return super.toString() +
-                "subcategory=" + subcategory +
-                ", deadline=" + deadline +
+                "subcategory='" + subcategory + '\'' +
+                ", deadline='" + deadline + '\'' +
                 '}';
     }
 

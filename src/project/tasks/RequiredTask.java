@@ -12,7 +12,7 @@ public class RequiredTask extends Task {
     public String toString() {
 
         return super.toString() +
-                "subcategory=" + subcategory +
+                "subcategory='" + subcategory + '\'' +
                 '}';
     }
 
