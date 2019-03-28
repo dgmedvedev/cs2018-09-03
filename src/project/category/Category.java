@@ -9,8 +9,8 @@ import java.util.Date;
 import java.util.LinkedList;
 
 public class Category {
-    private static int idCategory;
-    private int id;
+    private static int idCategories;
+    private int idCategory;
     private String title;
     private String color;
     private Date creationDate;
@@ -22,13 +22,13 @@ public class Category {
         this.title = title;
         this.color = color;
         this.creationDate = new Date();
-        this.id = ++idCategory;
+        this.idCategory = ++idCategories;
     }
 
     @Override
     public String toString() {
         return "Category{" + '\n' +
-                "id=" + id + "," + '\n' +
+                "idCategory=" + idCategory + "," + '\n' +
                 "title=" + title + "," + '\n' +
                 " color=" + color + "," + '\n' +
                 " creationDate=" + getCreationDate() + "," + '\n' +
@@ -38,12 +38,12 @@ public class Category {
                 '}';
     }
 
-    public static int getIdCategory() {
-        return idCategory;
+    public static int getIdCategories() {
+        return idCategories;
     }
 
-    public int getId() {
-        return id;
+    public int getIdCategory() {
+        return idCategory;
     }
 
     public String getTitle() {

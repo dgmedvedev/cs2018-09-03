@@ -1,11 +1,17 @@
-package project;
+package project.temp;
 
+import org.codehaus.jackson.map.ObjectMapper;
 import project.category.Category;
 import project.tasks.EverydayTask;
 import project.tasks.RequiredTask;
 import project.tasks.TemporaryTask;
 
-public class Temp {
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class JSON_2 {
     public static void start() {
         Category category = new Category("Быт", "yellow");
         RequiredTask one = new RequiredTask("Записать сына к врачу", 10, "Семья");
@@ -104,10 +110,18 @@ public class Temp {
         oneEC3.setUnsuccessfulExecution(5);
         category3.getEverydayTaskList().add(oneEC3);
 
+        List<Category> categoryList = new ArrayList<>();
+        categoryList.add(category);
+        categoryList.add(category2);
+        categoryList.add(category3);
 
-        System.out.println(category.toString());
-        System.out.println(category2.toString());
-        System.out.println(category3.toString());
+        ObjectMapper mapper = new ObjectMapper();
 
+        try {
+            FileWriter write = new FileWriter("json2.txt");
+            mapper.writeValue(write,categoryList);
+        }catch (IOException ioe){
+            ioe.printStackTrace();
+        }
     }
 }
