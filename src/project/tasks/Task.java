@@ -23,6 +23,10 @@ public abstract class Task {
                 ", ";
     }
 
+    public static void setIdTask(int idTask) {
+        Task.idTask = idTask;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }

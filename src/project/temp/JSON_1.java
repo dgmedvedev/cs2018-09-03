@@ -4,15 +4,22 @@ import org.codehaus.jackson.map.ObjectMapper;
 import project.category.Category;
 import project.tasks.EverydayTask;
 import project.tasks.RequiredTask;
+import project.tasks.Task;
 import project.tasks.TemporaryTask;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class JSON_1 {
+    private static List<Category> categoryList_1 = new LinkedList<>();
+
     public static void start() {
+        Category.setIdCategories(0);
+        Task.setIdTask(0);
+
         Category category = new Category("Быт", "yellow");
         RequiredTask one = new RequiredTask("Записать сына к врачу", 10, "Семья");
         one.setDescription("оториноларинголог");
@@ -110,18 +117,21 @@ public class JSON_1 {
         oneEC3.setUnsuccessfulExecution(5);
         category3.getEverydayTaskList().add(oneEC3);
 
-        List<Category> categoryList = new ArrayList<>();
-        categoryList.add(category);
-        categoryList.add(category2);
-        categoryList.add(category3);
+        categoryList_1.add(category);
+        categoryList_1.add(category2);
+        categoryList_1.add(category3);
 
         ObjectMapper mapper = new ObjectMapper();
 
         try {
             FileWriter write = new FileWriter("json1.txt");
-            mapper.writeValue(write,categoryList);
+            mapper.writeValue(write,categoryList_1);
         }catch (IOException ioe){
             ioe.printStackTrace();
         }
+    }
+
+    public static List<Category> getCategoryList_1() {
+        return categoryList_1;
     }
 }

@@ -13,15 +13,19 @@ public class Category {
     private int idCategory;
     private String title;
     private String color;
-    private Date creationDate;
+    private String creationDate;
     private LinkedList<RequiredTask> requiredTaskList = new LinkedList<>();
     private LinkedList<TemporaryTask> temporaryTaskList = new LinkedList<>();
     private LinkedList<EverydayTask> everydayTaskList = new LinkedList<>();
 
+    public Category() {
+    }
+
     public Category(String title, String color) {
         this.title = title;
         this.color = color;
-        this.creationDate = new Date();
+        SimpleDateFormat formatDate = new SimpleDateFormat("dd.MM.yyyy");
+        this.creationDate = formatDate.format(new Date());
         this.idCategory = ++idCategories;
     }
 
@@ -31,11 +35,15 @@ public class Category {
                 "idCategory=" + idCategory + "," + '\n' +
                 "title=" + title + "," + '\n' +
                 " color=" + color + "," + '\n' +
-                " creationDate=" + getCreationDate() + "," + '\n' +
+                " creationDate=" + creationDate + "," + '\n' +
                 "  requiredTaskList=" + requiredTaskList + "," + '\n' +
                 "  temporaryTaskList=" + temporaryTaskList + "," + '\n' +
                 "  everydayTaskList=" + everydayTaskList +
                 '}';
+    }
+
+    public static void setIdCategories(int idCategories) {
+        Category.idCategories = idCategories;
     }
 
     public static int getIdCategories() {
@@ -55,8 +63,7 @@ public class Category {
     }
 
     public String getCreationDate() {
-        SimpleDateFormat formatDate = new SimpleDateFormat("dd.MM.yyyy");
-        return formatDate.format(creationDate);
+        return creationDate;
     }
 
     public LinkedList<RequiredTask> getRequiredTaskList() {
