@@ -1,7 +1,7 @@
 package project.temp;
 
 import project.JoinLists;
-import project.category.Category;
+import project.menu.Menu;
 
 public class TestDrive {
     public static void start() {
@@ -11,16 +11,9 @@ public class TestDrive {
         JSON_1.start();
         JSON_2.start();
 
-    /*    for(Category category : JSON_1.getCategoryList_1())
-            System.out.println(category);
-
-        for(Category category : JSON_2.getCategoryList_2())
-            System.out.println(category);
-*/
         JoinLists.choiceCategory(JSON_1.getCategoryList_1(),JSON_2.getCategoryList_2());
 
-        for(Category category : JoinLists.getCategoryList())
-            System.out.println(category);
+        Menu.isMenu();
 
 
     }

@@ -18,9 +18,6 @@ public class Category {
     private LinkedList<TemporaryTask> temporaryTaskList = new LinkedList<>();
     private LinkedList<EverydayTask> everydayTaskList = new LinkedList<>();
 
-    public Category() {
-    }
-
     public Category(String title, String color) {
         this.title = title;
         this.color = color;
@@ -36,6 +33,14 @@ public class Category {
                 "title=" + title + "," + '\n' +
                 " color=" + color + "," + '\n' +
                 " creationDate=" + creationDate + "," + '\n' +
+                "  requiredTaskList=" + requiredTaskList + "," + '\n' +
+                "  temporaryTaskList=" + temporaryTaskList + "," + '\n' +
+                "  everydayTaskList=" + everydayTaskList +
+                '}';
+    }
+
+    public String toStringCategories() {
+        return "Category - " + title + "," + '\n' +
                 "  requiredTaskList=" + requiredTaskList + "," + '\n' +
                 "  temporaryTaskList=" + temporaryTaskList + "," + '\n' +
                 "  everydayTaskList=" + everydayTaskList +
