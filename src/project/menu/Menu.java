@@ -32,23 +32,23 @@ public class Menu {
                     break;
                 case "5":
                     P_05.start();
-                    notExit = false;
+                    printMenu();
                     break;
                 case "6":
                     P_06.start();
-                    notExit = false;
+                    printMenu();
                     break;
                 case "7":
                     P_07.start();
-                    notExit = false;
+                    printMenu();
                     break;
                 case "8":
                     P_08.start();
-                    notExit = false;
+                    printMenu();
                     break;
                 case "9":
                     P_09.start();
-                    notExit = false;
+                    printMenu();
                     break;
                 case "10":
                     P_10.start();
@@ -76,6 +76,25 @@ public class Menu {
         System.out.println("9. Получить статистику (НЕ РАБОТАЕТ)");
         System.out.println("10.Выйти из программы");
         System.out.println("____________________________");
+    }
+
+    public static int menuSelection2 (){
+        int number = 0;
+        boolean tempBool = true;
+        while (tempBool) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                number = sc.nextInt();
+                if (number == 1 || number == 2) {
+                    tempBool = false;
+                    break;
+                }
+            } catch (InputMismatchException ime) {
+                System.out.println("Будьте внимательнее!");
+            }
+            System.out.println("Введено неверное значение! Введите 1 или 2");
+        }
+        return number;
     }
 
     public static int menuSelection3 (){

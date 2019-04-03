@@ -1,11 +1,10 @@
 package project;
 
 import project.category.Category;
+import project.menu.Menu;
 
-import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
 
 public abstract class JoinLists {
     private static List<Category> categoryList = new LinkedList<>();
@@ -36,21 +35,8 @@ public abstract class JoinLists {
                     System.out.println("Введите номер категории, которую хотите оставить:");
                     System.out.println("1. " + "\"" + category_1.getTitle() + "\"" + " из списка 1. IdCategory = " + category_1.getIdCategory() + ";");
                     System.out.println("2. " + "\"" + category_2.getTitle() + "\"" + " из списка 2"+ tempString + ". IdCategory = " + category_2.getIdCategory() + ".");
-                    int number = 0;
-                    boolean temp = true;
-                    while (temp) {
-                        try {
-                            Scanner sc = new Scanner(System.in);
-                            number = sc.nextInt();
-                            if (number == 1 || number == 2) {
-                                temp = false;
-                                break;
-                            }
-                        } catch (InputMismatchException ime) {
-                            System.out.println("Будьте внимательнее!");
-                        }
-                        System.out.println("Введено неверное значение! Введите 1 или 2");
-                    }
+
+                    int number = Menu.menuSelection2();
 
                     if (number == 1) {
                         categoryList.add(category_1);
