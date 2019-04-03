@@ -1,5 +1,6 @@
 package project.menu;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -18,39 +19,39 @@ public class Menu {
                     printMenu();
                     break;
                 case "2":
-                    System.out.println("НЕ РАБОТАЕТ");
+                    P_02.start();
                     printMenu();
                     break;
                 case "3":
-                    System.out.println("Создать запись");
+                    P_03.start();
                     printMenu();
                     break;
                 case "4":
-                    System.out.println("Изменить запись");
+                    P_04.start();
                     printMenu();
                     break;
                 case "5":
-                    System.out.println("Удалить запись по id");
+                    P_05.start();
                     notExit = false;
                     break;
                 case "6":
-                    System.out.println("Найти запись по любому полю");
+                    P_06.start();
                     notExit = false;
                     break;
                 case "7":
-                    System.out.println("Сохранить результат своей работы в файл");
+                    P_07.start();
                     notExit = false;
                     break;
                 case "8":
-                    System.out.println("Сформировать html отчет");
+                    P_08.start();
                     notExit = false;
                     break;
                 case "9":
-                    System.out.println("Получить статистику");
+                    P_09.start();
                     notExit = false;
                     break;
                 case "10":
-                    System.out.println("Выйти из программы");
+                    P_10.start();
                     notExit = false;
                     break;
                 default:
@@ -76,4 +77,25 @@ public class Menu {
         System.out.println("10.Выйти из программы");
         System.out.println("____________________________");
     }
+
+    public static int menuSelection3 (){
+        int number = 0;
+        boolean tempBool = true;
+        while (tempBool) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                number = sc.nextInt();
+                if (number == 1 || number == 2 || number == 3) {
+                    tempBool = false;
+                    break;
+                }
+            } catch (InputMismatchException ime) {
+                System.out.println("Будьте внимательнее!");
+            }
+            System.out.println("Введено неверное значение! Введите 1, 2 или 3");
+        }
+        return number;
+    }
+
+
 }
