@@ -88,9 +88,15 @@ public class JSON_2 {
         oneEC3.setUnsuccessfulExecution(0);
         category3.getEverydayTaskList().add(oneEC3);
 
+        Category category4 = new Category("Здоровье", "WHITE");
+        RequiredTask oneC4 = new RequiredTask("Выпить воду", 10, "ЗОЖ");
+        oneC4.setDescription("1,5 - 2 л в день");
+        category4.getRequiredTaskList().add(oneC4);
+
         categoryList_2.add(category);
         categoryList_2.add(category2);
         categoryList_2.add(category3);
+        categoryList_2.add(category4);
 
         ObjectMapper mapper = new ObjectMapper();
 

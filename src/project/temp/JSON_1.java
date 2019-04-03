@@ -125,8 +125,8 @@ public class JSON_1 {
 
         try {
             FileWriter write = new FileWriter("json1.txt");
-            mapper.writeValue(write,categoryList_1);
-        }catch (IOException ioe){
+            mapper.writeValue(write, categoryList_1);
+        } catch (IOException ioe) {
             ioe.printStackTrace();
         }
     }
