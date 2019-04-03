@@ -47,6 +47,14 @@ public class Category {
                 '}';
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     public static void setIdCategories(int idCategories) {
         Category.idCategories = idCategories;
     }

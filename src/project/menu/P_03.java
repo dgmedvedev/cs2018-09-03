@@ -4,7 +4,10 @@ import project.JoinLists;
 import project.category.Category;
 import project.tasks.EverydayTask;
 import project.tasks.RequiredTask;
+import project.tasks.Task;
 import project.tasks.TemporaryTask;
+import project.temp.JSON_1;
+import project.temp.JSON_2;
 
 import java.util.Scanner;
 
@@ -27,6 +30,7 @@ public class P_03 {
         }
 
         if (number == 2) {
+
             System.out.println("Введите id категории для добавления задачи");
             boolean duplicate = false;
             try {
@@ -95,7 +99,7 @@ public class P_03 {
 
     }
 
-    private static int rating() {
+    public static int rating() {
         String id = "";
         boolean range = false;
         while (!range) {

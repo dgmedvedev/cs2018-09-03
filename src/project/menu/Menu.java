@@ -65,9 +65,9 @@ public class Menu {
     private static void printMenu() {
         System.out.println("____________________________\n");
         System.out.println("ВЫБЕРИТЕ ОПЕРАЦИЮ:");
-        System.out.println("1. Просмотреть все данные (отсортированные по id)");
+        System.out.println("1. Просмотреть все данные");
         System.out.println("2. Просмотреть данные отсортированные по любому из полей (НЕ РАБОТАЕТ)");
-        System.out.println("3. Создать запись (НЕ РАБОТАЕТ)");
+        System.out.println("3. Создать запись");
         System.out.println("4. Изменить запись (НЕ РАБОТАЕТ)");
         System.out.println("5. Удалить запись по id (НЕ РАБОТАЕТ)");
         System.out.println("6. Найти запись по любому полю (НЕ РАБОТАЕТ)");

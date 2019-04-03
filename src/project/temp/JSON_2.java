@@ -14,7 +14,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class JSON_2 {
-    private static List<Category> categoryList_2 = new LinkedList<>();;
+    private static List<Category> categoryList_2 = new LinkedList<>();
+    private static int idTaskJSON_2;
 
     public static void start() {
         Category.setIdCategories(0);
@@ -106,9 +107,15 @@ public class JSON_2 {
         }catch (IOException ioe){
             ioe.printStackTrace();
         }
+
+        idTaskJSON_2 = Task.getIdTask();
     }
 
     public static List<Category> getCategoryList_2() {
         return categoryList_2;
+    }
+
+    public static int getIdTaskJSON_2() {
+        return idTaskJSON_2;
     }
 }

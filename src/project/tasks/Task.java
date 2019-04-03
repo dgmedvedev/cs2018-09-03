@@ -27,6 +27,14 @@ public abstract class Task {
         Task.idTask = idTask;
     }
 
+    public void setTitleTask(String titleTask) {
+        this.titleTask = titleTask;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
