@@ -2,13 +2,9 @@ package project.menu;
 
 import project.JoinLists;
 import project.category.Category;
-import project.tasks.EverydayTask;
-import project.tasks.RequiredTask;
-import project.tasks.TemporaryTask;
-
+import project.tasks.Task;
+import java.util.LinkedList;
 import java.util.Scanner;
-
-import static project.menu.P_03.rating;
 
 public class P_04 {
     public static void start() {
@@ -71,137 +67,15 @@ public class P_04 {
                         number = Menu.menuSelection3();
                         if (number == 1) {
                             System.out.println("Введите id обязательной задачи, для изменения");
-                            boolean duplicateTask = false;
-                            try {
-                                String idTask = sc.nextLine();
-                                for (RequiredTask task : category.getRequiredTaskList()) {
-                                    if (task.getId() == Integer.parseInt(idTask)) {
-                                        System.out.println("Выберите, что Вы хотите изменить:\n" +
-                                                "1. Название задачи;\n" +
-                                                "2. Описание задачи;\n" +
-                                                "3. Рейтинг задачи;\n");
-                                        number = Menu.menuSelection3();
-                                        if (number == 1) {
-                                            System.out.println("Введите новое название задачи");
-                                            String titleTask = sc.nextLine();
-                                            task.setTitleTask(titleTask);
-                                            System.out.println("Название задачи изменено.");
-                                            return;
-                                        }
-                                        if (number == 2) {
-                                            System.out.println("Введите новое описание задачи");
-                                            String description = sc.nextLine();
-                                            task.setDescription(description);
-                                            System.out.println("Описание задачи изменено.");
-                                            return;
-                                        }
-                                        if (number == 3) {
-                                            System.out.println("Введите новый рейтинг задачи:");
-                                            int rating = rating();
-                                            task.setRating(rating);
-                                            System.out.println("Рейтинг задачи изменен.");
-                                            return;
-                                        }
-
-                                        duplicateTask = true;
-                                        break;
-                                    }
-                                }
-                            } catch (NumberFormatException nfe) {
-                                System.out.println("Будьте внимательнее. Вводите только числа!");
-                            }
-
-                            if (!duplicateTask) System.out.println("Задачи с таким id не существует");
+                            changeTask(sc,category.getRequiredTaskList());
                         }
                         if (number == 2) {
                             System.out.println("Введите id временной задачи, для изменения");
-                            boolean duplicateTask = false;
-                            try {
-                                String idTask = sc.nextLine();
-                                for (TemporaryTask task : category.getTemporaryTaskList()) {
-                                    if (task.getId() == Integer.parseInt(idTask)) {
-                                        System.out.println("Выберите, что Вы хотите изменить:\n" +
-                                                "1. Название задачи;\n" +
-                                                "2. Описание задачи;\n" +
-                                                "3. Рейтинг задачи;\n");
-                                        number = Menu.menuSelection3();
-                                        if (number == 1) {
-                                            System.out.println("Введите новое название задачи");
-                                            String titleTask = sc.nextLine();
-                                            task.setTitleTask(titleTask);
-                                            System.out.println("Название задачи изменено.");
-                                            return;
-                                        }
-                                        if (number == 2) {
-                                            System.out.println("Введите новое описание задачи");
-                                            String description = sc.nextLine();
-                                            task.setDescription(description);
-                                            System.out.println("Описание задачи изменено.");
-                                            return;
-                                        }
-                                        if (number == 3) {
-                                            System.out.println("Введите новый рейтинг задачи:");
-                                            int rating = rating();
-                                            task.setRating(rating);
-                                            System.out.println("Рейтинг задачи изменен.");
-                                            return;
-                                        }
-
-                                        duplicateTask = true;
-                                        break;
-                                    }
-                                }
-                            } catch (NumberFormatException nfe) {
-                                System.out.println("Будьте внимательнее. Вводите только числа!");
-                            }
-
-                            if (!duplicateTask) System.out.println("Задачи с таким id не существует");
-
+                            changeTask(sc,category.getTemporaryTaskList());
                         }
                         if (number == 3) {
                             System.out.println("Введите id каждодневной задачи, для изменения");
-                            boolean duplicateTask = false;
-                            try {
-                                String idTask = sc.nextLine();
-                                for (EverydayTask task : category.getEverydayTaskList()) {
-                                    if (task.getId() == Integer.parseInt(idTask)) {
-                                        System.out.println("Выберите, что Вы хотите изменить:\n" +
-                                                "1. Название задачи;\n" +
-                                                "2. Описание задачи;\n" +
-                                                "3. Рейтинг задачи;\n");
-                                        number = Menu.menuSelection3();
-                                        if (number == 1) {
-                                            System.out.println("Введите новое название задачи");
-                                            String titleTask = sc.nextLine();
-                                            task.setTitleTask(titleTask);
-                                            System.out.println("Название задачи изменено.");
-                                            return;
-                                        }
-                                        if (number == 2) {
-                                            System.out.println("Введите новое описание задачи");
-                                            String description = sc.nextLine();
-                                            task.setDescription(description);
-                                            System.out.println("Описание задачи изменено.");
-                                            return;
-                                        }
-                                        if (number == 3) {
-                                            System.out.println("Введите новый рейтинг задачи:");
-                                            int rating = rating();
-                                            task.setRating(rating);
-                                            System.out.println("Рейтинг задачи изменен.");
-                                            return;
-                                        }
-
-                                        duplicateTask = true;
-                                        break;
-                                    }
-                                }
-                            } catch (NumberFormatException nfe) {
-                                System.out.println("Будьте внимательнее. Вводите только числа!");
-                            }
-
-                            if (!duplicateTask) System.out.println("Задачи с таким id не существует");
-
+                            changeTask(sc,category.getEverydayTaskList());
                         }
 
                         duplicate = true;
@@ -216,7 +90,48 @@ public class P_04 {
         }
     }
 
-    private static void changeTask(){
+    private static void changeTask(Scanner sc, LinkedList<Task> list){
 
+        boolean duplicateTask = false;
+        try {
+            String idTask = sc.nextLine();
+            for (Task task : list) {
+                if (task.getId() == Integer.parseInt(idTask)) {
+                    System.out.println("Выберите, что Вы хотите изменить:\n" +
+                            "1. Название задачи;\n" +
+                            "2. Описание задачи;\n" +
+                            "3. Рейтинг задачи;\n");
+                    int number = Menu.menuSelection3();
+                    if (number == 1) {
+                        System.out.println("Введите новое название задачи");
+                        String titleTask = sc.nextLine();
+                        task.setTitleTask(titleTask);
+                        System.out.println("Название задачи изменено.");
+                        return;
+                    }
+                    if (number == 2) {
+                        System.out.println("Введите новое описание задачи");
+                        String description = sc.nextLine();
+                        task.setDescription(description);
+                        System.out.println("Описание задачи изменено.");
+                        return;
+                    }
+                    if (number == 3) {
+                        System.out.println("Введите новый рейтинг задачи:");
+                        int rating = Menu.rating();
+                        task.setRating(rating);
+                        System.out.println("Рейтинг задачи изменен.");
+                        return;
+                    }
+
+                    duplicateTask = true;
+                    break;
+                }
+            }
+        } catch (NumberFormatException nfe) {
+            System.out.println("Будьте внимательнее. Вводите только числа!");
+        }
+
+        if (!duplicateTask) System.out.println("Задачи с таким id не существует");
     }
 }

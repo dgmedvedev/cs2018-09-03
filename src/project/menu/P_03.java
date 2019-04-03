@@ -4,10 +4,7 @@ import project.JoinLists;
 import project.category.Category;
 import project.tasks.EverydayTask;
 import project.tasks.RequiredTask;
-import project.tasks.Task;
 import project.tasks.TemporaryTask;
-import project.temp.JSON_1;
-import project.temp.JSON_2;
 
 import java.util.Scanner;
 
@@ -50,7 +47,7 @@ public class P_03 {
                             System.out.println("Введите подкатегорию задачи:");
                             String subcategory = sc.nextLine();
                             System.out.println("Введите рейтинг задачи:");
-                            int rating = rating();
+                            int rating = Menu.rating();
                             RequiredTask newTask = new RequiredTask(titleTask, rating, subcategory);
                             newTask.setDescription(description);
                             category.getRequiredTaskList().add(newTask);
@@ -66,7 +63,7 @@ public class P_03 {
                             System.out.println("Введите срок на выполнение задачи:");
                             String deadline = sc.nextLine();
                             System.out.println("Введите рейтинг задачи:");
-                            int rating = rating();
+                            int rating = Menu.rating();
                             TemporaryTask newTask = new TemporaryTask(titleTask, rating, subcategory, deadline);
                             newTask.setDescription(description);
                             category.getTemporaryTaskList().add(newTask);
@@ -78,7 +75,7 @@ public class P_03 {
                             System.out.println("Введите описание задачи:");
                             String description = sc.nextLine();
                             System.out.println("Введите рейтинг задачи:");
-                            int rating = rating();
+                            int rating = Menu.rating();
                             EverydayTask newTask = new EverydayTask(titleTask, rating);
                             newTask.setDescription(description);
                             category.getEverydayTaskList().add(newTask);
@@ -99,24 +96,5 @@ public class P_03 {
 
     }
 
-    public static int rating() {
-        String id = "";
-        boolean range = false;
-        while (!range) {
-            try {
-                Scanner sc = new Scanner(System.in);
-                id = sc.nextLine();
 
-                if (Integer.parseInt(id) >= 0 && Integer.parseInt(id) <= 10) {
-                    range = true;
-                }
-
-            } catch (NumberFormatException nfe) {
-                System.out.println("Будьте внимательнее. Вводите только числа!");
-            }
-            if (!range) System.out.println("Значение должно быть от 0 до 10 включительно.");
-
-        }
-        return Integer.parseInt(id);
-    }
 }

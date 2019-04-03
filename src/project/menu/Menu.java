@@ -68,7 +68,7 @@ public class Menu {
         System.out.println("1. Просмотреть все данные");
         System.out.println("2. Просмотреть данные отсортированные по любому из полей (НЕ РАБОТАЕТ)");
         System.out.println("3. Создать запись");
-        System.out.println("4. Изменить запись (НЕ РАБОТАЕТ)");
+        System.out.println("4. Изменить запись");
         System.out.println("5. Удалить запись по id (НЕ РАБОТАЕТ)");
         System.out.println("6. Найти запись по любому полю (НЕ РАБОТАЕТ)");
         System.out.println("7. Сохранить результат своей работы в файл (НЕ РАБОТАЕТ)");
@@ -76,6 +76,27 @@ public class Menu {
         System.out.println("9. Получить статистику (НЕ РАБОТАЕТ)");
         System.out.println("10.Выйти из программы");
         System.out.println("____________________________");
+    }
+
+    public static int rating() {
+        String id = "";
+        boolean range = false;
+        while (!range) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                id = sc.nextLine();
+
+                if (Integer.parseInt(id) >= 0 && Integer.parseInt(id) <= 10) {
+                    range = true;
+                }
+
+            } catch (NumberFormatException nfe) {
+                System.out.println("Будьте внимательнее. Вводите только числа!");
+            }
+            if (!range) System.out.println("Значение должно быть от 0 до 10 включительно.");
+
+        }
+        return Integer.parseInt(id);
     }
 
     public static int menuSelection2 (){

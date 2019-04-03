@@ -2,6 +2,7 @@ package project.category;
 
 import project.tasks.EverydayTask;
 import project.tasks.RequiredTask;
+import project.tasks.Task;
 import project.tasks.TemporaryTask;
 
 import java.text.SimpleDateFormat;
@@ -14,9 +15,9 @@ public class Category {
     private String title;
     private String color;
     private String creationDate;
-    private LinkedList<RequiredTask> requiredTaskList = new LinkedList<>();
-    private LinkedList<TemporaryTask> temporaryTaskList = new LinkedList<>();
-    private LinkedList<EverydayTask> everydayTaskList = new LinkedList<>();
+    private LinkedList<Task> requiredTaskList = new LinkedList<>();
+    private LinkedList<Task> temporaryTaskList = new LinkedList<>();
+    private LinkedList<Task> everydayTaskList = new LinkedList<>();
 
     public Category(String title, String color) {
         this.title = title;
@@ -79,15 +80,15 @@ public class Category {
         return creationDate;
     }
 
-    public LinkedList<RequiredTask> getRequiredTaskList() {
+    public LinkedList<Task> getRequiredTaskList() {
         return requiredTaskList;
     }
 
-    public LinkedList<TemporaryTask> getTemporaryTaskList() {
+    public LinkedList<Task> getTemporaryTaskList() {
         return temporaryTaskList;
     }
 
-    public LinkedList<EverydayTask> getEverydayTaskList() {
+    public LinkedList<Task> getEverydayTaskList() {
         return everydayTaskList;
     }
 }
