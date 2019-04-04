@@ -6,7 +6,7 @@ import project.tasks.Task;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class P_04 {
+public class P_04 extends Menu{
     public static void start() {
         Scanner sc = new Scanner(System.in);
 
@@ -14,10 +14,10 @@ public class P_04 {
                 "1. Категорию;" + "\n" +
                 "2. Задачу.");
 
-        int number = Menu.menuSelection2();
+        int number = P_04.menuSelection2();
 
         if (number == 1) {
-            System.out.println("Введите id категории которую хотите изменить");
+            System.out.println("Введите id категории, которую хотите изменить:");
             boolean duplicate = false;
             try {
                 String id = sc.nextLine();
@@ -26,7 +26,7 @@ public class P_04 {
                         System.out.println("Выберите, что Вы хотите изменить:\n" +
                                 "1. Название категории;\n" +
                                 "2. Цвет категории;\n");
-                        number = Menu.menuSelection2();
+                        number = P_04.menuSelection2();
                         if (number == 1) {
                             System.out.println("Введите новое название для категории \"" + category.getTitle() + "\":");
                             String title = sc.next();
@@ -35,7 +35,7 @@ public class P_04 {
                             return;
                         }
                         if (number == 2) {
-                            System.out.println("Введите новый цвет для категории \"" + category.getTitle() + "\":");
+                            System.out.println("Введите новый цвет для категории: \"" + category.getTitle() + "\":");
                             String color = sc.next();
                             category.setColor(color);
                             System.out.println("Цвет категории успешно изменен.");
@@ -49,12 +49,12 @@ public class P_04 {
                 System.out.println("Будьте внимательнее. Вводите только числа!");
             }
 
-            if (!duplicate) System.out.println("Категории с таким id не существует");
+            if (!duplicate) System.out.println("Категории с таким id не существует!");
         }
 
         if (number == 2) {
 
-            System.out.println("Введите id категории для изменения задачи");
+            System.out.println("Введите id категории для изменения задачи:");
             boolean duplicate = false;
             try {
                 String id = sc.nextLine();
@@ -64,17 +64,17 @@ public class P_04 {
                                 "1. Обязательную;\n" +
                                 "2. Временную;\n" +
                                 "3. Каждодневную;\n");
-                        number = Menu.menuSelection3();
+                        number = P_04.menuSelection3();
                         if (number == 1) {
-                            System.out.println("Введите id обязательной задачи, для изменения");
+                            System.out.println("Введите id обязательной задачи, для изменения:");
                             changeTask(sc,category.getRequiredTaskList());
                         }
                         if (number == 2) {
-                            System.out.println("Введите id временной задачи, для изменения");
+                            System.out.println("Введите id временной задачи, для изменения:");
                             changeTask(sc,category.getTemporaryTaskList());
                         }
                         if (number == 3) {
-                            System.out.println("Введите id каждодневной задачи, для изменения");
+                            System.out.println("Введите id каждодневной задачи, для изменения:");
                             changeTask(sc,category.getEverydayTaskList());
                         }
 
@@ -86,7 +86,7 @@ public class P_04 {
                 System.out.println("Будьте внимательнее. Вводите только числа!");
             }
 
-            if (!duplicate) System.out.println("Категории с таким id не существует");
+            if (!duplicate) System.out.println("Категории с таким id не существует!");
         }
     }
 
@@ -101,16 +101,16 @@ public class P_04 {
                             "1. Название задачи;\n" +
                             "2. Описание задачи;\n" +
                             "3. Рейтинг задачи;\n");
-                    int number = Menu.menuSelection3();
+                    int number = P_04.menuSelection3();
                     if (number == 1) {
-                        System.out.println("Введите новое название задачи");
+                        System.out.println("Введите новое название задачи:");
                         String titleTask = sc.nextLine();
                         task.setTitleTask(titleTask);
                         System.out.println("Название задачи изменено.");
                         return;
                     }
                     if (number == 2) {
-                        System.out.println("Введите новое описание задачи");
+                        System.out.println("Введите новое описание задачи:");
                         String description = sc.nextLine();
                         task.setDescription(description);
                         System.out.println("Описание задачи изменено.");
@@ -118,7 +118,7 @@ public class P_04 {
                     }
                     if (number == 3) {
                         System.out.println("Введите новый рейтинг задачи:");
-                        int rating = Menu.rating();
+                        int rating = P_04.rating();
                         task.setRating(rating);
                         System.out.println("Рейтинг задачи изменен.");
                         return;
@@ -132,6 +132,6 @@ public class P_04 {
             System.out.println("Будьте внимательнее. Вводите только числа!");
         }
 
-        if (!duplicateTask) System.out.println("Задачи с таким id не существует");
+        if (!duplicateTask) System.out.println("Задачи с таким id не существует!");
     }
 }

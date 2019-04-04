@@ -69,7 +69,7 @@ public class Menu {
         System.out.println("2. Просмотреть данные отсортированные по любому из полей (НЕ РАБОТАЕТ)");
         System.out.println("3. Создать запись");
         System.out.println("4. Изменить запись");
-        System.out.println("5. Удалить запись по id (НЕ РАБОТАЕТ)");
+        System.out.println("5. Удалить запись по id");
         System.out.println("6. Найти запись по любому полю (НЕ РАБОТАЕТ)");
         System.out.println("7. Сохранить результат своей работы в файл (НЕ РАБОТАЕТ)");
         System.out.println("8. Сформировать html отчет (НЕ РАБОТАЕТ)");
