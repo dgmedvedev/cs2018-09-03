@@ -6,6 +6,7 @@ public abstract class Task {
     private String titleTask;
     private String description;
     private int rating;
+    private String subcategory;
 
     Task(String titleTask, int rating) {
         this.titleTask = titleTask;
@@ -39,6 +40,10 @@ public abstract class Task {
         this.description = description;
     }
 
+    public void setSubcategory(String subcategory) {
+        this.subcategory = subcategory;
+    }
+
     public int getId() {
         return id;
     }
@@ -57,5 +62,9 @@ public abstract class Task {
 
     public int getRating() {
         return rating;
+    }
+
+    public String getSubcategory() {
+        return subcategory;
     }
 }

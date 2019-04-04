@@ -73,7 +73,7 @@ public class Menu {
         System.out.println("3. Создать запись");
         System.out.println("4. Изменить запись");
         System.out.println("5. Удалить запись по id");
-        System.out.println("6. Найти запись по любому полю (НЕ РАБОТАЕТ)");
+        System.out.println("6. Найти запись по любому полю");
         System.out.println("7. Сохранить результат своей работы в файл (НЕ РАБОТАЕТ)");
         System.out.println("8. Сформировать html отчет (НЕ РАБОТАЕТ)");
         System.out.println("9. Получить статистику (НЕ РАБОТАЕТ)");
@@ -103,14 +103,12 @@ public class Menu {
     }
 
     public static int menuSelection2 (){
-        int number = 0;
-        boolean tempBool = true;
-        while (tempBool) {
+        int number;
+        while (true) {
             try {
                 Scanner sc = new Scanner(System.in);
                 number = sc.nextInt();
                 if (number == 1 || number == 2) {
-                    tempBool = false;
                     break;
                 }
             } catch (InputMismatchException ime) {
@@ -122,20 +120,35 @@ public class Menu {
     }
 
     public static int menuSelection3 (){
-        int number = 0;
-        boolean tempBool = true;
-        while (tempBool) {
+        int number;
+        while (true) {
             try {
                 Scanner sc = new Scanner(System.in);
                 number = sc.nextInt();
                 if (number == 1 || number == 2 || number == 3) {
-                    tempBool = false;
                     break;
                 }
             } catch (InputMismatchException ime) {
                 System.out.println("Будьте внимательнее!");
             }
             System.out.println("Введено неверное значение! Введите 1, 2 или 3");
+        }
+        return number;
+    }
+
+    public static int menuSelection4 (){
+        int number;
+        while (true) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                number = sc.nextInt();
+                if (number == 1 || number == 2 || number == 3 || number == 4) {
+                    break;
+                }
+            } catch (InputMismatchException ime) {
+                System.out.println("Будьте внимательнее!");
+            }
+            System.out.println("Введено неверное значение! Введите 1, 2, 3 или 4");
         }
         return number;
     }

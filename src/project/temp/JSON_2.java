@@ -2,6 +2,7 @@ package project.temp;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import project.category.Category;
+import project.json.JsonSave;
 import project.tasks.EverydayTask;
 import project.tasks.RequiredTask;
 import project.tasks.Task;
@@ -99,14 +100,7 @@ public class JSON_2 {
         categoryList_2.add(category3);
         categoryList_2.add(category4);
 
-        ObjectMapper mapper = new ObjectMapper();
-
-        try {
-            FileWriter write = new FileWriter("json2.txt");
-            mapper.writeValue(write,categoryList_2);
-        }catch (IOException ioe){
-            ioe.printStackTrace();
-        }
+        JsonSave.saveFile("json2",categoryList_2);
 
         idTaskJSON_2 = Task.getIdTask();
     }
