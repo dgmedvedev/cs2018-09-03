@@ -74,7 +74,7 @@ public class Menu {
         System.out.println("4. Изменить запись");
         System.out.println("5. Удалить запись по id");
         System.out.println("6. Найти запись по любому полю");
-        System.out.println("7. Сохранить результат своей работы в файл (НЕ РАБОТАЕТ)");
+        System.out.println("7. Сохранить результат своей работы в файл");
         System.out.println("8. Сформировать html отчет (НЕ РАБОТАЕТ)");
         System.out.println("9. Получить статистику (НЕ РАБОТАЕТ)");
         System.out.println("10.Выйти из программы");
