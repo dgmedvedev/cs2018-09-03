@@ -1,5 +1,8 @@
 package project.menu;
 
+import project.JoinLists;
+import project.category.Category;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -137,5 +140,23 @@ public class Menu {
         return number;
     }
 
+    public static void categorySearchByID(){
+        System.out.println("Введите id категории:");
+        boolean duplicate = false;
+        try {
+            Scanner sc = new Scanner(System.in);
+            String id = sc.nextLine();
+            for (Category category : JoinLists.getCategoryList()) {
+                if (category.getIdCategory() == Integer.parseInt(id)) {
+                    System.out.println(category);
+                    duplicate = true;
+                    break;
+                }
+            }
+        }catch (NumberFormatException nfe){
+            System.out.println("Будьте внимательнее. Вводите только числа!");
+        }
 
+        if (!duplicate) System.out.println("Категории с таким id не существует");
+    }
 }

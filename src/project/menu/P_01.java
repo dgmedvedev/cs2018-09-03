@@ -25,23 +25,7 @@ public class P_01 extends Menu{
         }
 
         if (number == 3) {
-            System.out.println("Введите id категории");
-            boolean duplicate = false;
-            try {
-                Scanner sc = new Scanner(System.in);
-                String id = sc.nextLine();
-                for (Category category : JoinLists.getCategoryList()) {
-                    if (category.getIdCategory() == Integer.parseInt(id)) {
-                        System.out.println(category.toStringCategories());
-                        duplicate = true;
-                        break;
-                    }
-                }
-            }catch (NumberFormatException nfe){
-                System.out.println("Будьте внимательнее. Вводите только числа!");
-            }
-
-            if (!duplicate) System.out.println("Категории с таким id не существует");
+            P_01.categorySearchByID();
         }
     }
 }
