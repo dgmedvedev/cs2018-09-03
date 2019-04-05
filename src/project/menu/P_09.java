@@ -50,7 +50,6 @@ public class P_09 extends Menu {
                                     + category.getIdCategory() + " = " + sum);
                         }
                         if (number == 3) {
-
                             System.out.println("Введите подкатегорию задачи:");
                             boolean temp = false;
                             String subcategory = sc.nextLine();
@@ -76,16 +75,48 @@ public class P_09 extends Menu {
                                         break;
                                     }
                             if (!temp) System.out.println("Задачи с такой подкатегорией не существует");
-
-
-
-
                         }
                         if (number == 4) {
-
-
+                            System.out.println("Введите подкатегорию задачи:");
+                            boolean temp = false;
+                            String subcategory = sc.nextLine();
+                            for (Task task : category.getRequiredTaskList())
+                                if (task.getSubcategory().equals(subcategory)) {
+                                    sum = sumRating(category,subcategory);
+                                    System.out.println("Суммарная сложность, для подкатегории "
+                                            + subcategory + " = " + sum);
+                                    return;
+                                }
+                            for (Task task : category.getTemporaryTaskList())
+                                if (task.getSubcategory().equals(subcategory)) {
+                                    sum = sumRating(category,subcategory);
+                                    System.out.println("Суммарная сложность, для подкатегории "
+                                            + subcategory + " = " + sum);
+                                    temp = true;
+                                    break;
+                                }
+                            if (!temp) System.out.println("Задачи с такой подкатегорией не существует");
                         }
                         if (number == 5) {
+                            System.out.println("Введите подкатегорию задачи:");
+                            boolean temp = false;
+                            String subcategory = sc.nextLine();
+                            for (Task task : category.getRequiredTaskList())
+                                if (task.getSubcategory().equals(subcategory)) {
+                                    count = countTasks(category,subcategory);
+                                    System.out.println("Количество задач, для подкатегории "
+                                            + subcategory + " = " + count);
+                                    return;
+                                }
+                            for (Task task : category.getTemporaryTaskList())
+                                if (task.getSubcategory().equals(subcategory)) {
+                                    count = countTasks(category,subcategory);
+                                    System.out.println("Количество задач, для подкатегории "
+                                            + subcategory + " = " + count);
+                                    temp = true;
+                                    break;
+                                }
+                            if (!temp) System.out.println("Задачи с такой подкатегорией не существует");
 
                         }
 
