@@ -9,6 +9,7 @@ import java.util.List;
 
 public abstract class JoinLists {
     private static List<Category> categoryList = new LinkedList<>();
+    private final static List<Category> startCategoryList = categoryList;
 
     public static void choiceCategory(List<Category> list_1, List<Category> list_2) {
         List<Category> tempMin;
@@ -35,7 +36,7 @@ public abstract class JoinLists {
                     System.out.println("Найдено совпадение по idCategory");
                     System.out.println("Введите номер категории, которую хотите оставить:");
                     System.out.println("1. " + "\"" + category_1.getTitle() + "\"" + " из списка 1. IdCategory = " + category_1.getIdCategory() + ";");
-                    System.out.println("2. " + "\"" + category_2.getTitle() + "\"" + " из списка 2"+ tempString + ". IdCategory = " + category_2.getIdCategory() + ".");
+                    System.out.println("2. " + "\"" + category_2.getTitle() + "\"" + " из списка 2" + tempString + ". IdCategory = " + category_2.getIdCategory() + ".");
 
                     int number = Menu.menuSelection2();
 
@@ -53,10 +54,16 @@ public abstract class JoinLists {
             if (!duplicate)
                 categoryList.add(category_1);
         }
-        JsonSave.saveFile("JoinLists",categoryList);
+        JsonSave.saveFile("JoinListsStart", startCategoryList);
+        JsonSave.saveFile("JoinLists", categoryList);
+
     }
 
     public static List<Category> getCategoryList() {
         return categoryList;
+    }
+
+    public static List<Category> getStartCategoryList() {
+        return startCategoryList;
     }
 }

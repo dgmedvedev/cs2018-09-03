@@ -76,7 +76,7 @@ public class Menu {
         System.out.println("6. Найти запись по любому полю");
         System.out.println("7. Сохранить результат своей работы в файл");
         System.out.println("8. Сформировать html отчет (НЕ РАБОТАЕТ)");
-        System.out.println("9. Получить статистику (НЕ РАБОТАЕТ)");
+        System.out.println("9. Получить статистику");
         System.out.println("10.Выйти из программы");
         System.out.println("____________________________");
     }
@@ -89,14 +89,14 @@ public class Menu {
                 Scanner sc = new Scanner(System.in);
                 id = sc.nextLine();
 
-                if (Integer.parseInt(id) >= 0 && Integer.parseInt(id) <= 10) {
+                if (Integer.parseInt(id) > 0 && Integer.parseInt(id) <= 10) {
                     range = true;
                 }
 
             } catch (NumberFormatException nfe) {
                 System.out.println("Будьте внимательнее. Вводите только числа!");
             }
-            if (!range) System.out.println("Значение должно быть от 0 до 10 включительно.");
+            if (!range) System.out.println("Значение должно быть от 1 до 10 включительно.");
 
         }
         return Integer.parseInt(id);

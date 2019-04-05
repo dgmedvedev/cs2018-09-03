@@ -2,6 +2,7 @@ package project.menu;
 
 import project.JoinLists;
 import project.category.Category;
+import project.json.JsonSave;
 import project.tasks.EverydayTask;
 import project.tasks.RequiredTask;
 import project.tasks.TemporaryTask;
@@ -83,6 +84,7 @@ public class P_03 extends Menu{
                         }
 
                         duplicate = true;
+                        JsonSave.saveFile("JoinLists", JoinLists.getCategoryList());
                         break;
                     }
                 }
@@ -93,8 +95,6 @@ public class P_03 extends Menu{
             if (!duplicate) System.out.println("Категории с таким id не существует");
 
         }
-
+        JsonSave.saveFile("JoinLists", JoinLists.getCategoryList());
     }
-
-
 }

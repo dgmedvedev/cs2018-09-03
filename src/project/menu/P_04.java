@@ -2,6 +2,7 @@ package project.menu;
 
 import project.JoinLists;
 import project.category.Category;
+import project.json.JsonSave;
 import project.tasks.Task;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -32,6 +33,7 @@ public class P_04 extends Menu{
                             String title = sc.next();
                             category.setTitle(title);
                             System.out.println("Название категории успешно изменено.");
+                            JsonSave.saveFile("JoinLists", JoinLists.getCategoryList());
                             return;
                         }
                         if (number == 2) {
@@ -39,6 +41,7 @@ public class P_04 extends Menu{
                             String color = sc.next();
                             category.setColor(color);
                             System.out.println("Цвет категории успешно изменен.");
+                            JsonSave.saveFile("JoinLists", JoinLists.getCategoryList());
                             return;
                         }
                         duplicate = true;
@@ -107,6 +110,7 @@ public class P_04 extends Menu{
                         String titleTask = sc.nextLine();
                         task.setTitleTask(titleTask);
                         System.out.println("Название задачи изменено.");
+                        JsonSave.saveFile("JoinLists", JoinLists.getCategoryList());
                         return;
                     }
                     if (number == 2) {
@@ -114,6 +118,7 @@ public class P_04 extends Menu{
                         String description = sc.nextLine();
                         task.setDescription(description);
                         System.out.println("Описание задачи изменено.");
+                        JsonSave.saveFile("JoinLists", JoinLists.getCategoryList());
                         return;
                     }
                     if (number == 3) {
@@ -121,9 +126,9 @@ public class P_04 extends Menu{
                         int rating = P_04.rating();
                         task.setRating(rating);
                         System.out.println("Рейтинг задачи изменен.");
+                        JsonSave.saveFile("JoinLists", JoinLists.getCategoryList());
                         return;
                     }
-
                     duplicateTask = true;
                     break;
                 }

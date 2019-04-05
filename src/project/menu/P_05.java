@@ -2,6 +2,7 @@ package project.menu;
 
 import project.JoinLists;
 import project.category.Category;
+import project.json.JsonSave;
 import project.tasks.Task;
 
 import java.util.LinkedList;
@@ -27,6 +28,7 @@ public class P_05 extends Menu {
                         JoinLists.getCategoryList().remove(category);
                         System.out.println("Категория с id = " + category.getIdCategory() + ", успешно удалена.");
                         duplicate = true;
+                        JsonSave.saveFile("JoinLists", JoinLists.getCategoryList());
                         break;
                     }
                 }
@@ -73,7 +75,6 @@ public class P_05 extends Menu {
 
             if (!duplicate) System.out.println("Категории с таким id не существует!");
         }
-
     }
 
     private static void changeTask(Scanner sc, LinkedList<Task> list) {
@@ -86,6 +87,7 @@ public class P_05 extends Menu {
                     list.remove(task);
                     System.out.println("Задача с id = " + task.getId() + ", успешно удалена.");
                     duplicateTask = true;
+                    JsonSave.saveFile("JoinLists", JoinLists.getCategoryList());
                     break;
                 }
             }

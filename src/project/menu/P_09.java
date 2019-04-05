@@ -322,10 +322,6 @@ public class P_09 extends Menu {
                 if (task.getSubcategory().equals(subcategory))
                     count++;
             }
-            for (Task task : category.getEverydayTaskList()) {
-                if (task.getSubcategory().equals(subcategory))
-                    count++;
-            }
         }
         return count;
     }
