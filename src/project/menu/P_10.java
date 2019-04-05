@@ -5,6 +5,7 @@ import project.json.CheckSum;
 import java.io.File;
 
 public class P_10 extends Menu {
+
     public static void start() {
         File file_1 = new File("JoinLists.txt");
         File file_2 = new File("JoinListsStart.txt");
@@ -17,7 +18,9 @@ public class P_10 extends Menu {
         System.out.println("checkSum_1 = " + checkSum_1);
         System.out.println("checkSum_2 = " + checkSum_2);
 
-        if (!checkSum_1.equals(checkSum_2))
-            System.out.println("Сохраните изменения перед выходом?");
+        if (!checkSum_1.equals(checkSum_2)){
+            System.out.println("Сохраните изменения перед выходом?");}
+
+
     }
 }
