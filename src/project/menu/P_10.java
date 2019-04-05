@@ -13,14 +13,21 @@ public class P_10 extends Menu {
         String directory_2 = file_2.getAbsolutePath();
         String checkSum_1 = CheckSum.setCheckSum(directory_1);
         String checkSum_2 = CheckSum.setCheckSum(directory_2);
-        System.out.println("directory file_1 = " + directory_1);
-        System.out.println("directory file_2 = " + directory_2);
-        System.out.println("checkSum_1 = " + checkSum_1);
-        System.out.println("checkSum_2 = " + checkSum_2);
 
-        if (!checkSum_1.equals(checkSum_2)){
-            System.out.println("Сохраните изменения перед выходом?");}
+        if (!checkSum_1.equals(checkSum_2)) {
+            System.out.println("У Вас есть несохраненные данные.\n" +
+                    "Вы точно хотите выйти без сохранения?" + "\n" +
+                    "1. Да;" + "\n" +
+                    "2. Нет.");
 
+            int number = P_10.menuSelection2();
 
+            if (number == 1) {
+                System.out.println("Good bye!");
+            }
+            if (number == 2) {
+                P_07.start();
+            }
+        }
     }
 }

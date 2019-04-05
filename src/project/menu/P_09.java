@@ -233,7 +233,7 @@ public class P_09 extends Menu {
         }
     }
 
-    private static int sumRatingAll() {
+    public static int sumRatingAll() {
         int sum = 0;
         for (Category category : JoinLists.getCategoryList()) {
             for (Task task : category.getRequiredTaskList()) {
@@ -249,7 +249,7 @@ public class P_09 extends Menu {
         return sum;
     }
 
-    private static int sumRatingAll(String subcategory) {
+    public static int sumRatingAll(String subcategory) {
         int sum = 0;
         for (Category category : JoinLists.getCategoryList()) {
             for (Task task : category.getRequiredTaskList()) {
@@ -260,15 +260,11 @@ public class P_09 extends Menu {
                 if (task.getSubcategory().equals(subcategory))
                     sum += task.getRating();
             }
-            for (Task task : category.getEverydayTaskList()) {
-                if (task.getSubcategory().equals(subcategory))
-                    sum += task.getRating();
-            }
         }
         return sum;
     }
 
-    private static int sumRating(Category category) {
+    public static int sumRating(Category category) {
         int sum = 0;
         for (Task task : category.getRequiredTaskList()) {
             sum += task.getRating();
@@ -282,7 +278,7 @@ public class P_09 extends Menu {
         return sum;
     }
 
-    private static int sumRating(Category category, String subcategory) {
+    public static int sumRating(Category category, String subcategory) {
         int sum = 0;
         for (Task task : category.getRequiredTaskList()) {
             if (task.getSubcategory().equals(subcategory))
@@ -295,7 +291,7 @@ public class P_09 extends Menu {
         return sum;
     }
 
-    private static double countTasksAll() {
+    public static double countTasksAll() {
         double count = 0;
         for (Category category : JoinLists.getCategoryList()) {
             for (Task ignored : category.getRequiredTaskList()) {
@@ -311,7 +307,7 @@ public class P_09 extends Menu {
         return count;
     }
 
-    private static double countTasksAll(String subcategory) {
+    public static double countTasksAll(String subcategory) {
         double count = 0;
         for (Category category : JoinLists.getCategoryList()) {
             for (Task task : category.getRequiredTaskList()) {
@@ -326,7 +322,7 @@ public class P_09 extends Menu {
         return count;
     }
 
-    private static double countTasks(Category category) {
+    public static double countTasks(Category category) {
         double count = 0;
         for (Task ignored : category.getRequiredTaskList()) {
             count++;
@@ -340,7 +336,7 @@ public class P_09 extends Menu {
         return count;
     }
 
-    private static double countTasks(Category category, String subcategory) {
+    public static double countTasks(Category category, String subcategory) {
         double count = 0;
         for (Task task : category.getRequiredTaskList()) {
             if (task.getSubcategory().equals(subcategory))
