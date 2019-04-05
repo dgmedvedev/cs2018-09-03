@@ -34,33 +34,55 @@ public class P_09 extends Menu {
                                 "4. Суммарную сложность по подкатегориям;\n" +
                                 "5. Количество задач по подкатегориям.");
                         number = P_09.menuSelection5();
-                        int sum = 0;
-                        double count = 0;
+                        int sum;
+                        double count;
                         if (number == 1) {
-                            for (Task task : category.getRequiredTaskList()) {
-                                sum += task.getRating();
-                                count++;
-                            }
-                            for (Task task : category.getTemporaryTaskList()) {
-                                sum += task.getRating();
-                                count++;
-                            }
-                            for (Task task : category.getEverydayTaskList()) {
-                                sum += task.getRating();
-                                count++;
-                            }
+                            sum = sumRating(category);
+                            count = countTasks(category);
                             System.out.print("Средняя сложность, для категории "
                                     + category.getIdCategory() + " = ");
-                            System.out.printf("%.1f", sum/count);
+                            System.out.printf("%.1f", sum / count);
                             System.out.println();
                         }
                         if (number == 2) {
-
+                            sum = sumRating(category);
+                            System.out.println("Суммарная сложность, для категории "
+                                    + category.getIdCategory() + " = " + sum);
                         }
                         if (number == 3) {
 
+                            System.out.println("Введите подкатегорию задачи:");
+                            boolean temp = false;
+                            String subcategory = sc.nextLine();
+                                for (Task task : category.getRequiredTaskList())
+                                    if (task.getSubcategory().equals(subcategory)) {
+                                        sum = sumRating(category,subcategory);
+                                        count = countTasks(category,subcategory);
+                                        System.out.print("Средняя сложность, для подкатегории "
+                                                + subcategory + " = ");
+                                        System.out.printf("%.1f", sum / count);
+                                        System.out.println();
+                                        return;
+                                    }
+                                for (Task task : category.getTemporaryTaskList())
+                                    if (task.getSubcategory().equals(subcategory)) {
+                                        sum = sumRating(category,subcategory);
+                                        count = countTasks(category,subcategory);
+                                        System.out.print("Средняя сложность, для подкатегории "
+                                                + subcategory + " = ");
+                                        System.out.printf("%.1f", sum / count);
+                                        System.out.println();
+                                        temp = true;
+                                        break;
+                                    }
+                            if (!temp) System.out.println("Задачи с такой подкатегорией не существует");
+
+
+
+
                         }
                         if (number == 4) {
+
 
                         }
                         if (number == 5) {
@@ -82,5 +104,59 @@ public class P_09 extends Menu {
         if (number == 2) {
             System.out.println();
         }
+    }
+
+    private static int sumRating(Category category) {
+        int sum = 0;
+        for (Task task : category.getRequiredTaskList()) {
+            sum += task.getRating();
+        }
+        for (Task task : category.getTemporaryTaskList()) {
+            sum += task.getRating();
+        }
+        for (Task task : category.getEverydayTaskList()) {
+            sum += task.getRating();
+        }
+        return sum;
+    }
+
+    private static int sumRating(Category category, String subcategory) {
+        int sum = 0;
+        for (Task task : category.getRequiredTaskList()) {
+            if (task.getSubcategory().equals(subcategory))
+                sum += task.getRating();
+        }
+        for (Task task : category.getTemporaryTaskList()) {
+            if (task.getSubcategory().equals(subcategory))
+                sum += task.getRating();
+        }
+        return sum;
+    }
+
+    private static double countTasks(Category category) {
+        double count = 0;
+        for (Task ignored : category.getRequiredTaskList()) {
+            count++;
+        }
+        for (Task ignored : category.getTemporaryTaskList()) {
+            count++;
+        }
+        for (Task ignored : category.getEverydayTaskList()) {
+            count++;
+        }
+        return count;
+    }
+
+    private static double countTasks(Category category, String subcategory) {
+        double count = 0;
+        for (Task task : category.getRequiredTaskList()) {
+            if (task.getSubcategory().equals(subcategory))
+                count++;
+        }
+        for (Task task : category.getTemporaryTaskList()) {
+            if (task.getSubcategory().equals(subcategory))
+                count++;
+        }
+        return count;
     }
 }
