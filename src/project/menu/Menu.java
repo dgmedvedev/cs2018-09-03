@@ -153,6 +153,23 @@ public class Menu {
         return number;
     }
 
+    public static int menuSelection5 (){
+        int number;
+        while (true) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                number = sc.nextInt();
+                if (number == 1 || number == 2 || number == 3 || number == 4 || number == 5) {
+                    break;
+                }
+            } catch (InputMismatchException ime) {
+                System.out.println("Будьте внимательнее!");
+            }
+            System.out.println("Введено неверное значение! Введите 1, 2, 3, 4 или 5");
+        }
+        return number;
+    }
+
     public static void categorySearchByID(){
         System.out.println("Введите id категории:");
         boolean duplicate = false;

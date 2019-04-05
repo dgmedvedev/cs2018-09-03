@@ -1,6 +1,7 @@
 package project;
 
 import project.category.Category;
+import project.json.JsonSave;
 import project.menu.Menu;
 
 import java.util.LinkedList;
@@ -52,6 +53,7 @@ public abstract class JoinLists {
             if (!duplicate)
                 categoryList.add(category_1);
         }
+        JsonSave.saveFile("JoinLists",categoryList);
     }
 
     public static List<Category> getCategoryList() {

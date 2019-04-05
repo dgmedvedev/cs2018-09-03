@@ -11,17 +11,18 @@ import java.util.List;
 import java.util.Scanner;
 
 public class JsonSave {
+    private static String file;
 
     public static void saveFile(String fileName, List<Category> list) {
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            String temp = fileName.replaceAll("[\\\\,/,:,*,?,\",<,>,|]+", "");
-            if (fileName.length() != temp.length()) {
-                System.out.println("Сработала ошибка");
+            String name = fileName.replaceAll("[\\\\,/,:,*,?,\",<,>,|]+", "");
+            if (fileName.length() != name.length()) {
                 throw new FileNotFoundException();
             }
-            FileWriter write = new FileWriter(fileName + ".txt");
+            file = fileName  + ".txt";
+            FileWriter write = new FileWriter(file);
             mapper.writeValue(write, list);
         } catch (FileNotFoundException fnf) {
             System.out.println("Имя не должно содержать следующих знаков:\n" +
@@ -33,5 +34,9 @@ public class JsonSave {
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
+    }
+
+    public static String getFile() {
+        return file;
     }
 }
