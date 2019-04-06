@@ -13,7 +13,6 @@ import static org.junit.Assert.assertTrue;
 
 public class TestUnit {
 
-
     private Category category = new Category("Test", "GREEN");
 
     private RequiredTask oneR = new RequiredTask("Запись первая", 9, "Семья");

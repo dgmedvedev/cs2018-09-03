@@ -12,5 +12,8 @@ public class P_07 extends Menu{
         String fileName = sc.nextLine();
         JsonSave.saveFile(fileName, JoinLists.getCategoryList());
         System.out.println("Файл " + JsonSave.getFile() + " сохранен.");
+
+        JsonSave.saveFile("JoinLists", JoinLists.getCategoryList());
+        JsonSave.saveFile("JoinListsStart", JoinLists.getCategoryList());
     }
 }
