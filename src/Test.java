@@ -11,7 +11,7 @@ public class Test {
                             && Math.abs(x) != Math.abs(y) && Math.abs(x) != Math.abs(z) && Math.abs(y) != Math.abs(z)) {
                         x1 = x;
                         y1 = y;
-                        z1 = z;//
+                        z1 = z;///
                         end = System.currentTimeMillis() - start;
                         System.out.println("x = " + x + "; у = " + y + "; z = " + z);
                         System.out.println("end = " + end);
